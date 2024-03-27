@@ -1,20 +1,20 @@
-h2 {
-	font-size: 2.5rem;
-	text-align: center;
-	line-height: 35px;
-	margin-bottom: 20px;
-}
-
 #hero-bg {
 	background-image: url("https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg");
 	width: 100%;
 	padding-bottom: 55%;
-	resize: both;
+	/* resize: both; */
 	background-size: 100%;
 }
 
 #tri {
 	padding: 10px;
+}
+
+h2 {
+	font-size: 2.5rem;
+	text-align: center;
+	line-height: 35px;
+	margin-bottom: 20px;
 }
 
 #tri button {
@@ -24,4 +24,42 @@ h2 {
 	border: none;
 	border-radius: 3px;
 	color: var(--white);
+}
+
+/* ----------------- 720 px ----------------- */
+
+@media (min-width: 720px) {
+	#hero {
+		position: relative;
+		height: 590px;
+		width: 100%;
+	}
+
+	#hero-bg {
+		width: 100%;
+		height: 100%;
+		padding-bottom: 0;
+		background-size: cover;
+		background-position: center;
+	}
+
+	#tri {
+		width: 320px;
+		position: absolute;
+		left: 20px;
+		top: 30px;
+		background-color: var(--white);
+		padding: 30px;
+		border-radius: 3px;
+	}
+
+	h2 {
+		font-size: 3.5rem;
+		text-align: left;
+		line-height: 40px;
+	}
+
+	#tri button {
+		font-size: 1.8rem;
+	}
 }
