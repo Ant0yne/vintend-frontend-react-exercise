@@ -1,9 +1,38 @@
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
+import HeaderHome from "../components/Header";
+import Hero from "../components/Hero";
+import OffersHome from "../components/OffersHome";
 
 const Home = () => {
-	return (
+	const [data, setData] = useState();
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await axios.get(
+					"https://lereacteur-vinted-api.herokuapp.com/offers"
+				);
+
+				setData(response.data);
+				setIsLoading(false);
+			} catch (error) {
+				console.log(error.response);
+			}
+		};
+
+		fetchData();
+	}, []);
+
+	return isLoading ? (
+		<p>LLoading ...</p>
+	) : (
 		<>
-			<Link to="/offer/fdsfsdf">Offer</Link>
+			<HeaderHome />
+			<Hero />
+			<OffersHome {...data} />
 		</>
 	);
 };
