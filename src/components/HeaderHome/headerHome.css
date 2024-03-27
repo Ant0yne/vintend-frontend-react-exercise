@@ -2,12 +2,15 @@
 	position: sticky;
 	z-index: 1;
 	top: 0;
+	background-color: var(--white);
+}
+
+#header-home > .container {
 	height: 102px;
 	padding: 8px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	background-color: var(--white);
 }
 
 #header-home-logo {
@@ -36,7 +39,7 @@
 /* ----------------- 720 px ----------------- */
 
 @media (min-width: 720px) {
-	#header-home {
+	#header-home > .container {
 		padding: 15px 15px 8px 15px;
 		height: 116px;
 	}
@@ -45,21 +48,47 @@
 /* ----------------- 960 px ----------------- */
 
 @media (min-width: 960px) {
-	.header-m {
-		display: inherit;
+	#header-home > .container {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		height: 100px;
+		gap: 20px;
 	}
 
 	.menu-w {
 		display: none;
 	}
 
-	#header-home {
-		flex-direction: row;
-		align-items: center;
-		/* justify-content: space-around; */
+	#header-home > .container > div:nth-of-type(2) {
+		flex: 1;
 	}
 
-	#search-bar {
-		flex-shrink: 0;
+	.header-m {
+		display: flex;
+		gap: 50px;
+	}
+
+	.header-m > div {
+		display: flex;
+		gap: 20px;
+	}
+
+	.header-m > div button {
+		border: 1px solid var(--green-vinted);
+		background-color: var(--white);
+		border-radius: 5px;
+		color: var(--green-vinted);
+		font-size: 1.4rem;
+		padding: 0 30px;
+	}
+
+	.header-m > button {
+		background-color: var(--green-vinted);
+		border: none;
+		border-radius: 3px;
+		padding: 8px 10px;
+		color: var(--white);
+		font-size: 1.4rem;
 	}
 }
