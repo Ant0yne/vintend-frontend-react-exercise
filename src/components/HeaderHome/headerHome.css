@@ -1,0 +1,33 @@
+#header-home {
+	position: sticky;
+	top: 0;
+	height: 102px;
+	padding: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: var(--white);
+}
+
+#header-home-logo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+}
+
+#header-home-logo img {
+	height: 30px;
+}
+
+#search-bar {
+	padding: 10px 5px;
+	width: 100%;
+	background-color: var(--light-grey);
+	border: none;
+	border-radius: 3px;
+}
+
+.header-home-mh {
+	display: none;
+}

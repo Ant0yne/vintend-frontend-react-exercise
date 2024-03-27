@@ -24,16 +24,21 @@ const OfferHome = ({
 		<>
 			<div className="offer-home">
 				<Link to={routeOffer}>
-					<div>
+					<div className="owner-home">
 						{avatar && <img src={avatar.secure_url} alt={avatar.asset_id} />}
 						<p>{username}</p>
 					</div>
-					<img src={product_image.secure_url} alt={product_image.asset_id} />
+					<img
+						className="img-home"
+						src={product_image.secure_url}
+						alt={product_image.asset_id}
+					/>
 					<p>{product_price} €</p>
-					{etat && <p>{etat.ÉTAT}</p>}
-					{marque && <p>{marque.MARQUE}</p>}
+					<aside>
+						{etat && <p>{etat.ÉTAT}</p>}
+						{marque && <p>{marque.MARQUE}</p>}
+					</aside>
 				</Link>
-				;
 			</div>
 		</>
 	);

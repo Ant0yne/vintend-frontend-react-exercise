@@ -1,0 +1,24 @@
+h2 {
+	font-size: 2.5rem;
+	text-align: center;
+	line-height: 35px;
+	margin-bottom: 20px;
+}
+
+#hero-bg {
+	background-image: url("https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg");
+	width: 100%;
+}
+
+#tri {
+	padding: 10px;
+}
+
+#tri button {
+	width: 100%;
+	padding: 10px;
+	background-color: var(--green-vinted);
+	border: none;
+	border-radius: 3px;
+	color: var(--white);
+}

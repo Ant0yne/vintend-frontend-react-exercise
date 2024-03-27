@@ -5,9 +5,13 @@ import "./offersHome.css";
 const OffersHome = ({ count, offers }) => {
 	return (
 		<>
-			{offers.map((offer) => {
-				return <OfferHome key={offer._id} {...offer} />;
-			})}
+			<section id="offers">
+				<div className="container">
+					{offers.map((offer) => {
+						return <OfferHome key={offer._id} {...offer} />;
+					})}
+				</div>
+			</section>
 		</>
 	);
 };

@@ -3,7 +3,32 @@ import "./headerHome.css";
 const HeaderHome = () => {
 	return (
 		<>
-			<h1>Winted</h1>
+			<header id="header-home">
+				<div id="header-home-logo">
+					<img
+						src="https://lereacteur-vinted.netlify.app/static/media/logo.10b0caad793dd0a8ea72.png"
+						alt=""
+					/>
+					<nav>
+						<button>Menu</button>
+					</nav>
+				</div>
+				<div>
+					<input
+						type="text"
+						name="search-bar"
+						id="search-bar"
+						placeholder="Rechercher des articles"
+					/>
+				</div>
+				<nav className="header-home-mh">
+					<div>
+						<button> S'inscrire</button>
+						<button>Se connecter</button>
+					</div>
+					<button>Vends tes articles</button>
+				</nav>
+			</header>
 		</>
 	);
 };

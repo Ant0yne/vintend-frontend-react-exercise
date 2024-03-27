@@ -27,7 +27,7 @@ const Home = () => {
 	}, []);
 
 	return isLoading ? (
-		<p>LLoading ...</p>
+		<p>Loading ...</p>
 	) : (
 		<>
 			<HeaderHome />
