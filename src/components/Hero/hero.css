@@ -8,6 +8,9 @@ h2 {
 #hero-bg {
 	background-image: url("https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg");
 	width: 100%;
+	padding-bottom: 55%;
+	resize: both;
+	background-size: 100%;
 }
 
 #tri {
