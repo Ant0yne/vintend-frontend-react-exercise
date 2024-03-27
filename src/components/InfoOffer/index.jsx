@@ -1,4 +1,4 @@
-import "./infOffer.css";
+import "./infoOffer.css";
 
 const InfOffer = ({
 	product_price,

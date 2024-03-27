@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 import HeaderOffer from "../components/HeaderOffer";
 import CarouselOffer from "../components/CarouselOffer";
-import InfOffer from "../components/InfOffer";
+import InfOffer from "../components/InfoOffer";
 
 const Offer = () => {
 	const [data, setData] = useState();

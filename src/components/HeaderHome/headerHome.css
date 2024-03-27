@@ -1,5 +1,6 @@
 #header-home {
 	position: sticky;
+	z-index: 1;
 	top: 0;
 	height: 102px;
 	padding: 8px;
@@ -28,6 +29,37 @@
 	border-radius: 3px;
 }
 
-.header-home-mh {
+.header-m {
 	display: none;
+}
+
+/* ----------------- 720 px ----------------- */
+
+@media (min-width: 720px) {
+	#header-home {
+		padding: 15px 15px 8px 15px;
+		height: 116px;
+	}
+}
+
+/* ----------------- 960 px ----------------- */
+
+@media (min-width: 960px) {
+	.header-m {
+		display: inherit;
+	}
+
+	.menu-w {
+		display: none;
+	}
+
+	#header-home {
+		flex-direction: row;
+		align-items: center;
+		/* justify-content: space-around; */
+	}
+
+	#search-bar {
+		flex-shrink: 0;
+	}
 }

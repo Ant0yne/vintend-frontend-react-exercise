@@ -9,7 +9,7 @@ const HeaderHome = () => {
 						src="https://lereacteur-vinted.netlify.app/static/media/logo.10b0caad793dd0a8ea72.png"
 						alt=""
 					/>
-					<nav>
+					<nav className="menu-w">
 						<button>Menu</button>
 					</nav>
 				</div>
@@ -21,7 +21,7 @@ const HeaderHome = () => {
 						placeholder="Rechercher des articles"
 					/>
 				</div>
-				<nav className="header-home-mh">
+				<nav className="header-m">
 					<div>
 						<button> S'inscrire</button>
 						<button>Se connecter</button>
