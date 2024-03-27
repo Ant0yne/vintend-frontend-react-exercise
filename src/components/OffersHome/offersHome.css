@@ -5,4 +5,29 @@
 #offers > .container {
 	display: flex;
 	flex-direction: column;
+	gap: var(--gap-offer);
+}
+
+/* ----------------- 520 px ----------------- */
+
+@media (min-width: 520px) {
+	#offers > .container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+/* ----------------- 1260 px ----------------- */
+
+@media (min-width: 1260px) {
+	.offer-home {
+		width: calc((100% - (var(--gap-offer) * 4)) / 5);
+	}
+
+	.container {
+		padding: 0;
+		width: 1260px;
+		margin: 0 auto;
+	}
 }

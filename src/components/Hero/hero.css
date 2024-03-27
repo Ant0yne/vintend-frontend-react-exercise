@@ -2,7 +2,6 @@
 	background-image: url("https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg");
 	width: 100%;
 	padding-bottom: 55%;
-	/* resize: both; */
 	background-size: 100%;
 }
 
@@ -33,6 +32,7 @@ h2 {
 		position: relative;
 		height: 590px;
 		width: 100%;
+		margin-bottom: 20px;
 	}
 
 	#hero-bg {
