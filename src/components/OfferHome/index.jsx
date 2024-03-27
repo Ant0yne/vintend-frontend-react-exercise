@@ -19,7 +19,6 @@ const OfferHome = ({
 	const marque = product_details.find((detail) => detail.MARQUE !== undefined);
 
 	const routeOffer = "/offer/" + _id;
-	console.log(routeOffer);
 
 	return (
 		<>

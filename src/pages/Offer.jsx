@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 import HeaderOffer from "../components/HeaderOffer";
 import CarouselOffer from "../components/CarouselOffer";
-import InfoOffer from "../components/InfoOffer";
+import InfOffer from "../components/InfOffer";
 
 const Offer = () => {
 	const [data, setData] = useState();
@@ -28,7 +28,7 @@ const Offer = () => {
 		};
 
 		fetchData();
-	}, []);
+	}, [id]);
 
 	return isLoading ? (
 		<p>Loading ...</p>
@@ -40,7 +40,7 @@ const Offer = () => {
 				image={data.product_image}
 				pictures={data.product_pictures}
 			/>
-			<InfoOffer {...data} />
+			<InfOffer {...data} />
 		</>
 	);
 };

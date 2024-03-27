@@ -1,6 +1,6 @@
-import "./infoOffer.css";
+import "./infOffer.css";
 
-const InfoOffer = ({
+const InfOffer = ({
 	product_price,
 	product_details,
 	product_name,
@@ -23,14 +23,18 @@ const InfoOffer = ({
 			})}
 			<p>{product_name}</p>
 			<p>{product_description}</p>
-			{/* <nav>
-				{owner.avatar && (
-					<img src={owner.avatar.secure_url} alt={owner.avatar.asset_id} />
+			<nav>
+				{owner.account.avatar && (
+					<img
+						src={owner.account.avatar.secure_url}
+						alt={owner.account.avatar.asset_id}
+					/>
 				)}
-				<p>{owner.username}</p>
-			</nav> */}
+				<p>{owner.account.username}</p>
+			</nav>
+			<button>Acheter</button>
 		</>
 	);
 };
 
-export default InfoOffer;
+export default InfOffer;
