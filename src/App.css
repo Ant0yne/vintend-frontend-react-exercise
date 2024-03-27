@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 :root {
-	--light-grey: #d3d3d3;
-	--light-grey-b: #d3d3d32f;
-	--grey: #868686;
-	--white-grey: #f3f5f5;
 	--white: #fff;
+	--light-grey: #f5f6f7;
+	--text-grey: #868686;
 	--black: #000;
+	--green-vinted: #2baeb7;
 }
 
 * {
@@ -15,11 +16,6 @@ html {
 	font-size: 62.5%;
 }
 
-body {
-	font-size: 1.6rem;
-	line-height: 22px;
-}
-
 html::-webkit-scrollbar {
 	display: none;
 }
@@ -27,4 +23,20 @@ html::-webkit-scrollbar {
 html {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+}
+
+body {
+	font-size: 1.6rem;
+	line-height: 22px;
+	font-family: "Roboto", sans-serif;
+}
+
+button {
+	font-family: "Roboto", sans-serif;
+	font-size: 1.6rem;
+}
+
+a {
+	color: var(--black);
+	text-decoration: none;
 }
