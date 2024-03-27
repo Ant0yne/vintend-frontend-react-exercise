@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-import HeaderHome from "../components/Header";
+import HeaderHome from "../components/HeaderHome";
 import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
 

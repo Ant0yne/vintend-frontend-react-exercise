@@ -25,19 +25,14 @@ const OfferHome = ({
 		<>
 			<div className="offer-home">
 				<Link to={routeOffer}>
-					{/* <button
-					onClick={() => {
-                        return 
-					}}> */}
 					<div>
 						{avatar && <img src={avatar.secure_url} alt={avatar.asset_id} />}
 						<p>{username}</p>
 					</div>
 					<img src={product_image.secure_url} alt={product_image.asset_id} />
 					<p>{product_price} €</p>
-					<p>{etat.ÉTAT}</p>
-					<p>{marque.MARQUE}</p>
-					{/* </button> */}
+					{etat && <p>{etat.ÉTAT}</p>}
+					{marque && <p>{marque.MARQUE}</p>}
 				</Link>
 				;
 			</div>
