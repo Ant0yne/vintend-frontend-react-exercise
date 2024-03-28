@@ -12,7 +12,9 @@ const Offers = () => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const location = useLocation();
-	const { page, limit, count } = location.state;
+	const { page, limit } = location.state;
+
+	console.log("test", page);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -22,6 +24,7 @@ const Offers = () => {
 				);
 
 				setData(response.data);
+				console.log(response.data);
 				setIsLoading(false);
 			} catch (error) {
 				console.log("error.response");
@@ -29,7 +32,7 @@ const Offers = () => {
 		};
 
 		fetchData();
-	}, [limit, page]);
+	}, []);
 
 	return isLoading ? (
 		<p>Loading ...</p>
@@ -38,7 +41,7 @@ const Offers = () => {
 			<HeaderHome />
 			<Hero />
 			<OffersHome {...data} />
-			<Pagination page={page} limit={limit} count={count} />
+			<Pagination page={page} limit={limit} count={data.count} />
 		</>
 	);
 };
