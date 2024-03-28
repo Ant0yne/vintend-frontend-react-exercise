@@ -1,8 +1,27 @@
+#hero {
+	position: relative;
+}
+
 #hero-bg {
+	position: relative;
 	background-image: url("https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg");
 	width: 100%;
 	padding-bottom: 55%;
 	background-size: 100%;
+}
+
+#torn-effect {
+	background-image: url("https://static.vinted.com/_next/static/media/tear.884480420945b3afd77b44a6c5f98567.svg");
+	width: 100%;
+	height: 100%;
+	/* height: 100px; */
+	z-index: 1;
+	position: absolute;
+	top: 89%;
+	right: 0;
+	/* padding-bottom: 7%; */
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
 #tri {
@@ -29,7 +48,6 @@ h2 {
 
 @media (min-width: 720px) {
 	#hero {
-		position: relative;
 		height: 590px;
 		width: 100%;
 		margin-bottom: 20px;
@@ -41,6 +59,13 @@ h2 {
 		padding-bottom: 0;
 		background-size: cover;
 		background-position: center;
+	}
+
+	#torn-effect {
+		width: 100%;
+		height: 100%;
+		background-size: contain;
+		top: 92%;
 	}
 
 	#tri {
