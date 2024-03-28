@@ -6,12 +6,14 @@ import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
 import Pagination from "../components/Pagination";
 import SignComp from "../components/SignComp";
+import Login from "../components/Login";
 
 const Home = () => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
 	const [dataSlice, setDataSlice] = useState();
 	const [isModalSign, setIsModalSign] = useState(false);
+	const [isModalLog, setIsModalLog] = useState(false);
 	const [token, setToken] = useState("");
 
 	const defaultPage = 1;
@@ -46,12 +48,20 @@ const Home = () => {
 				setIsModalSign={setIsModalSign}
 				token={token}
 				setToken={setToken}
+				setIsModalLog={setIsModalLog}
 			/>
 			<Hero />
 			<OffersHome {...dataSlice} />
 			<Pagination page={defaultPage} limit={defaultLimit} count={data.count} />
 			{isModalSign && (
 				<SignComp setIsModalSign={setIsModalSign} setToken={setToken} />
+			)}
+			{isModalLog && (
+				<Login
+					setIsModalLog={setIsModalLog}
+					token={token}
+					setToken={setToken}
+				/>
 			)}
 		</>
 	);

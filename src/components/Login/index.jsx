@@ -3,20 +3,17 @@ import Cookies from "js-cookie";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import "./signComp.css";
+import "./login.css";
 
-const SignComp = ({ setIsModalSign, setToken }) => {
-	const [username, setUsername] = useState("");
+const Login = ({ setIsModalLog, token, setToken }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [isNews, setIsNews] = useState(false);
 	const [isError, setIsError] = useState(false);
 
 	const sendData = async (e) => {
 		e.preventDefault();
 
 		if (
-			!username ||
 			!email ||
 			!password ||
 			email.indexOf(".") === email.length - 1 ||
@@ -26,17 +23,15 @@ const SignComp = ({ setIsModalSign, setToken }) => {
 		} else {
 			try {
 				const response = await axios.post(
-					"https://lereacteur-vinted-api.herokuapp.com/user/signup",
+					"https://lereacteur-vinted-api.herokuapp.com/user/login",
 					{
-						username: username,
 						email: email,
 						password: password,
-						newsletter: isNews,
 					}
 				);
 				Cookies.set("token", response.data.token, { expires: 10 });
 				setToken(response.data.token);
-				setIsModalSign(false);
+				setIsModalLog(false);
 			} catch (error) {
 				console.log(error.response);
 			}
@@ -46,64 +41,47 @@ const SignComp = ({ setIsModalSign, setToken }) => {
 	return (
 		<>
 			<section
-				id="signup"
+				id="login"
 				onClick={() => {
-					setIsModalSign(false);
+					setIsModalLog(false);
 				}}>
-				<div id="signup-modal" onClick={(e) => e.stopPropagation()}>
+				<div id="login-modal" onClick={(e) => e.stopPropagation()}>
 					<button
 						onClick={() => {
-							setIsModalSign(false);
+							setIsModalLog(false);
 						}}>
 						X
 					</button>
 					<form onSubmit={(e) => sendData(e)}>
-						<h2>S'inscrire</h2>
+						<h2>Se connecter</h2>
 						<span className={isError ? "" : "errorSignup"}>
 							Veuiller remplir tous les champs (email : xxxx@xxx.xxx)
 						</span>
 
 						<input
-							type="text"
-							name="signupInput"
-							id="signupInput"
-							placeholder="Nom d'utilisateur-ice"
-							value={username}
-							onChange={(e) => setUsername(e.target.value)}
-						/>
-						<input
 							type="email"
-							name="emailSignup"
-							id="emailSignup"
+							name="emailLogin"
+							id="emailLogin"
 							placeholder="Email"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 						/>
 						<input
 							type="password"
-							name="passwordSignup"
-							id="passwordSignup"
+							name="passwordLogin"
+							id="passwordLogin"
 							placeholder="Mot de passe"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 						/>
-						<div id="newsletter">
-							<input
-								type="checkbox"
-								name="checkboxSignup"
-								id="checkboxSignup"
-								onClick={(e) => setIsNews(e.target.checked)}
-							/>
-							<p>S'inscrire à notre Newsletter</p>
-						</div>
 						<input
 							type="submit"
-							name="submitSignup"
-							id="submitSignup"
-							value="S'inscrire"
+							name="submitLogin"
+							id="submitLogin"
+							value="Se Connecter"
 						/>
 
-						<Link>Tu as déjà un compte ? Connecte-toi !</Link>
+						<Link>Pas encore de compte ? Inscris-toi !</Link>
 					</form>
 				</div>
 			</section>
@@ -111,4 +89,4 @@ const SignComp = ({ setIsModalSign, setToken }) => {
 	);
 };
 
-export default SignComp;
+export default Login;

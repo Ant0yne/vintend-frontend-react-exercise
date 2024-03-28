@@ -1,0 +1,32 @@
+#login {
+	position: absolute;
+	z-index: 4;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--bg-modal);
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#login-modal {
+	width: 25vw;
+	background-color: var(--white);
+}
+
+#login-modal > form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+#login-modal h2 {
+	text-align: center;
+}
+
+.errorSignup {
+	visibility: hidden;
+}

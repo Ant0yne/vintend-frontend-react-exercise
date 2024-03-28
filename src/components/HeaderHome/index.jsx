@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./headerHome.css";
 import Cookies from "js-cookie";
 
-const HeaderHome = ({ setIsModalSign, token, setToken }) => {
+const HeaderHome = ({ setIsModalSign, token, setToken, setIsModalLog }) => {
 	const handleLogOut = () => {
 		Cookies.remove("token");
 		const tokenTemp = "";
@@ -49,7 +49,9 @@ const HeaderHome = ({ setIsModalSign, token, setToken }) => {
 									{" "}
 									S'inscrire
 								</button>
-								<button>Se connecter</button>
+								<button onClick={() => setIsModalLog(true)}>
+									Se connecter
+								</button>
 							</div>
 						)}
 						<button>Vends tes articles</button>
