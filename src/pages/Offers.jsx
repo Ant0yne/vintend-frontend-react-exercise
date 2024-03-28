@@ -15,6 +15,7 @@ const Offers = () => {
 	const { page, limit, count } = location.state;
 
 	useEffect(() => {
+		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 		const fetchData = async () => {
 			try {
 				const response = await axios.get(
