@@ -22,11 +22,11 @@ const Pagination = ({ limit, page, count }) => {
 								<Link
 									key={counterPage}
 									to={`/offers?sort=price-asc&page=${counterPage}&limit=${limit}`}
-									state={{
-										limit: limit,
-										page: counterPage,
-										count: count,
-									}}
+									// state={{
+									// 	limit: limit,
+									// 	page: counterPage,
+									// 	count: count,
+									// }}
 									className="actual-page">
 									{counterPage}
 								</Link>
@@ -36,11 +36,12 @@ const Pagination = ({ limit, page, count }) => {
 								<Link
 									key={counterPage}
 									to={`/offers?sort=price-asc&page=${counterPage}&limit=${limit}`}
-									state={{
-										limit: limit,
-										page: counterPage,
-										count: count,
-									}}>
+									// state={{
+									// 	limit: limit,
+									// 	page: counterPage,
+									// 	count: count,
+									// }}
+								>
 									{counterPage}
 								</Link>
 							);

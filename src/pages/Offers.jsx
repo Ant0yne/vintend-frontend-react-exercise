@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 import HeaderHome from "../components/HeaderHome";
 import Hero from "../components/Hero";
@@ -21,10 +21,10 @@ const Offers = () => {
 	// if not, init token with ""
 	const [token, setToken] = useState(Cookies.get("token") || "");
 
-	const location = useLocation();
-	const { page, limit, count } = location.state;
+	const [queries] = useSearchParams();
 
-	console.log(token);
+	const limit = queries.get("limit");
+	const page = queries.get("page");
 
 	useEffect(() => {
 		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -56,7 +56,7 @@ const Offers = () => {
 			/>
 			<Hero />
 			<OffersHome {...data} />
-			<Pagination page={page} limit={limit} count={count} />
+			<Pagination page={page} limit={limit} count={data.count} />
 			{isModalSign && (
 				<SignComp
 					setIsModalSign={setIsModalSign}
