@@ -7,7 +7,7 @@ import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
 
 const Offers = () => {
-	const [dataPage, setDataPage] = useState();
+	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
 
 	const location = useLocation();
@@ -20,11 +20,7 @@ const Offers = () => {
 					`https://lereacteur-vinted-api.herokuapp.com/offers?sort=price-asc&page=${page}&limit=${limit}`
 				);
 
-				// EN ATTENDANT DE VOIR POUR LA REQUETE SERVEUR AVEC QUERY
-				// const dataSlice = response.data.offers.slice(0, limit);
-				// setDataPage({ count: limit, offers: dataSlice });
-
-				setDataPage(response.data);
+				setData(response.data);
 				setIsLoading(false);
 			} catch (error) {
 				console.log("error.response");
@@ -38,11 +34,9 @@ const Offers = () => {
 		<p>Loading ...</p>
 	) : (
 		<>
-			<Link to="/">Home</Link>
-
 			<HeaderHome />
 			<Hero />
-			<OffersHome {...dataPage} />
+			<OffersHome {...data} />
 		</>
 	);
 };
