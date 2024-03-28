@@ -1,5 +1,5 @@
 #login {
-	position: absolute;
+	position: fixed;
 	z-index: 4;
 	width: 100vw;
 	height: 100vh;
@@ -12,6 +12,7 @@
 }
 
 #login-modal {
+	position: absolute;
 	width: 25vw;
 	background-color: var(--white);
 }
