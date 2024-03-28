@@ -13,8 +13,13 @@ const Offers = () => {
 
 	const location = useLocation();
 	const { page, limit } = location.state;
+<<<<<<< HEAD
 
 	console.log("test", page);
+=======
+	console.log(page);
+	console.log(limit);
+>>>>>>> parent of 442a014 (pagination)
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -22,6 +27,8 @@ const Offers = () => {
 				const response = await axios.get(
 					`https://lereacteur-vinted-api.herokuapp.com/offers?sort=price-asc&page=${page}&limit=${limit}`
 				);
+
+				console.log(response.data);
 
 				setData(response.data);
 				console.log(response.data);
@@ -41,7 +48,11 @@ const Offers = () => {
 			<HeaderHome />
 			<Hero />
 			<OffersHome {...data} />
+<<<<<<< HEAD
 			<Pagination page={page} limit={limit} count={data.count} />
+=======
+			{/* <Pagination page={page} limit={limit} {...data} /> */}
+>>>>>>> parent of 442a014 (pagination)
 		</>
 	);
 };

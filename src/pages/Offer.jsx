@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import HeaderHome from "../components/HeaderHome";
+import HeaderOffer from "../components/HeaderOffer";
 import CarouselOffer from "../components/CarouselOffer";
 import InfOffer from "../components/InfoOffer";
 
@@ -35,7 +35,7 @@ const Offer = () => {
 	) : (
 		<>
 			<Link to="/">Home</Link>
-			<HeaderHome />
+			<HeaderOffer />
 			<CarouselOffer
 				image={data.product_image}
 				pictures={data.product_pictures}
