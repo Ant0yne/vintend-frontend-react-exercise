@@ -17,16 +17,13 @@ const Pagination = ({ limit, page, count }) => {
 				{countArr.map((counter, i) => {
 					if ((i + 1) % limit === 0) {
 						counterPage++;
-						if (counterPage === page) {
+
+						if (counterPage === Number(page)) {
+							console.log("ok");
 							return (
 								<Link
 									key={counterPage}
 									to={`/offers?sort=price-asc&page=${counterPage}&limit=${limit}`}
-									// state={{
-									// 	limit: limit,
-									// 	page: counterPage,
-									// 	count: count,
-									// }}
 									className="actual-page">
 									{counterPage}
 								</Link>
@@ -35,13 +32,7 @@ const Pagination = ({ limit, page, count }) => {
 							return (
 								<Link
 									key={counterPage}
-									to={`/offers?sort=price-asc&page=${counterPage}&limit=${limit}`}
-									// state={{
-									// 	limit: limit,
-									// 	page: counterPage,
-									// 	count: count,
-									// }}
-								>
+									to={`/offers?sort=price-asc&page=${counterPage}&limit=${limit}`}>
 									{counterPage}
 								</Link>
 							);

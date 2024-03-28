@@ -13,12 +13,10 @@ const InfOffer = ({
 			{product_details.map((detail) => {
 				const key = Object.keys(detail).join("");
 				return (
-					<>
-						<div key={key} className="detail">
-							<p>{key}</p>
-							<p>{detail[key]}</p>
-						</div>
-					</>
+					<div key={key} className="detail">
+						<p>{key}</p>
+						<p>{detail[key]}</p>
+					</div>
 				);
 			})}
 			<p>{product_name}</p>
