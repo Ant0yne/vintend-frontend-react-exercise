@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./headerHome.css";
 import Cookies from "js-cookie";
 
-const HeaderHome = ({ setIsModalSign, token, setToken, setIsModalLog }) => {
+const HeaderHome = ({
+	setIsModalSign,
+	setIsModalLog,
+	isModalMenu,
+	setIsModalMenu,
+	token,
+	setToken,
+}) => {
 	// When click on "Se déconnecter" button
 	const handleLogOut = () => {
 		Cookies.remove("token");
@@ -20,20 +29,35 @@ const HeaderHome = ({ setIsModalSign, token, setToken, setIsModalLog }) => {
 		}
 	};
 
+	const handleMenu = () => {
+		if (isModalMenu) {
+			setIsModalMenu(false);
+		} else {
+			setIsModalMenu(true);
+		}
+	};
+
 	return (
 		<>
 			<header id="header-home">
 				<div className="container">
 					{/* the logo is a link to "/" */}
 					<div id="header-home-logo">
-						<Link to="/">
+						<Link
+							to="/"
+							onClick={() => {
+								setIsModalMenu(false);
+							}}>
 							<img
 								src="https://lereacteur-vinted.netlify.app/static/media/logo.10b0caad793dd0a8ea72.png"
 								alt=""
 							/>
 						</Link>
 						<nav className="menu-w">
-							<button>Menu</button>
+							<button onClick={handleMenu}>
+								{!isModalMenu && <FontAwesomeIcon icon="bars" />}
+								{isModalMenu && <FontAwesomeIcon icon="xmark" />}
+							</button>
 						</nav>
 					</div>
 					<div>

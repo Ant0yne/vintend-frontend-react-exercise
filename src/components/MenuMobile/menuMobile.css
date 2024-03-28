@@ -1,0 +1,49 @@
+#menu {
+	position: fixed;
+	z-index: 2;
+	width: 100vw;
+	height: 93vh;
+	bottom: 0;
+}
+
+#menu-modal {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: var(--white);
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 50px;
+}
+
+#menu-modal > nav {
+	width: 80vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 30px;
+}
+
+#menu-modal > nav > button {
+	text-align: center;
+}
+
+#menu-modal > nav > button:nth-of-type(1) {
+	background-color: var(--green-vinted);
+	border: none;
+	border-radius: 3px;
+	padding: 8px 10px;
+	color: var(--white);
+	font-size: 1.4rem;
+}
+
+#menu-modal > nav > button:nth-of-type(2),
+#menu-modal > nav > button:nth-of-type(3) {
+	border: 1px solid var(--green-vinted);
+	background-color: var(--white);
+	border-radius: 5px;
+	color: var(--green-vinted);
+	font-size: 1.4rem;
+	padding: 10px 30px;
+}

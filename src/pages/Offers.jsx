@@ -9,6 +9,7 @@ import OffersHome from "../components/OffersHome";
 import Pagination from "../components/Pagination";
 import SignComp from "../components/SignComp";
 import Login from "../components/Login";
+import MenuMobile from "../components/MenuMobile";
 
 const Offers = () => {
 	const [data, setData] = useState();
@@ -17,6 +18,9 @@ const Offers = () => {
 	const [isModalSign, setIsModalSign] = useState(false);
 	// display the modal to login
 	const [isModalLog, setIsModalLog] = useState(false);
+	// display the modal to login
+	const [isModalMenu, setIsModalMenu] = useState(false);
+
 	// Check if there is a cookie "token"
 	// if not, init token with ""
 	const [token, setToken] = useState(Cookies.get("token") || "");
@@ -50,9 +54,11 @@ const Offers = () => {
 		<>
 			<HeaderHome
 				setIsModalSign={setIsModalSign}
+				setIsModalLog={setIsModalLog}
+				isModalMenu={isModalMenu}
+				setIsModalMenu={setIsModalMenu}
 				token={token}
 				setToken={setToken}
-				setIsModalLog={setIsModalLog}
 			/>
 			<Hero />
 			<OffersHome {...data} />
@@ -69,6 +75,13 @@ const Offers = () => {
 					setIsModalLog={setIsModalLog}
 					token={token}
 					setToken={setToken}
+				/>
+			)}
+			{isModalMenu && (
+				<MenuMobile
+					setIsModalSign={setIsModalSign}
+					setIsModalLog={setIsModalLog}
+					setIsModalMenu={setIsModalMenu}
 				/>
 			)}
 		</>

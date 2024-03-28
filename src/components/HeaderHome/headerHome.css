@@ -25,6 +25,13 @@
 	height: 30px;
 }
 
+.menu-w button {
+	background: none;
+	border: none;
+	font-size: 2.3rem;
+	color: var(--text-grey);
+}
+
 #search-bar {
 	padding: 10px 5px;
 	width: 100%;

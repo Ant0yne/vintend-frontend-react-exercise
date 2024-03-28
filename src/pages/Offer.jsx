@@ -8,6 +8,7 @@ import CarouselOffer from "../components/CarouselOffer";
 import InfOffer from "../components/InfoOffer";
 import SignComp from "../components/SignComp";
 import Login from "../components/Login";
+import MenuMobile from "../components/MenuMobile";
 
 const Offer = () => {
 	const [data, setData] = useState();
@@ -16,6 +17,9 @@ const Offer = () => {
 	const [isModalSign, setIsModalSign] = useState(false);
 	// display the modal to login
 	const [isModalLog, setIsModalLog] = useState(false);
+	// display the modal to login
+	const [isModalMenu, setIsModalMenu] = useState(false);
+
 	// Check if there is a cookie "token"
 	// if not, init token with ""
 	const [token, setToken] = useState(Cookies.get("token") || "");
@@ -48,9 +52,11 @@ const Offer = () => {
 		<>
 			<HeaderHome
 				setIsModalSign={setIsModalSign}
+				setIsModalLog={setIsModalLog}
+				isModalMenu={isModalMenu}
+				setIsModalMenu={setIsModalMenu}
 				token={token}
 				setToken={setToken}
-				setIsModalLog={setIsModalLog}
 			/>
 			<CarouselOffer
 				image={data.product_image}
@@ -69,6 +75,13 @@ const Offer = () => {
 					setIsModalLog={setIsModalLog}
 					token={token}
 					setToken={setToken}
+				/>
+			)}
+			{isModalMenu && (
+				<MenuMobile
+					setIsModalSign={setIsModalSign}
+					setIsModalLog={setIsModalLog}
+					setIsModalMenu={setIsModalMenu}
 				/>
 			)}
 		</>

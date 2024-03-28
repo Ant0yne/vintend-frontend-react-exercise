@@ -1,7 +1,6 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import "./login.css";
 

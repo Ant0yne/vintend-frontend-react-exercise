@@ -1,6 +1,6 @@
 #signup {
 	position: fixed;
-	z-index: 4;
+	z-index: 2;
 	width: 100vw;
 	height: 100vh;
 	background-color: var(--bg-modal);
@@ -13,7 +13,7 @@
 
 #signup-modal {
 	position: absolute;
-	width: 25vw;
+	width: 75vw;
 	background-color: var(--white);
 }
 
