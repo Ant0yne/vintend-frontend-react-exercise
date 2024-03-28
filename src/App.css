@@ -44,6 +44,8 @@ button:hover {
 a {
 	color: var(--black);
 	text-decoration: none;
+	font-family: "Roboto", sans-serif;
+	font-size: 1.6rem;
 }
 
 /* ----------------- 520 px ----------------- */

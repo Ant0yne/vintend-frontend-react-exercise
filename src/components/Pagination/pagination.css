@@ -1,0 +1,10 @@
+#pagination {
+	margin-top: 20px;
+	text-align: center;
+}
+
+#pagination a {
+	font-size: 2rem;
+	color: var(--text-grey);
+	padding: 20px;
+}
