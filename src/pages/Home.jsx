@@ -11,6 +11,7 @@ const Home = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [dataSlice, setDataSlice] = useState();
 
+	const defaultPage = 1;
 	const defaultLimit = 8;
 
 	useEffect(() => {
@@ -41,7 +42,7 @@ const Home = () => {
 			<HeaderHome />
 			<Hero />
 			<OffersHome {...dataSlice} />
-			<Pagination />
+			<Pagination page={defaultPage} limit={defaultLimit} {...data} />
 		</>
 	);
 };

@@ -37,6 +37,10 @@ button {
 	font-size: 1.6rem;
 }
 
+button:hover {
+	cursor: pointer;
+}
+
 a {
 	color: var(--black);
 	text-decoration: none;

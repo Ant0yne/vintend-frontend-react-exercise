@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import HeaderHome from "../components/HeaderHome";
 import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
+import Pagination from "../components/Pagination";
 
 const Offers = () => {
 	const [data, setData] = useState();
@@ -12,6 +13,8 @@ const Offers = () => {
 
 	const location = useLocation();
 	const { page, limit } = location.state;
+	console.log(page);
+	console.log(limit);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -19,6 +22,8 @@ const Offers = () => {
 				const response = await axios.get(
 					`https://lereacteur-vinted-api.herokuapp.com/offers?sort=price-asc&page=${page}&limit=${limit}`
 				);
+
+				console.log(response.data);
 
 				setData(response.data);
 				setIsLoading(false);
@@ -37,6 +42,7 @@ const Offers = () => {
 			<HeaderHome />
 			<Hero />
 			<OffersHome {...data} />
+			{/* <Pagination page={page} limit={limit} {...data} /> */}
 		</>
 	);
 };
