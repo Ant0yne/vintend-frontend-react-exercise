@@ -1,10 +1,11 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./signComp.css";
 
-const SignComp = ({ setIsModalSign }) => {
+const SignComp = ({ setIsModalSign, setToken }) => {
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -25,7 +26,7 @@ const SignComp = ({ setIsModalSign }) => {
 		} else {
 			// try {
 			// 	const response = await axios.post(
-			// 		"https://lereacteur-vinted-api.herokuapp.com/offers?sort=price-asc",
+			// 		"https://lereacteur-vinted-api.herokuapp.com/user.signup",
 			// 		{
 			// 			username: username,
 			// 			email: email,
@@ -37,12 +38,9 @@ const SignComp = ({ setIsModalSign }) => {
 			// 	console.log(error.response);
 			// }
 
-			console.log({
-				username: username,
-				email: email,
-				password: password,
-				newsletter: isNews,
-			});
+			Cookies.set("token", username, { expires: 10 });
+			setToken(username);
+			setIsModalSign(false);
 		}
 	};
 

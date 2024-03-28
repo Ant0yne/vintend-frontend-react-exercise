@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 
 import "./headerHome.css";
+import Cookies from "js-cookie";
 
-const HeaderHome = ({ setIsModalSign }) => {
+const HeaderHome = ({ setIsModalSign, token, setToken }) => {
+	const handleLogOut = () => {
+		Cookies.remove("token");
+		const tokenTemp = "";
+		return setToken(tokenTemp);
+	};
+
 	return (
 		<>
 			<header id="header-home">
@@ -27,10 +34,24 @@ const HeaderHome = ({ setIsModalSign }) => {
 						/>
 					</div>
 					<nav className="header-m">
-						<div>
-							<button onClick={() => setIsModalSign(true)}> S'inscrire</button>
-							<button>Se connecter</button>
-						</div>
+						{token !== "" ? (
+							<div>
+								<button
+									onClick={() => {
+										handleLogOut();
+									}}>
+									Se déconnecter
+								</button>
+							</div>
+						) : (
+							<div>
+								<button onClick={() => setIsModalSign(true)}>
+									{" "}
+									S'inscrire
+								</button>
+								<button>Se connecter</button>
+							</div>
+						)}
 						<button>Vends tes articles</button>
 					</nav>
 				</div>

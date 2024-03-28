@@ -12,6 +12,7 @@ const Home = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [dataSlice, setDataSlice] = useState();
 	const [isModalSign, setIsModalSign] = useState(false);
+	const [token, setToken] = useState("");
 
 	const defaultPage = 1;
 	const defaultLimit = 8;
@@ -41,11 +42,17 @@ const Home = () => {
 		<p>Loading ...</p>
 	) : (
 		<>
-			<HeaderHome setIsModalSign={setIsModalSign} />
+			<HeaderHome
+				setIsModalSign={setIsModalSign}
+				token={token}
+				setToken={setToken}
+			/>
 			<Hero />
 			<OffersHome {...dataSlice} />
 			<Pagination page={defaultPage} limit={defaultLimit} count={data.count} />
-			{isModalSign && <SignComp setIsModalSign={setIsModalSign} />}
+			{isModalSign && (
+				<SignComp setIsModalSign={setIsModalSign} setToken={setToken} />
+			)}
 		</>
 	);
 };
