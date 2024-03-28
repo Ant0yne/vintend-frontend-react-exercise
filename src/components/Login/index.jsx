@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import "./login.css";
 
-const Login = ({ setIsModalLog, token, setToken }) => {
+const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isError, setIsError] = useState(false);
@@ -80,9 +80,14 @@ const Login = ({ setIsModalLog, token, setToken }) => {
 							id="submitLogin"
 							value="Se Connecter"
 						/>
-
-						<Link>Pas encore de compte ? Inscris-toi !</Link>
 					</form>
+					<button
+						onClick={() => {
+							setIsModalLog(false);
+							setIsModalSign(true);
+						}}>
+						Pas encore de compte ? Inscris-toi !
+					</button>
 				</div>
 			</section>
 		</>

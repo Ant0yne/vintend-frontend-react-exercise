@@ -19,11 +19,10 @@ const Pagination = ({ limit, page, count }) => {
 						counterPage++;
 
 						if (counterPage === Number(page)) {
-							console.log("ok");
 							return (
 								<Link
 									key={counterPage}
-									to={`/offers?sort=price-asc&page=${counterPage}&limit=${limit}`}
+									to={`/offers?page=${counterPage}&limit=${limit}`}
 									className="actual-page">
 									{counterPage}
 								</Link>
@@ -32,7 +31,7 @@ const Pagination = ({ limit, page, count }) => {
 							return (
 								<Link
 									key={counterPage}
-									to={`/offers?sort=price-asc&page=${counterPage}&limit=${limit}`}>
+									to={`/offers?page=${counterPage}&limit=${limit}`}>
 									{counterPage}
 								</Link>
 							);

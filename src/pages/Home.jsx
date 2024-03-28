@@ -33,9 +33,8 @@ const Home = () => {
 		const fetchData = async () => {
 			window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 			try {
-				// sort by price ascending -> arbitrary for now
 				const response = await axios.get(
-					"https://lereacteur-vinted-api.herokuapp.com/offers?sort=price-asc"
+					"https://lereacteur-vinted-api.herokuapp.com/offers"
 				);
 
 				// shallow copy the data and slice it depending on the "defaultLimit"
@@ -72,14 +71,14 @@ const Home = () => {
 			{isModalSign && (
 				<SignComp
 					setIsModalSign={setIsModalSign}
-					token={token}
+					setIsModalLog={setIsModalLog}
 					setToken={setToken}
 				/>
 			)}
 			{isModalLog && (
 				<Login
 					setIsModalLog={setIsModalLog}
-					token={token}
+					setIsModalSign={setIsModalSign}
 					setToken={setToken}
 				/>
 			)}

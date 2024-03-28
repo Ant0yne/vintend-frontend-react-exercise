@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import "./signComp.css";
 
-const SignComp = ({ setIsModalSign, setToken }) => {
+const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -102,9 +102,14 @@ const SignComp = ({ setIsModalSign, setToken }) => {
 							id="submitSignup"
 							value="S'inscrire"
 						/>
-
-						<Link>Tu as déjà un compte ? Connecte-toi !</Link>
 					</form>
+					<button
+						onClick={() => {
+							setIsModalSign(false);
+							setIsModalLog(true);
+						}}>
+						Tu as déjà un compte ? Connecte-toi !
+					</button>
 				</div>
 			</section>
 		</>
