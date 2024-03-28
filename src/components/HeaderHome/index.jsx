@@ -1,9 +1,23 @@
+import { Link } from "react-router-dom";
+
 import "./headerHome.css";
 
 const HeaderHome = () => {
+	const page = 1;
+	const limit = 8;
+
 	return (
 		<>
 			<header id="header-home">
+				<Link
+					id="test"
+					to={`/offers?page=${page}&limit=${limit}`}
+					state={{
+						page: page,
+						limit: limit,
+					}}>
+					Test
+				</Link>
 				<div className="container">
 					<div id="header-home-logo">
 						<img
