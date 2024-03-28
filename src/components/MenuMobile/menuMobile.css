@@ -47,3 +47,11 @@
 	font-size: 1.4rem;
 	padding: 10px 30px;
 }
+
+/* ----------------- 720 px ----------------- */
+
+@media (min-width: 720px) {
+	#menu {
+		height: 92vh;
+	}
+}
