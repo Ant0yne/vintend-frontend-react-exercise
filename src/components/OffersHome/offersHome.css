@@ -2,6 +2,7 @@
 	padding: 0 10px;
 }
 
+/* put the offers in column */
 #offers > .container {
 	display: flex;
 	flex-direction: column;
@@ -10,6 +11,7 @@
 
 /* ----------------- 520 px ----------------- */
 
+/* allow multiple offers per line */
 @media (min-width: 520px) {
 	#offers > .container {
 		display: flex;
@@ -20,11 +22,8 @@
 
 /* ----------------- 1260 px ----------------- */
 
+/* configure the container */
 @media (min-width: 1260px) {
-	.offer-home {
-		width: calc((100% - (var(--gap-offer) * 4)) / 5);
-	}
-
 	.container {
 		padding: 0;
 		width: 1260px;

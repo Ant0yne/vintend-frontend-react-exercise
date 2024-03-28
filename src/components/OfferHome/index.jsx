@@ -4,14 +4,10 @@ import "./offerHome.css";
 
 const OfferHome = ({
 	_id,
-	product_name,
-	product_description,
 	product_price,
 	product_details,
-	product_pictures,
 	owner,
 	product_image,
-	product_date,
 }) => {
 	const avatar = owner.account.avatar;
 	const username = owner.account.username;

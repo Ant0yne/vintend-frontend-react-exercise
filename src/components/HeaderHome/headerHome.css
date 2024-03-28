@@ -1,3 +1,4 @@
+/* stick the header to the top */
 #header-home {
 	position: sticky;
 	z-index: 2;
@@ -32,6 +33,7 @@
 	border-radius: 3px;
 }
 
+/* hide the signup/login button when on mobile */
 .header-m {
 	display: none;
 }
@@ -56,10 +58,12 @@
 		gap: 20px;
 	}
 
+	/* hide the "Menu" button when on wide screen */
 	.menu-w {
 		display: none;
 	}
 
+	/* the search bar takes the maximum space possible */
 	#header-home > .container > div:nth-of-type(2) {
 		flex: 1;
 	}
@@ -74,6 +78,7 @@
 		gap: 20px;
 	}
 
+	/* all the button except the one to sell articles */
 	.header-m > div button {
 		border: 1px solid var(--green-vinted);
 		background-color: var(--white);
@@ -83,6 +88,7 @@
 		padding: 0 30px;
 	}
 
+	/* button to sell articles */
 	.header-m > button {
 		background-color: var(--green-vinted);
 		border: none;
