@@ -17,7 +17,7 @@ const Offers = () => {
 		const fetchData = async () => {
 			try {
 				const response = await axios.get(
-					`https://lereacteur-vinted-api.herokuapp.com/offers?page=${page}&limit=${limit}`
+					`https://lereacteur-vinted-api.herokuapp.com/offers?sort=price-asc&page=${page}&limit=${limit}`
 				);
 
 				// EN ATTENDANT DE VOIR POUR LA REQUETE SERVEUR AVEC QUERY
