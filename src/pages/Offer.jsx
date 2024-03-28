@@ -46,7 +46,6 @@ const Offer = () => {
 		<p>Loading ...</p>
 	) : (
 		<>
-			<Link to="/">Home</Link>
 			<HeaderHome
 				setIsModalSign={setIsModalSign}
 				token={token}
