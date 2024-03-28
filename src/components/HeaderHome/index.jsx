@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import "./headerHome.css";
 
-const HeaderHome = () => {
+const HeaderHome = ({ setIsModalSign }) => {
 	return (
 		<>
 			<header id="header-home">
@@ -28,7 +28,7 @@ const HeaderHome = () => {
 					</div>
 					<nav className="header-m">
 						<div>
-							<button> S'inscrire</button>
+							<button onClick={() => setIsModalSign(true)}> S'inscrire</button>
 							<button>Se connecter</button>
 						</div>
 						<button>Vends tes articles</button>

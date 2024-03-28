@@ -7,11 +7,10 @@ import OffersHome from "../components/OffersHome";
 import Pagination from "../components/Pagination";
 import SignComp from "../components/SignComp";
 
-const Home = () => {
+const Signup = () => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
 	const [dataSlice, setDataSlice] = useState();
-	const [isModalSign, setIsModalSign] = useState(false);
 
 	const defaultPage = 1;
 	const defaultLimit = 8;
@@ -41,13 +40,13 @@ const Home = () => {
 		<p>Loading ...</p>
 	) : (
 		<>
-			<HeaderHome setIsModalSign={setIsModalSign} />
+			<HeaderHome />
 			<Hero />
 			<OffersHome {...dataSlice} />
 			<Pagination page={defaultPage} limit={defaultLimit} count={data.count} />
-			{isModalSign && <SignComp setIsModalSign={setIsModalSign} />}
+			<SignComp />
 		</>
 	);
 };
 
-export default Home;
+export default Signup;

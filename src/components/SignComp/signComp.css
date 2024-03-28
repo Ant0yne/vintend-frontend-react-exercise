@@ -1,0 +1,37 @@
+#signup {
+	position: absolute;
+	z-index: 4;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--bg-modal);
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#signup-modal {
+	width: 25vw;
+	background-color: var(--white);
+}
+
+#signup-modal > form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+#signup-modal h2 {
+	text-align: center;
+}
+
+#newsletter {
+	display: flex;
+	justify-content: center;
+}
+
+.errorSignup {
+	visibility: hidden;
+}
