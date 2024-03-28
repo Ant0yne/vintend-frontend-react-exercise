@@ -12,9 +12,7 @@ const Offers = () => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const location = useLocation();
-	const { page, limit } = location.state;
-	console.log(page);
-	console.log(limit);
+	const { page, limit, count } = location.state;
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -22,8 +20,6 @@ const Offers = () => {
 				const response = await axios.get(
 					`https://lereacteur-vinted-api.herokuapp.com/offers?sort=price-asc&page=${page}&limit=${limit}`
 				);
-
-				console.log(response.data);
 
 				setData(response.data);
 				setIsLoading(false);
@@ -42,7 +38,7 @@ const Offers = () => {
 			<HeaderHome />
 			<Hero />
 			<OffersHome {...data} />
-			{/* <Pagination page={page} limit={limit} {...data} /> */}
+			<Pagination page={page} limit={limit} count={count} />
 		</>
 	);
 };

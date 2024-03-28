@@ -8,3 +8,7 @@
 	color: var(--text-grey);
 	padding: 20px;
 }
+
+.actual-page {
+	text-decoration: underline;
+}

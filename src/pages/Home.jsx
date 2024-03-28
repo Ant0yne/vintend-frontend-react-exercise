@@ -42,7 +42,7 @@ const Home = () => {
 			<HeaderHome />
 			<Hero />
 			<OffersHome {...dataSlice} />
-			<Pagination page={defaultPage} limit={defaultLimit} {...data} />
+			<Pagination page={defaultPage} limit={defaultLimit} count={data.count} />
 		</>
 	);
 };
