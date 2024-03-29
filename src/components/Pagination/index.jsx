@@ -14,7 +14,29 @@ const Pagination = ({ limit, page, count, url }) => {
 		countArr.push(i);
 	}
 
-	const createPage = () => {};
+	const createPage = () => {
+		counterPage++;
+
+		// check if this is the page already selected to underline it
+		if (counterPage === Number(page)) {
+			return (
+				<Link
+					key={counterPage}
+					to={`${url}&page=${counterPage}&limit=${limit}`}
+					className="actual-page">
+					{counterPage}
+				</Link>
+			);
+		} else {
+			return (
+				<Link
+					key={counterPage}
+					to={`${url}&page=${counterPage}&limit=${limit}`}>
+					{counterPage}
+				</Link>
+			);
+		}
+	};
 
 	return (
 		<>
@@ -23,53 +45,11 @@ const Pagination = ({ limit, page, count, url }) => {
 					{countArr.map((counter, i) => {
 						if (counter % limit !== 0 && !isLastPage) {
 							isLastPage = true;
-							counterPage++;
-
-							// check if this is the page already selected to underline it
-							if (counterPage === Number(page)) {
-								console.log("test");
-								return (
-									<Link
-										key={counterPage}
-										to={`${url}&page=${counterPage}&limit=${limit}`}
-										className="actual-page">
-										{counterPage}
-									</Link>
-								);
-							} else {
-								return (
-									<Link
-										key={counterPage}
-										to={`${url}&page=${counterPage}&limit=${limit}`}>
-										{counterPage}
-									</Link>
-								);
-							}
+							return createPage();
 						}
 						// if the offer number modulo the limit = 0 create a new page
 						if ((i + 1) % limit === 0) {
-							counterPage++;
-
-							// check if this is the page already selected to underline it
-							if (counterPage === Number(page)) {
-								console.log("test");
-								return (
-									<Link
-										key={counterPage}
-										to={`${url}&page=${counterPage}&limit=${limit}`}
-										className="actual-page">
-										{counterPage}
-									</Link>
-								);
-							} else {
-								return (
-									<Link
-										key={counterPage}
-										to={`${url}&page=${counterPage}&limit=${limit}`}>
-										{counterPage}
-									</Link>
-								);
-							}
+							return createPage();
 						} else {
 							return null;
 						}
