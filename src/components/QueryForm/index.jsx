@@ -18,6 +18,8 @@ const QueryForm = () => {
 	 *
 	 * function when subimitting the form
 	 *
+	 * add all the query to the url then navigate to this url
+	 *
 	 */
 	const sendQuery = async (e) => {
 		e.preventDefault();
@@ -26,7 +28,8 @@ const QueryForm = () => {
 			? (url = url + "sort=price-desc&")
 			: (url = url + "sort=price-asc&");
 		url = url + "priceMin=" + minPrice + "&";
-		url = url + "priceMax=" + maxPrice;
+		url = url + "priceMax=" + maxPrice + "&";
+		url = url + "title=" + search;
 		navigate(url);
 	};
 

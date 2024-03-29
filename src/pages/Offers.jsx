@@ -18,8 +18,9 @@ const Offers = ({ token, setToken }) => {
 	const sort = queries.get("sort") || "price-asc";
 	const priceMin = queries.get("priceMin") || 0;
 	const priceMax = queries.get("priceMax") || 10000;
+	const title = queries.get("title");
 
-	const url = `?sort=${sort}&priceMin=${priceMin}&priceMax=${priceMax}`;
+	const url = `?sort=${sort}&priceMin=${priceMin}&priceMax=${priceMax}&title=${title}`;
 
 	useEffect(() => {
 		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
