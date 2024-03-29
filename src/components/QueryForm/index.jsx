@@ -7,8 +7,8 @@ const QueryForm = () => {
 	// all the state for the inputs' values to search and sort the offers
 	const [checkbox, setCheckbox] = useState(false);
 	const [search, setSearch] = useState("");
-	const [minPrice, setMinPrice] = useState(0);
-	const [maxPrice, setMaxPrice] = useState(10000);
+	const [minPrice, setMinPrice] = useState("");
+	const [maxPrice, setMaxPrice] = useState("");
 
 	const navigate = useNavigate();
 
@@ -21,14 +21,12 @@ const QueryForm = () => {
 	 */
 	const sendQuery = async (e) => {
 		e.preventDefault();
-		console.log("ok");
 		let url = "/offers?";
 		checkbox
 			? (url = url + "sort=price-desc&")
 			: (url = url + "sort=price-asc&");
 		url = url + "priceMin=" + minPrice + "&";
 		url = url + "priceMax=" + maxPrice;
-		console.log(url);
 		navigate(url);
 	};
 

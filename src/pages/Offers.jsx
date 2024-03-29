@@ -27,11 +27,7 @@ const Offers = ({ token, setToken }) => {
 	const priceMax = queries.get("priceMax") || 10000;
 
 	useEffect(() => {
-		//return to the top of screen
 		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-		// console.log(
-		// 	`https://lereacteur-vinted-api.herokuapp.com/offers?sort=${sort}&minPrice=${minPrice}&maxPrice=${maxPrice}&page=${page}&limit=${limit}`
-		// );
 		const fetchData = async () => {
 			try {
 				// send request with the queries
@@ -39,7 +35,6 @@ const Offers = ({ token, setToken }) => {
 					`https://lereacteur-vinted-api.herokuapp.com/offers?sort=${sort}&priceMin=${priceMin}&priceMax=${priceMax}&page=${page}&limit=${limit}`
 				);
 
-				console.log(response.data);
 				setData(response.data);
 				setIsLoading(false);
 			} catch (error) {
