@@ -7,7 +7,7 @@ const OffersHome = ({ count, offers }) => {
 		<>
 			<section id="offers">
 				<div className="container">
-					{/* display all offers on page -> only the ones sliced */}
+					{/* display the selected offers on page */}
 					{offers.map((offer) => {
 						return <OfferHome key={offer._id} {...offer} />;
 					})}

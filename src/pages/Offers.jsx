@@ -13,11 +13,13 @@ const Offers = ({ token, setToken }) => {
 
 	// retreive the queries and set default value if there is none
 	const [queries, setQueries] = useSearchParams();
-	const limit = queries.get("limit") || 8;
+	const limit = queries.get("limit") || 10;
 	const page = queries.get("page") || 1;
 	const sort = queries.get("sort") || "price-asc";
 	const priceMin = queries.get("priceMin") || 0;
 	const priceMax = queries.get("priceMax") || 10000;
+
+	const url = `?sort=${sort}&priceMin=${priceMin}&priceMax=${priceMax}`;
 
 	useEffect(() => {
 		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -25,8 +27,10 @@ const Offers = ({ token, setToken }) => {
 			try {
 				// send request with the queries
 				const response = await axios.get(
-					`https://lereacteur-vinted-api.herokuapp.com/offers?sort=${sort}&priceMin=${priceMin}&priceMax=${priceMax}&page=${page}&limit=${limit}`
+					`https://lereacteur-vinted-api.herokuapp.com/offers${url}&page=${page}&limit=${limit}`
 				);
+
+				console.log(response.data.count);
 
 				setData(response.data);
 				setIsLoading(false);
@@ -36,7 +40,7 @@ const Offers = ({ token, setToken }) => {
 		};
 
 		fetchData();
-	}, [limit, page, sort, priceMin, priceMax]);
+	}, [limit, page, sort, priceMin, priceMax, url]);
 
 	return isLoading ? (
 		<p>Loading ...</p>
@@ -45,7 +49,7 @@ const Offers = ({ token, setToken }) => {
 			<HeaderHome token={token} setToken={setToken} />
 			<Hero />
 			<OffersHome {...data} />
-			<Pagination page={page} limit={limit} count={data.count} />
+			<Pagination page={page} limit={limit} count={data.count} url={url} />
 		</>
 	);
 };
