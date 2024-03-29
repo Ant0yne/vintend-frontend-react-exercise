@@ -10,7 +10,9 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isNews, setIsNews] = useState(false);
-	const [isError, setIsError] = useState("placeholder");
+	const [isError, setIsError] = useState(
+		"This is a placeholder to prevent the layout to move"
+	);
 
 	/**
 	 *
@@ -20,7 +22,7 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 	 *
 	 */
 	const sendData = async (e) => {
-		setIsError("placeholder");
+		setIsError("This is a placeholder to prevent the layout to move");
 		e.preventDefault();
 
 		try {
@@ -62,18 +64,26 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 					<button
 						onClick={() => {
 							setIsModalSign(false);
-						}}>
+						}}
+						className="close-modal">
 						X
 					</button>
 					<form onSubmit={(e) => sendData(e)}>
 						<h2>S'inscrire</h2>
 
 						{/* The error from the request to display */}
-						<span className={isError !== "placeholder" ? "" : "errorSignup"}>
+						<span
+							className={
+								isError !==
+								"This is a placeholder to prevent the layout to move"
+									? ""
+									: "errorSignup"
+							}>
 							{isError}
 						</span>
 
 						<input
+							className="typing-modal"
 							type="text"
 							name="signupInput"
 							id="signupInput"
@@ -82,6 +92,7 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 							onChange={(e) => setUsername(e.target.value)}
 						/>
 						<input
+							className="typing-modal"
 							type="email"
 							name="emailSignup"
 							id="emailSignup"
@@ -90,6 +101,7 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 							onChange={(e) => setEmail(e.target.value)}
 						/>
 						<input
+							className="typing-modal"
 							type="password"
 							name="passwordSignup"
 							id="passwordSignup"

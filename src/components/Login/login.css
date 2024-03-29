@@ -15,20 +15,77 @@
 	position: absolute;
 	width: 75vw;
 	background-color: var(--white);
+	border-radius: 5px;
+	padding: 10px;
 }
 
 #login-modal > form {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	align-items: center;
 	text-align: center;
+	gap: 10px;
 }
 
 #login-modal h2 {
 	text-align: center;
+	padding-top: 20px;
+}
+
+#login-modal input[type="submit"] {
+	background-color: var(--green-vinted);
+	color: var(--white);
+	border: none;
+	padding: 8px 10px;
+	width: 80%;
+	border-radius: 5px;
+	margin: 10px 0;
+}
+
+#login-modal button:last-child {
+	background: none;
+	border: none;
+	font-size: 1rem;
+	color: var(--green-vinted);
+	width: 100%;
 }
 
 /* to display the error */
 .errorSignup {
 	visibility: hidden;
+}
+
+#login span {
+	color: var(--red-error);
+	font-size: 1.4rem;
+}
+
+/* ----------------- 520 px ----------------- */
+
+@media (min-width: 520px) {
+	#login-modal {
+		width: 50vw;
+	}
+}
+
+/* ----------------- 768 px ----------------- */
+
+@media (min-width: 768px) {
+	#login-modal {
+		width: 540px;
+	}
+
+	#login-modal > form {
+		gap: 30px;
+		/* width: 35vw; */
+	}
+
+	.typing-modal {
+		font-size: 1.8rem;
+	}
+
+	#login-modal button:last-child {
+		font-size: 1.2rem;
+		margin: 10px 0;
+	}
 }

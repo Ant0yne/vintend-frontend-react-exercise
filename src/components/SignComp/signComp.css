@@ -15,25 +15,110 @@
 	position: absolute;
 	width: 75vw;
 	background-color: var(--white);
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.close-modal {
+	width: 35px;
+	background: none;
+	border: none;
+	position: absolute;
+	right: 8px;
+	top: 10px;
 }
 
 #signup-modal > form {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	align-items: center;
 	text-align: center;
+	gap: 10px;
 }
 
 #signup-modal h2 {
 	text-align: center;
+	padding-top: 20px;
+	margin-bottom: 0;
 }
 
 #newsletter {
 	display: flex;
 	justify-content: center;
+	gap: 10px;
+}
+
+#newsletter p {
+	font-size: 1.2rem;
+}
+
+.typing-modal {
+	border: none;
+	border-bottom: 1px solid var(--text-grey);
+}
+
+.typing-modal::placeholder {
+	color: var(--palceholder-grey);
+}
+
+#signup-modal input[type="submit"] {
+	background-color: var(--green-vinted);
+	color: var(--white);
+	border: none;
+	padding: 8px 10px;
+	width: 80%;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+#signup-modal button:last-child {
+	background: none;
+	border: none;
+	font-size: 1rem;
+	color: var(--green-vinted);
+	width: 100%;
 }
 
 /* to display the error */
 .errorSignup {
 	visibility: hidden;
+}
+
+#signup span {
+	color: var(--red-error);
+	font-size: 1.4rem;
+}
+
+/* ----------------- 520 px ----------------- */
+
+@media (min-width: 520px) {
+	#signup-modal {
+		width: 50vw;
+	}
+}
+
+/* ----------------- 768 px ----------------- */
+
+@media (min-width: 768px) {
+	#signup-modal {
+		width: 540px;
+	}
+
+	#signup-modal > form {
+		gap: 30px;
+		/* width: 35vw; */
+	}
+
+	.typing-modal {
+		font-size: 1.8rem;
+	}
+
+	#newsletter p {
+		font-size: 1.4rem;
+	}
+
+	#signup-modal button:last-child {
+		font-size: 1.2rem;
+		margin: 10px 0;
+	}
 }
