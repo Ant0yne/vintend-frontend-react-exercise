@@ -1,5 +1,4 @@
 import axios from "axios";
-import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 

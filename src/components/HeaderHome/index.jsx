@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import QueryForm from "../QueryForm";
 import SignComp from "../SignComp";
 import Login from "../Login";
 import MenuMobile from "../MenuMobile";
@@ -106,12 +107,7 @@ const HeaderHome = ({
 						</nav>
 					</div>
 					<div>
-						<input
-							type="text"
-							name="search-bar"
-							id="search-bar"
-							placeholder="Rechercher des articles"
-						/>
+						<QueryForm />
 					</div>
 					<nav className="header-m">
 						{/* if there is a token in the state
