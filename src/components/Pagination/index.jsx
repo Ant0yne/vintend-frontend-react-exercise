@@ -14,32 +14,37 @@ const Pagination = ({ limit, page, count }) => {
 	return (
 		<>
 			<section id="pagination">
-				{countArr.map((counter, i) => {
-					if ((i + 1) % limit === 0) {
-						counterPage++;
+				<nav>
+					{countArr.map((counter, i) => {
+						if ((i + 1) % limit === 0) {
+							counterPage++;
 
-						if (counterPage === Number(page)) {
-							return (
-								<Link
-									key={counterPage}
-									to={`/offers?page=${counterPage}&limit=${limit}`}
-									className="actual-page">
-									{counterPage}
-								</Link>
-							);
+							if (counterPage === Number(page)) {
+								return (
+									<Link
+										key={counterPage}
+										to={`/offers?page=${counterPage}&limit=${limit}`}
+										className="actual-page">
+										{counterPage}
+									</Link>
+								);
+							} else {
+								return (
+									<Link
+										key={counterPage}
+										to={`/offers?page=${counterPage}&limit=${limit}`}>
+										{counterPage}
+									</Link>
+								);
+							}
 						} else {
-							return (
-								<Link
-									key={counterPage}
-									to={`/offers?page=${counterPage}&limit=${limit}`}>
-									{counterPage}
-								</Link>
-							);
+							return null;
 						}
-					} else {
-						return null;
-					}
-				})}
+					})}
+				</nav>
+				<div>
+					<p>Offres par page : </p>
+				</div>
 			</section>
 		</>
 	);

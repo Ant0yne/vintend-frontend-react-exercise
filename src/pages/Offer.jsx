@@ -8,12 +8,6 @@ import OfferDetail from "../components/OfferDetail";
 const Offer = ({ token, setToken }) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
-	// display the modal to sign
-	const [isModalSign, setIsModalSign] = useState(false);
-	// display the modal to login
-	const [isModalLog, setIsModalLog] = useState(false);
-	// display the modal to login
-	const [isModalMenu, setIsModalMenu] = useState(false);
 
 	const { id } = useParams();
 
@@ -43,40 +37,8 @@ const Offer = ({ token, setToken }) => {
 		<p>Loading ...</p>
 	) : (
 		<>
-			<HeaderHome
-				isModalSign={isModalSign}
-				setIsModalSign={setIsModalSign}
-				isModalLog={isModalLog}
-				setIsModalLog={setIsModalLog}
-				isModalMenu={isModalMenu}
-				setIsModalMenu={setIsModalMenu}
-				token={token}
-				setToken={setToken}
-			/>
+			<HeaderHome token={token} setToken={setToken} />
 			<OfferDetail data={data} />
-			{/* {isModalSign && (
-				<SignComp
-					setIsModalSign={setIsModalSign}
-					token={token}
-					setToken={setToken}
-				/>
-			)}
-			{isModalLog && (
-				<Login
-					setIsModalLog={setIsModalLog}
-					token={token}
-					setToken={setToken}
-				/>
-			)}
-			{isModalMenu && (
-				<MenuMobile
-					setIsModalSign={setIsModalSign}
-					setIsModalLog={setIsModalLog}
-					setIsModalMenu={setIsModalMenu}
-					token={token}
-					setToken={setToken}
-				/>
-			)} */}
 		</>
 	);
 };

@@ -11,18 +11,16 @@ import MenuMobile from "../MenuMobile";
 import "./headerHome.css";
 import Cookies from "js-cookie";
 
-const HeaderHome = ({
-	isModalSign,
-	setIsModalSign,
-	isModalLog,
-	setIsModalLog,
-	isModalMenu,
-	setIsModalMenu,
-	token,
-	setToken,
-}) => {
+const HeaderHome = ({ token, setToken }) => {
 	// the actual width of the screen
 	const [width, setWidth] = useState(window.innerWidth);
+
+	// display the modal to sign
+	const [isModalSign, setIsModalSign] = useState(false);
+	// display the modal to login
+	const [isModalLog, setIsModalLog] = useState(false);
+	// display the modal to login
+	const [isModalMenu, setIsModalMenu] = useState(false);
 
 	// When the width change, change the state width with the new width
 	// Then stop listening to the width change
@@ -36,14 +34,14 @@ const HeaderHome = ({
 		return () => {
 			window.removeEventListener("resize", handleResize);
 		};
-	}, []);
+	}, [width]);
 
 	// If it's open, stop rendering the modal menu if width no more mobile size
 	useEffect(() => {
 		if (width > 960 && isModalMenu) {
 			setIsModalMenu(false);
 		}
-	});
+	}, [isModalMenu, width]);
 
 	/**
 	 *  When click on "Se déconnecter" button

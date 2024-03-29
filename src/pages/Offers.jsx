@@ -10,16 +10,9 @@ import Pagination from "../components/Pagination";
 const Offers = ({ token, setToken }) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
-	// display the modal to sign
-	const [isModalSign, setIsModalSign] = useState(false);
-	// display the modal to login
-	const [isModalLog, setIsModalLog] = useState(false);
-	// display the modal to login
-	const [isModalMenu, setIsModalMenu] = useState(false);
 
-	// retreive the queries
+	// retreive the queries and set default value if there is none
 	const [queries, setQueries] = useSearchParams();
-
 	const limit = queries.get("limit") || 8;
 	const page = queries.get("page") || 1;
 	const sort = queries.get("sort") || "price-asc";
@@ -49,16 +42,7 @@ const Offers = ({ token, setToken }) => {
 		<p>Loading ...</p>
 	) : (
 		<>
-			<HeaderHome
-				isModalSign={isModalSign}
-				setIsModalSign={setIsModalSign}
-				isModalLog={isModalLog}
-				setIsModalLog={setIsModalLog}
-				isModalMenu={isModalMenu}
-				setIsModalMenu={setIsModalMenu}
-				token={token}
-				setToken={setToken}
-			/>
+			<HeaderHome token={token} setToken={setToken} />
 			<Hero />
 			<OffersHome {...data} />
 			<Pagination page={page} limit={limit} count={data.count} />

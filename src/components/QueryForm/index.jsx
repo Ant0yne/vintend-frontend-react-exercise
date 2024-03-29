@@ -42,7 +42,7 @@ const QueryForm = () => {
 					onChange={(e) => setSearch(e.target.value)}
 				/>
 				<div>
-					<p>Trier par prix croissant</p>
+					<p>Trier par prix décroissant</p>
 					<input
 						type="checkbox"
 						name="sort-price"
