@@ -5,15 +5,24 @@ import { useState } from "react";
 import "./signComp.css";
 
 const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
+	// state for all the input values
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isNews, setIsNews] = useState(false);
 	const [isError, setIsError] = useState(false);
 
+	/**
+	 *
+	 * @param {Object} e
+	 *
+	 * function when subimitting the form
+	 *
+	 */
 	const sendData = async (e) => {
 		e.preventDefault();
 
+		// check all input are filled and if the mail is valid (xxxx@xxxx.xxxx)
 		if (
 			!username ||
 			!email ||
@@ -21,6 +30,7 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 			email.indexOf(".") === email.length - 1 ||
 			email.trim().split(/[@.]/).length < 3
 		) {
+			// display the error
 			setIsError(true);
 		} else {
 			try {
@@ -33,11 +43,13 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 						newsletter: isNews,
 					}
 				);
+
+				// Create cookie "token" with server's response -> expires arbitrary for now
 				Cookies.set("token", response.data.token, { expires: 10 });
 				setToken(response.data.token);
 				setIsModalSign(false);
 			} catch (error) {
-				console.log(error.response);
+				console.log(error.response.data);
 			}
 		}
 	};
@@ -58,6 +70,8 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 					</button>
 					<form onSubmit={(e) => sendData(e)}>
 						<h2>S'inscrire</h2>
+
+						{/* The error to display if input completion not ok */}
 						<span className={isError ? "" : "errorSignup"}>
 							Veuiller remplir tous les champs (email : xxxx@xxx.xxx)
 						</span>
@@ -102,6 +116,7 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 							value="S'inscrire"
 						/>
 					</form>
+					{/* switch from signup modal to login modal */}
 					<button
 						onClick={() => {
 							setIsModalSign(false);

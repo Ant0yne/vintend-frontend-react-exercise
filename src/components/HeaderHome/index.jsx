@@ -14,8 +14,11 @@ const HeaderHome = ({
 	token,
 	setToken,
 }) => {
+	// the actual width of the screen
 	const [width, setWidth] = useState(window.innerWidth);
 
+	// When the width change, change the state width with the new width
+	// Then stop listening to the width change
 	useEffect(() => {
 		const handleResize = () => {
 			setWidth(window.innerWidth);
@@ -28,19 +31,30 @@ const HeaderHome = ({
 		};
 	}, []);
 
+	// If it's open, stop rendering the modal menu if width no more mobile size
 	useEffect(() => {
 		if (width > 960 && isModalMenu) {
 			setIsModalMenu(false);
 		}
 	});
 
-	// When click on "Se déconnecter" button
+	/**
+	 *  When click on "Se déconnecter" button
+	 */
 	const handleLogOut = () => {
 		Cookies.remove("token");
 		const tokenTemp = "";
 		return setToken(tokenTemp);
 	};
 
+	/**
+	 *
+	 * @param {String} type
+	 *
+	 * return to the top of screen
+	 *
+	 * display Sign up modal or Login modal regarding wich button is click
+	 */
 	const handleSignLog = (type) => {
 		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 		if (type === "sign") {
@@ -50,6 +64,9 @@ const HeaderHome = ({
 		}
 	};
 
+	/**
+	 * open or close the mobile menu on click
+	 */
 	const handleMenu = () => {
 		if (isModalMenu) {
 			setIsModalMenu(false);
@@ -76,6 +93,7 @@ const HeaderHome = ({
 						</Link>
 						<nav className="menu-w">
 							<button onClick={handleMenu}>
+								{/* change the icon if the mobile menu is open or not */}
 								{!isModalMenu && <FontAwesomeIcon icon="bars" />}
 								{isModalMenu && <FontAwesomeIcon icon="xmark" />}
 							</button>
@@ -106,7 +124,6 @@ const HeaderHome = ({
 						) : (
 							<div>
 								<button onClick={() => handleSignLog("sign")}>
-									{" "}
 									S'inscrire
 								</button>
 								<button onClick={() => handleSignLog("log")}>

@@ -12,6 +12,7 @@ const InfOffer = ({
 			<div className="info-offer">
 				<h3>{product_price} €</h3>
 				<article>
+					{/* Display all the details that exist in the offer -> key name and value */}
 					{product_details.map((detail) => {
 						const key = Object.keys(detail).join("");
 						return (
@@ -22,6 +23,7 @@ const InfOffer = ({
 						);
 					})}
 				</article>
+				{/* div just for un border line */}
 				<div></div>
 				<h4>{product_name}</h4>
 				<p>{product_description}</p>

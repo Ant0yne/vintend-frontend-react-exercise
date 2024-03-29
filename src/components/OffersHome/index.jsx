@@ -3,7 +3,6 @@ import OfferHome from "../OfferHome";
 import "./offersHome.css";
 
 const OffersHome = ({ count, offers }) => {
-	// console.log("offers", offers);
 	return (
 		<>
 			<section id="offers">

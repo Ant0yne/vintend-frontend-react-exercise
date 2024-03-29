@@ -6,6 +6,7 @@
 	top: 55px;
 }
 
+/* This modal take all screen except the header */
 #menu-modal {
 	position: absolute;
 	width: 100%;
@@ -29,6 +30,7 @@
 	text-align: center;
 }
 
+/* button to sell articles */
 #menu-modal > nav > button {
 	background-color: var(--green-vinted);
 	border: none;
@@ -46,6 +48,7 @@
 	gap: 30px;
 }
 
+/* all the button except the one to sell articles */
 #menu-modal > nav > div button {
 	border: 1px solid var(--green-vinted);
 	background-color: var(--white);

@@ -6,6 +6,8 @@ const CarouselOffer = ({ image, pictures }) => {
 			<nav className="carousel-offer">
 				<img id="image" src={image.secure_url} alt={image.asset_id} />
 
+				{/* For the carousel later */}
+
 				{/* {pictures.map((picture) => {
 					return (
 						<img

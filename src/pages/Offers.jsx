@@ -25,15 +25,18 @@ const Offers = () => {
 	// if not, init token with ""
 	const [token, setToken] = useState(Cookies.get("token") || "");
 
+	// retreive the queries
 	const [queries] = useSearchParams();
 
 	const limit = queries.get("limit");
 	const page = queries.get("page");
 
 	useEffect(() => {
+		//return to the top of screen
 		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 		const fetchData = async () => {
 			try {
+				// send request with the queries
 				const response = await axios.get(
 					`https://lereacteur-vinted-api.herokuapp.com/offers?sort=price-asc&page=${page}&limit=${limit}`
 				);

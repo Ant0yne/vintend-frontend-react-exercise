@@ -8,6 +8,15 @@ const MenuMobile = ({
 	token,
 	setToken,
 }) => {
+	/**
+	 *
+	 * @param {String} type
+	 *
+	 * return to the top of screen
+	 *
+	 * display Sign up modal or Login modal regarding wich button is click
+	 * deactivate the mobile menu
+	 */
 	const handleSignLog = (type) => {
 		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 		if (type === "sign") {
@@ -19,8 +28,9 @@ const MenuMobile = ({
 		}
 	};
 
-	// When click on "Se déconnecter" button
-	const handleLogOut = () => {
+	/**
+	 *  When click on "Se déconnecter" button
+	 */ const handleLogOut = () => {
 		Cookies.remove("token");
 		const tokenTemp = "";
 		return setToken(tokenTemp);
@@ -32,6 +42,10 @@ const MenuMobile = ({
 				<div id="menu-modal" onClick={(e) => e.stopPropagation()}>
 					<nav>
 						<button>Vendre tes articles</button>
+						{/* if there is a token in the state
+						display the "Se déconnecter" button
+						if the token is ""
+						display the "S'inscrire" and "Se connecter" button */}
 						{token !== "" ? (
 							<div>
 								<button

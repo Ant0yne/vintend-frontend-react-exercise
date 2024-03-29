@@ -25,6 +25,7 @@ const Offer = () => {
 	const { id } = useParams();
 
 	useEffect(() => {
+		//return to the top of screen
 		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
 		const fetchData = async () => {

@@ -11,9 +11,12 @@ const OfferHome = ({
 }) => {
 	const avatar = owner.account.avatar;
 	const username = owner.account.username;
+	// serach for the ÉTAT and MARQUE values for those keys
+	// Those keys are not mandatory so can return undefined
 	const etat = product_details.find((detail) => detail.ÉTAT !== undefined);
 	const marque = product_details.find((detail) => detail.MARQUE !== undefined);
 
+	// if the user click on the offer, navigate to the route offers with the id of the offer
 	const routeOffer = "/offer/" + _id;
 
 	return (

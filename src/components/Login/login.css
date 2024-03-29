@@ -28,6 +28,7 @@
 	text-align: center;
 }
 
+/* for the errors */
 .errorSignup {
 	visibility: hidden;
 }

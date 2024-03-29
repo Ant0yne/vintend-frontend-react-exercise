@@ -35,6 +35,7 @@ const Home = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
+			// return to the top of screen
 			window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 			try {
 				const response = await axios.get(
