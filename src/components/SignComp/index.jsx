@@ -10,7 +10,7 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isNews, setIsNews] = useState(false);
-	const [isError, setIsError] = useState(false);
+	const [isError, setIsError] = useState("");
 
 	/**
 	 *
@@ -20,38 +20,39 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 	 *
 	 */
 	const sendData = async (e) => {
+		setIsError("");
 		e.preventDefault();
 
-		// check all input are filled and if the mail is valid (xxxx@xxxx.xxxx)
-		if (
-			!username ||
-			!email ||
-			!password ||
-			email.indexOf(".") === email.length - 1 ||
-			email.trim().split(/[@.]/).length < 3
-		) {
-			// display the error
-			setIsError(true);
-		} else {
-			try {
-				const response = await axios.post(
-					"https://lereacteur-vinted-api.herokuapp.com/user/signup",
-					{
-						username: username,
-						email: email,
-						password: password,
-						newsletter: isNews,
-					}
-				);
+		// // check all input are filled and if the mail is valid (xxxx@xxxx.xxxx)
+		// if (
+		// 	!username ||
+		// 	!email ||
+		// 	!password ||
+		// 	email.indexOf(".") === email.length - 1 ||
+		// 	email.trim().split(/[@.]/).length < 3
+		// ) {
+		// 	// display the error
+		// 	setIsError(true);
+		// } else {
+		try {
+			const response = await axios.post(
+				"https://lereacteur-vinted-api.herokuapp.com/user/signup",
+				{
+					username: username,
+					email: email,
+					password: password,
+					newsletter: isNews,
+				}
+			);
 
-				// Create cookie "token" with server's response -> expires arbitrary for now
-				Cookies.set("token", response.data.token, { expires: 10 });
-				setToken(response.data.token);
-				setIsModalSign(false);
-			} catch (error) {
-				console.log(error.response.data);
-			}
+			// Create cookie "token" with server's response -> expires arbitrary for now
+			Cookies.set("token", response.data.token, { expires: 10 });
+			setToken(response.data.token);
+			setIsModalSign(false);
+		} catch (error) {
+			setIsError(error.response.data.message);
 		}
+		// }
 	};
 
 	return (
@@ -72,9 +73,7 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 						<h2>S'inscrire</h2>
 
 						{/* The error to display if input completion not ok */}
-						<span className={isError ? "" : "errorSignup"}>
-							Veuiller remplir tous les champs (email : xxxx@xxx.xxx)
-						</span>
+						<span className={isError ? "" : "errorSignup"}>{isError}</span>
 
 						<input
 							type="text"

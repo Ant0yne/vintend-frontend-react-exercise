@@ -8,7 +8,7 @@ const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 	// state for all the input values
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [isError, setIsError] = useState(false);
+	const [isError, setIsError] = useState("");
 
 	/**
 	 *
@@ -17,33 +17,34 @@ const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 	 *  function when subimitting the form
 	 */
 	const sendData = async (e) => {
+		setIsError("");
 		e.preventDefault();
 
-		// check all input are filled and if the mail is valid (xxxx@xxxx.xxxx)
-		if (
-			!email ||
-			!password ||
-			email.indexOf(".") === email.length - 1 ||
-			email.trim().split(/[@.]/).length < 3
-		) {
-			// display the error
-			setIsError(true);
-		} else {
-			try {
-				const response = await axios.post(
-					"https://lereacteur-vinted-api.herokuapp.com/user/login",
-					{
-						email: email,
-						password: password,
-					}
-				);
-				Cookies.set("token", response.data.token, { expires: 10 });
-				setToken(response.data.token);
-				setIsModalLog(false);
-			} catch (error) {
-				console.log(error.response.data);
-			}
+		// // check all input are filled and if the mail is valid (xxxx@xxxx.xxxx)
+		// if (
+		// 	!email ||
+		// 	!password ||
+		// 	email.indexOf(".") === email.length - 1 ||
+		// 	email.trim().split(/[@.]/).length < 3
+		// ) {
+		// 	// display the error
+		// 	setIsError(true);
+		// } else {
+		try {
+			const response = await axios.post(
+				"https://lereacteur-vinted-api.herokuapp.com/user/login",
+				{
+					email: email,
+					password: password,
+				}
+			);
+			Cookies.set("token", response.data.token, { expires: 10 });
+			setToken(response.data.token);
+			setIsModalLog(false);
+		} catch (error) {
+			setIsError(error.response.data.message);
 		}
+		// }
 	};
 
 	return (
@@ -64,9 +65,7 @@ const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 						<h2>Se connecter</h2>
 
 						{/* The error to display if input completion not ok */}
-						<span className={isError ? "" : "errorSignup"}>
-							Veuiller remplir tous les champs (email : xxxx@xxx.xxx)
-						</span>
+						<span className={isError ? "" : "errorSignup"}>{isError}</span>
 
 						<input
 							type="email"
