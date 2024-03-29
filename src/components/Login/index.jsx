@@ -8,7 +8,7 @@ const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 	// state for all the input values
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [isError, setIsError] = useState("");
+	const [isError, setIsError] = useState("placeholder");
 
 	/**
 	 *
@@ -17,19 +17,9 @@ const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 	 *  function when subimitting the form
 	 */
 	const sendData = async (e) => {
-		setIsError("");
+		setIsError("placeholder");
 		e.preventDefault();
 
-		// // check all input are filled and if the mail is valid (xxxx@xxxx.xxxx)
-		// if (
-		// 	!email ||
-		// 	!password ||
-		// 	email.indexOf(".") === email.length - 1 ||
-		// 	email.trim().split(/[@.]/).length < 3
-		// ) {
-		// 	// display the error
-		// 	setIsError(true);
-		// } else {
 		try {
 			const response = await axios.post(
 				"https://lereacteur-vinted-api.herokuapp.com/user/login",
@@ -50,7 +40,6 @@ const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 				setIsError(error.response.data.message);
 			}
 		}
-		// }
 	};
 
 	return (
@@ -70,8 +59,10 @@ const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 					<form onSubmit={(e) => sendData(e)}>
 						<h2>Se connecter</h2>
 
-						{/* The error to display if input completion not ok */}
-						<span className={isError ? "" : "errorSignup"}>{isError}</span>
+						{/* The error from the request to display */}
+						<span className={isError !== "placeholder" ? "" : "errorSignup"}>
+							{isError}
+						</span>
 
 						<input
 							type="email"

@@ -28,7 +28,7 @@
 	text-align: center;
 }
 
-/* for the errors */
+/* to display the error */
 .errorSignup {
 	visibility: hidden;
 }
