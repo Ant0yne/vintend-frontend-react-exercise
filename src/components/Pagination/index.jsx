@@ -44,8 +44,8 @@ const Pagination = ({ limit, page, count, url }) => {
 
 	return (
 		<>
-			<section id="pagination">
-				<nav>
+			<section id="page-limit">
+				<nav id="pagination">
 					{countArr.map((counter, i) => {
 						// if there is some extra offer create an extra offer
 						if (counter % limit !== 0 && !isLastPage) {
@@ -63,7 +63,7 @@ const Pagination = ({ limit, page, count, url }) => {
 
 				{/* don't display a limit choice if all the offers are displayed */}
 				{counterPage > 1 && (
-					<div>
+					<div id="limit">
 						<p>Offres par page : </p>
 						{limitArr.map((lim) => {
 							// don't display the limit numbers that are superior to offers number

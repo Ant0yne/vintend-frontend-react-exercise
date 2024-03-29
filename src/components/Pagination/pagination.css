@@ -1,14 +1,34 @@
-#pagination {
+#page-limit {
 	margin-top: 20px;
 	text-align: center;
 }
 
 #pagination a {
-	font-size: 2rem;
+	font-size: 1.8rem;
 	color: var(--text-grey);
 	padding: 20px;
 }
 
 .actual-page {
 	text-decoration: underline;
+}
+
+#limit {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	margin: 10px 0;
+}
+
+#limit a {
+	font-size: 1.4rem;
+	color: var(--text-grey);
+	width: 22px;
+	font-style: italic;
+}
+
+#limit p {
+	font-size: 1.2rem;
+	color: var(--text-grey);
+	font-style: italic;
 }

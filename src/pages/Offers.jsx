@@ -31,8 +31,6 @@ const Offers = ({ token, setToken }) => {
 					`https://lereacteur-vinted-api.herokuapp.com/offers${url}&page=${page}&limit=${limit}`
 				);
 
-				console.log(response.data.count);
-
 				setData(response.data);
 				setIsLoading(false);
 			} catch (error) {
