@@ -6,3 +6,12 @@
 .carousel-offer img {
 	width: 100%;
 }
+
+/* ----------------- 720 px ----------------- */
+
+@media (min-width: 720px) {
+	.carousel-offer img {
+		height: 80%;
+		object-fit: cover;
+	}
+}

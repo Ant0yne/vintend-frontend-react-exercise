@@ -75,3 +75,11 @@ h4 {
 		margin: 0;
 	}
 }
+
+/* ----------------- 720 px ----------------- */
+
+@media (min-width: 720px) {
+	.info-offer {
+		width: 400px;
+	}
+}

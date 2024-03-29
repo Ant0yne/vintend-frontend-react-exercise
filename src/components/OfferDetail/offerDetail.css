@@ -13,3 +13,13 @@
 		padding: 0 10px;
 	}
 }
+
+/* ----------------- 720 px ----------------- */
+
+@media (min-width: 720px) {
+	.offer-detail > .container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
