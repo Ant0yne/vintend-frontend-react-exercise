@@ -54,11 +54,3 @@
 	font-size: 1.4rem;
 	padding: 10px 30px;
 }
-
-/* ----------------- 960 px ----------------- */
-
-@media (min-width: 960px) {
-	#menu {
-		/* display: none; */
-	}
-}

@@ -28,6 +28,12 @@ const HeaderHome = ({
 		};
 	}, []);
 
+	useEffect(() => {
+		if (width > 960 && isModalMenu) {
+			setIsModalMenu(false);
+		}
+	});
+
 	// When click on "Se déconnecter" button
 	const handleLogOut = () => {
 		Cookies.remove("token");
@@ -51,10 +57,6 @@ const HeaderHome = ({
 			setIsModalMenu(true);
 		}
 	};
-
-	if (width > 960 && isModalMenu) {
-		setIsModalMenu(false);
-	}
 
 	return (
 		<>
