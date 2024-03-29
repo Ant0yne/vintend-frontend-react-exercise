@@ -49,7 +49,8 @@ const Offers = ({ token, setToken }) => {
 		<>
 			<HeaderHome token={token} setToken={setToken} />
 			<Hero />
-			<OffersHome {...data} />
+			{/* if no offer display a message */}
+			{data.count > 0 ? <OffersHome {...data} /> : <p>Aucune offre trouvée</p>}
 			<Pagination page={page} limit={limit} count={data.count} url={url} />
 		</>
 	);
