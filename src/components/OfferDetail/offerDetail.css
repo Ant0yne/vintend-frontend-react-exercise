@@ -1,0 +1,15 @@
+.offer-detail {
+	background-color: var(--bg-grey);
+}
+
+.offer-detail > .container {
+	padding: 0;
+}
+
+/* ----------------- 520 px ----------------- */
+
+@media (min-width: 520px) {
+	.offer-detail > .container {
+		padding: 0 10px;
+	}
+}

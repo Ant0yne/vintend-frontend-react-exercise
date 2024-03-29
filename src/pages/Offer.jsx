@@ -1,11 +1,10 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import HeaderHome from "../components/HeaderHome";
-import CarouselOffer from "../components/CarouselOffer";
-import InfOffer from "../components/InfoOffer";
+import OfferDetail from "../components/OfferDetail";
 import SignComp from "../components/SignComp";
 import Login from "../components/Login";
 import MenuMobile from "../components/MenuMobile";
@@ -58,11 +57,7 @@ const Offer = () => {
 				token={token}
 				setToken={setToken}
 			/>
-			<CarouselOffer
-				image={data.product_image}
-				pictures={data.product_pictures}
-			/>
-			<InfOffer {...data} />
+			<OfferDetail data={data} />
 			{isModalSign && (
 				<SignComp
 					setIsModalSign={setIsModalSign}
@@ -82,6 +77,8 @@ const Offer = () => {
 					setIsModalSign={setIsModalSign}
 					setIsModalLog={setIsModalLog}
 					setIsModalMenu={setIsModalMenu}
+					token={token}
+					setToken={setToken}
 				/>
 			)}
 		</>

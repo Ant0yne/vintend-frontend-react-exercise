@@ -82,6 +82,8 @@ const Offers = () => {
 					setIsModalSign={setIsModalSign}
 					setIsModalLog={setIsModalLog}
 					setIsModalMenu={setIsModalMenu}
+					token={token}
+					setToken={setToken}
 				/>
 			)}
 		</>
