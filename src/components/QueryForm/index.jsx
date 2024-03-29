@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./queryForm.css";
 
@@ -6,8 +7,10 @@ const QueryForm = () => {
 	// all the state for the inputs' values to search and sort the offers
 	const [checkbox, setCheckbox] = useState(false);
 	const [search, setSearch] = useState("");
-	const [minPrice, setMinPrice] = useState("");
-	const [maxPrice, setMaxPrice] = useState("");
+	const [minPrice, setMinPrice] = useState(0);
+	const [maxPrice, setMaxPrice] = useState(10000);
+
+	const navigate = useNavigate();
 
 	/**
 	 *
@@ -18,7 +21,15 @@ const QueryForm = () => {
 	 */
 	const sendQuery = async (e) => {
 		e.preventDefault();
-		const url = "https://lereacteur-vinted-api.herokuapp.com/offers";
+		console.log("ok");
+		let url = "/offers?";
+		checkbox
+			? (url = url + "sort=price-desc&")
+			: (url = url + "sort=price-asc&");
+		url = url + "priceMin=" + minPrice + "&";
+		url = url + "priceMax=" + maxPrice;
+		console.log(url);
+		navigate(url);
 	};
 
 	return (
@@ -33,13 +44,13 @@ const QueryForm = () => {
 					onChange={(e) => setSearch(e.target.value)}
 				/>
 				<div>
-					<p>Trier par prix : </p>
+					<p>Trier par prix croissant</p>
 					<input
 						type="checkbox"
 						name="sort-price"
 						id="sort-price"
 						checked={checkbox}
-						onClick={(e) => setCheckbox(e.target.checked)}
+						onChange={(e) => setCheckbox(e.target.checked)}
 					/>
 				</div>
 				<input

@@ -18,21 +18,28 @@ const Offers = ({ token, setToken }) => {
 	const [isModalMenu, setIsModalMenu] = useState(false);
 
 	// retreive the queries
-	const [queries] = useSearchParams();
+	const [queries, setQueries] = useSearchParams();
 
-	const limit = queries.get("limit");
-	const page = queries.get("page");
+	const limit = queries.get("limit") || 8;
+	const page = queries.get("page") || 1;
+	const sort = queries.get("sort") || "price-asc";
+	const priceMin = queries.get("priceMin") || 0;
+	const priceMax = queries.get("priceMax") || 10000;
 
 	useEffect(() => {
 		//return to the top of screen
 		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+		// console.log(
+		// 	`https://lereacteur-vinted-api.herokuapp.com/offers?sort=${sort}&minPrice=${minPrice}&maxPrice=${maxPrice}&page=${page}&limit=${limit}`
+		// );
 		const fetchData = async () => {
 			try {
 				// send request with the queries
 				const response = await axios.get(
-					`https://lereacteur-vinted-api.herokuapp.com/offers?sort=price-asc&page=${page}&limit=${limit}`
+					`https://lereacteur-vinted-api.herokuapp.com/offers?sort=${sort}&priceMin=${priceMin}&priceMax=${priceMax}&page=${page}&limit=${limit}`
 				);
 
+				console.log(response.data);
 				setData(response.data);
 				setIsLoading(false);
 			} catch (error) {
@@ -41,7 +48,7 @@ const Offers = ({ token, setToken }) => {
 		};
 
 		fetchData();
-	}, [limit, page]);
+	}, [limit, page, sort, priceMin, priceMax]);
 
 	return isLoading ? (
 		<p>Loading ...</p>
