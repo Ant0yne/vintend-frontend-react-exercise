@@ -7,7 +7,7 @@ import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
 import Pagination from "../components/Pagination";
 
-const Home = () => {
+const Home = ({ token, setToken }) => {
 	// data received by the request
 	const [data, setData] = useState();
 	// display a loading screen until data is received
@@ -20,10 +20,6 @@ const Home = () => {
 	const [isModalLog, setIsModalLog] = useState(false);
 	// display the modal to login
 	const [isModalMenu, setIsModalMenu] = useState(false);
-
-	// Check if there is a cookie "token"
-	// if not, init token with ""
-	const [token, setToken] = useState(Cookies.get("token") || "");
 
 	// the page displayed by default -> arbitrary number for now
 	const defaultPage = 1;

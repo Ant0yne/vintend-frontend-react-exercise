@@ -8,7 +8,7 @@ import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
 import Pagination from "../components/Pagination";
 
-const Offers = () => {
+const Offers = ({ token, setToken }) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
 	// display the modal to sign
@@ -17,10 +17,6 @@ const Offers = () => {
 	const [isModalLog, setIsModalLog] = useState(false);
 	// display the modal to login
 	const [isModalMenu, setIsModalMenu] = useState(false);
-
-	// Check if there is a cookie "token"
-	// if not, init token with ""
-	const [token, setToken] = useState(Cookies.get("token") || "");
 
 	// retreive the queries
 	const [queries] = useSearchParams();

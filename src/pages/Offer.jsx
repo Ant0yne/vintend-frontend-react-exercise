@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import HeaderHome from "../components/HeaderHome";
 import OfferDetail from "../components/OfferDetail";
 
-const Offer = () => {
+const Offer = ({ token, setToken }) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
 	// display the modal to sign
@@ -16,9 +16,6 @@ const Offer = () => {
 	// display the modal to login
 	const [isModalMenu, setIsModalMenu] = useState(false);
 
-	// Check if there is a cookie "token"
-	// if not, init token with ""
-	const [token, setToken] = useState(Cookies.get("token") || "");
 	const { id } = useParams();
 
 	useEffect(() => {
