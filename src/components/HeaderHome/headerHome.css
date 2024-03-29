@@ -7,8 +7,6 @@
 }
 
 #header-home > .container {
-	/* height: 102px; */
-
 	padding: 8px;
 	display: flex;
 	flex-direction: column;
@@ -33,14 +31,6 @@
 	color: var(--text-grey);
 }
 
-#search-bar {
-	padding: 10px 5px;
-	width: 100%;
-	background-color: var(--light-grey);
-	border: none;
-	border-radius: 3px;
-}
-
 /* hide the signup/login button when on mobile */
 .header-m {
 	display: none;
@@ -51,7 +41,6 @@
 @media (min-width: 720px) {
 	#header-home > .container {
 		padding: 15px 15px 8px 15px;
-		height: 116px;
 	}
 }
 
@@ -62,7 +51,6 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		height: 100px;
 		gap: 20px;
 	}
 

@@ -35,7 +35,7 @@ const QueryForm = () => {
 
 	return (
 		<>
-			<form onSubmit={sendQuery}>
+			<form id="form-query" onSubmit={sendQuery}>
 				<input
 					type="text"
 					name="search-bar"
@@ -44,7 +44,7 @@ const QueryForm = () => {
 					value={search}
 					onChange={(e) => setSearch(e.target.value)}
 				/>
-				<div>
+				<div id="checkbox-query">
 					<p>Trier par prix décroissant</p>
 					<input
 						type="checkbox"
@@ -74,7 +74,7 @@ const QueryForm = () => {
 					type="submit"
 					name="submit-query"
 					id="submit-query"
-					value="Rechercher"
+					value="Lancer la recherche"
 				/>
 			</form>
 		</>

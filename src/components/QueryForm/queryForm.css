@@ -1,0 +1,33 @@
+#form-query {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+}
+
+#form-query input[type="number"] {
+	width: 100px;
+}
+
+#form-query input[type="submit"] {
+	width: 150px;
+	background-color: var(--green-vinted);
+	color: var(--white);
+	border: none;
+	padding: 8px 10px;
+	border-radius: 5px;
+}
+
+#search-bar {
+	padding: 10px 5px;
+	width: 100%;
+	background-color: var(--light-grey);
+	border: none;
+	border-radius: 3px;
+}
+
+#checkbox-query {
+	display: flex;
+	font-size: 1.4rem;
+	gap: 10px;
+}
