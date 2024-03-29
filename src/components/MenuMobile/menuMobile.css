@@ -29,7 +29,7 @@
 	text-align: center;
 }
 
-#menu-modal > nav > button:nth-of-type(1) {
+#menu-modal > nav > button {
 	background-color: var(--green-vinted);
 	border: none;
 	border-radius: 3px;
@@ -38,8 +38,15 @@
 	font-size: 1.4rem;
 }
 
-#menu-modal > nav > button:nth-of-type(2),
-#menu-modal > nav > button:nth-of-type(3) {
+#menu-modal > nav > div {
+	width: 80vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 30px;
+}
+
+#menu-modal > nav > div button {
 	border: 1px solid var(--green-vinted);
 	background-color: var(--white);
 	border-radius: 5px;

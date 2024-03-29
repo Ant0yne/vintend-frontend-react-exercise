@@ -93,6 +93,8 @@ const Home = () => {
 					setIsModalSign={setIsModalSign}
 					setIsModalLog={setIsModalLog}
 					setIsModalMenu={setIsModalMenu}
+					token={token}
+					setToken={setToken}
 				/>
 			)}
 		</>
