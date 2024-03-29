@@ -42,7 +42,13 @@ const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 			setToken(response.data.token);
 			setIsModalLog(false);
 		} catch (error) {
-			setIsError(error.response.data.message);
+			const errMsg = error.response.data.message;
+
+			if (errMsg === "User not found") {
+				setIsError("Ce compte n'existe pas.");
+			} else {
+				setIsError(error.response.data.message);
+			}
 		}
 		// }
 	};

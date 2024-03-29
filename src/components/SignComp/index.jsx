@@ -50,7 +50,15 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 			setToken(response.data.token);
 			setIsModalSign(false);
 		} catch (error) {
-			setIsError(error.response.data.message);
+			const errMsg = error.response.data.message;
+
+			if (errMsg === "Missing parameters") {
+				setIsError("Veuillez remplir tous les champs.");
+			} else if (errMsg === "This email already has an account") {
+				setIsError("Un compte avec cet email existe déjà.");
+			} else {
+				setIsError(error.response.data.message);
+			}
 		}
 		// }
 	};
