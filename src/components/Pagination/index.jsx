@@ -6,7 +6,9 @@ const Pagination = ({ limit, page, count, url }) => {
 	let counterPage = 0;
 
 	const countArr = [];
+	// offer's number to display -> arbitrary choice
 	const limitArr = [5, 10, 15, 25, 50];
+	// to check if there is an extra page
 	let isLastPage = false;
 
 	// create an array with the number of offers received
@@ -15,9 +17,11 @@ const Pagination = ({ limit, page, count, url }) => {
 	}
 
 	const createPage = () => {
+		// add a page
 		counterPage++;
 
 		// check if this is the page already selected to underline it
+		// then create a link with the page number that navigate to it
 		if (counterPage === Number(page)) {
 			return (
 				<Link
@@ -43,6 +47,7 @@ const Pagination = ({ limit, page, count, url }) => {
 			<section id="pagination">
 				<nav>
 					{countArr.map((counter, i) => {
+						// if there is some extra offer create an extra offer
 						if (counter % limit !== 0 && !isLastPage) {
 							isLastPage = true;
 							return createPage();
@@ -56,26 +61,32 @@ const Pagination = ({ limit, page, count, url }) => {
 					})}
 				</nav>
 
+				{/* don't display a limit choice if all the offers are displayed */}
 				{counterPage > 1 && (
 					<div>
 						<p>Offres par page : </p>
 						{limitArr.map((lim) => {
-							// check if this is the actual limit to underline it
-							if (lim === Number(limit)) {
-								return (
-									<Link
-										key={lim}
-										className="actual-page"
-										to={`${url}&page=${page}&limit=${lim}`}>
-										{lim}
-									</Link>
-								);
+							// don't display the limit numbers that are superior to offers number
+							if (count - lim > 0) {
+								// check if this is the actual limit to underline it
+								if (lim === Number(limit)) {
+									return (
+										<Link
+											key={lim}
+											className="actual-page"
+											to={`${url}&page=${page}&limit=${lim}`}>
+											{lim}
+										</Link>
+									);
+								} else {
+									return (
+										<Link key={lim} to={`${url}&page=${page}&limit=${lim}`}>
+											{lim}
+										</Link>
+									);
+								}
 							} else {
-								return (
-									<Link key={lim} to={`${url}&page=${page}&limit=${lim}`}>
-										{lim}
-									</Link>
-								);
+								return null;
 							}
 						})}
 					</div>
