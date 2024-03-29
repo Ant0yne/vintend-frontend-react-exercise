@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -13,6 +14,20 @@ const HeaderHome = ({
 	token,
 	setToken,
 }) => {
+	const [width, setWidth] = useState(window.innerWidth);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setWidth(window.innerWidth);
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
 	// When click on "Se déconnecter" button
 	const handleLogOut = () => {
 		Cookies.remove("token");
@@ -36,6 +51,10 @@ const HeaderHome = ({
 			setIsModalMenu(true);
 		}
 	};
+
+	if (width > 960 && isModalMenu) {
+		setIsModalMenu(false);
+	}
 
 	return (
 		<>
