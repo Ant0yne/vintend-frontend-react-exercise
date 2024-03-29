@@ -3,11 +3,17 @@ import { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import SignComp from "../SignComp";
+import Login from "../Login";
+import MenuMobile from "../MenuMobile";
+
 import "./headerHome.css";
 import Cookies from "js-cookie";
 
 const HeaderHome = ({
+	isModalSign,
 	setIsModalSign,
+	isModalLog,
 	setIsModalLog,
 	isModalMenu,
 	setIsModalMenu,
@@ -135,6 +141,29 @@ const HeaderHome = ({
 					</nav>
 				</div>
 			</header>
+			{isModalSign && (
+				<SignComp
+					setIsModalSign={setIsModalSign}
+					setIsModalLog={setIsModalLog}
+					setToken={setToken}
+				/>
+			)}
+			{isModalLog && (
+				<Login
+					setIsModalLog={setIsModalLog}
+					setIsModalSign={setIsModalSign}
+					setToken={setToken}
+				/>
+			)}
+			{isModalMenu && (
+				<MenuMobile
+					setIsModalSign={setIsModalSign}
+					setIsModalLog={setIsModalLog}
+					setIsModalMenu={setIsModalMenu}
+					token={token}
+					setToken={setToken}
+				/>
+			)}
 		</>
 	);
 };

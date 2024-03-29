@@ -5,9 +5,6 @@ import { useParams } from "react-router-dom";
 
 import HeaderHome from "../components/HeaderHome";
 import OfferDetail from "../components/OfferDetail";
-import SignComp from "../components/SignComp";
-import Login from "../components/Login";
-import MenuMobile from "../components/MenuMobile";
 
 const Offer = () => {
 	const [data, setData] = useState();
@@ -51,7 +48,9 @@ const Offer = () => {
 	) : (
 		<>
 			<HeaderHome
+				isModalSign={isModalSign}
 				setIsModalSign={setIsModalSign}
+				isModalLog={isModalLog}
 				setIsModalLog={setIsModalLog}
 				isModalMenu={isModalMenu}
 				setIsModalMenu={setIsModalMenu}
@@ -59,7 +58,7 @@ const Offer = () => {
 				setToken={setToken}
 			/>
 			<OfferDetail data={data} />
-			{isModalSign && (
+			{/* {isModalSign && (
 				<SignComp
 					setIsModalSign={setIsModalSign}
 					token={token}
@@ -81,7 +80,7 @@ const Offer = () => {
 					token={token}
 					setToken={setToken}
 				/>
-			)}
+			)} */}
 		</>
 	);
 };

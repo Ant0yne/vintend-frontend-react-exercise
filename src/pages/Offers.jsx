@@ -7,9 +7,6 @@ import HeaderHome from "../components/HeaderHome";
 import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
 import Pagination from "../components/Pagination";
-import SignComp from "../components/SignComp";
-import Login from "../components/Login";
-import MenuMobile from "../components/MenuMobile";
 
 const Offers = () => {
 	const [data, setData] = useState();
@@ -56,7 +53,9 @@ const Offers = () => {
 	) : (
 		<>
 			<HeaderHome
+				isModalSign={isModalSign}
 				setIsModalSign={setIsModalSign}
+				isModalLog={isModalLog}
 				setIsModalLog={setIsModalLog}
 				isModalMenu={isModalMenu}
 				setIsModalMenu={setIsModalMenu}
@@ -66,29 +65,6 @@ const Offers = () => {
 			<Hero />
 			<OffersHome {...data} />
 			<Pagination page={page} limit={limit} count={data.count} />
-			{isModalSign && (
-				<SignComp
-					setIsModalSign={setIsModalSign}
-					token={token}
-					setToken={setToken}
-				/>
-			)}
-			{isModalLog && (
-				<Login
-					setIsModalLog={setIsModalLog}
-					token={token}
-					setToken={setToken}
-				/>
-			)}
-			{isModalMenu && (
-				<MenuMobile
-					setIsModalSign={setIsModalSign}
-					setIsModalLog={setIsModalLog}
-					setIsModalMenu={setIsModalMenu}
-					token={token}
-					setToken={setToken}
-				/>
-			)}
 		</>
 	);
 };

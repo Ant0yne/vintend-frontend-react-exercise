@@ -6,9 +6,6 @@ import HeaderHome from "../components/HeaderHome";
 import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
 import Pagination from "../components/Pagination";
-import SignComp from "../components/SignComp";
-import Login from "../components/Login";
-import MenuMobile from "../components/MenuMobile";
 
 const Home = () => {
 	// data received by the request
@@ -65,7 +62,9 @@ const Home = () => {
 	) : (
 		<>
 			<HeaderHome
+				isModalSign={isModalSign}
 				setIsModalSign={setIsModalSign}
+				isModalLog={isModalLog}
 				setIsModalLog={setIsModalLog}
 				isModalMenu={isModalMenu}
 				setIsModalMenu={setIsModalMenu}
@@ -75,29 +74,6 @@ const Home = () => {
 			<Hero />
 			<OffersHome {...dataSlice} />
 			<Pagination page={defaultPage} limit={defaultLimit} count={data.count} />
-			{isModalSign && (
-				<SignComp
-					setIsModalSign={setIsModalSign}
-					setIsModalLog={setIsModalLog}
-					setToken={setToken}
-				/>
-			)}
-			{isModalLog && (
-				<Login
-					setIsModalLog={setIsModalLog}
-					setIsModalSign={setIsModalSign}
-					setToken={setToken}
-				/>
-			)}
-			{isModalMenu && (
-				<MenuMobile
-					setIsModalSign={setIsModalSign}
-					setIsModalLog={setIsModalLog}
-					setIsModalMenu={setIsModalMenu}
-					token={token}
-					setToken={setToken}
-				/>
-			)}
 		</>
 	);
 };
