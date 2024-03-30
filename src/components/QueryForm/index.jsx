@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import QueryRange from "../QueryRange";
+import QuerySwitch from "../QuerySwitch";
 
 import "./queryForm.css";
 
@@ -59,7 +60,8 @@ const QueryForm = ({ offerRoute, priceRange, setPriceRange }) => {
 								setValues={setPriceRange}
 								sendQuery={sendQuery}
 							/>
-							<div id="checkbox-query">
+							<QuerySwitch />
+							{/* <div id="checkbox-query">
 								<p>Trier par prix décroissant</p>
 								<input
 									type="checkbox"
@@ -68,7 +70,7 @@ const QueryForm = ({ offerRoute, priceRange, setPriceRange }) => {
 									checked={checkbox}
 									onChange={(e) => setCheckbox(e.target.checked)}
 								/>
-							</div>
+							</div> */}
 						</div>
 						<input
 							type="submit"

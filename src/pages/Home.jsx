@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import HeaderHome from "../components/HeaderHome";
 import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
-import Pagination from "../components/Pagination";
 
 const Home = ({ token, setToken }) => {
 	// data received by the request

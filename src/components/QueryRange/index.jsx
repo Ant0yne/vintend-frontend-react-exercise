@@ -1,5 +1,7 @@
 import { Range, getTrackBackground } from "react-range";
 
+import "./queryRange.css";
+
 const STEP = 1;
 const MIN = 0;
 const MAX = 200;

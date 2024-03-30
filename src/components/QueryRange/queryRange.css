@@ -22,7 +22,7 @@
 	height: 15px;
 	width: 15px;
 	border-radius: 50%;
-	background-color: #fff;
+	background-color: var(--text-grey);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -42,8 +42,8 @@
 }
 
 #range-thumb-int {
-	height: 100%;
-	width: 100%;
+	height: 99%;
+	width: 99%;
 	border-radius: 50%;
 }
 
