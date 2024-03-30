@@ -5,7 +5,16 @@ import HeaderHome from "../components/HeaderHome";
 import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
 
-const Home = ({ token, setToken }) => {
+const Home = ({
+	token,
+	setToken,
+	priceRange,
+	setPriceRange,
+	checked,
+	setChecked,
+	search,
+	setSearch,
+}) => {
 	// data received by the request
 	const [data, setData] = useState();
 	// display a loading screen until data is received
@@ -36,7 +45,16 @@ const Home = ({ token, setToken }) => {
 		<p>Loading ...</p>
 	) : (
 		<>
-			<HeaderHome token={token} setToken={setToken} />
+			<HeaderHome
+				token={token}
+				setToken={setToken}
+				priceRange={priceRange}
+				setPriceRange={setPriceRange}
+				checked={checked}
+				setChecked={setChecked}
+				search={search}
+				setSearch={setSearch}
+			/>
 			<Hero />
 			<OffersHome {...data} />
 		</>

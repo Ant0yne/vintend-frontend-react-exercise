@@ -11,7 +11,17 @@ import MenuMobile from "../MenuMobile";
 import "./headerHome.css";
 import Cookies from "js-cookie";
 
-const HeaderHome = ({ token, setToken, offerRoute }) => {
+const HeaderHome = ({
+	token,
+	setToken,
+	priceRange,
+	setPriceRange,
+	checked,
+	setChecked,
+	search,
+	setSearch,
+	offerRoute,
+}) => {
 	// the actual width of the screen
 	const [width, setWidth] = useState(window.innerWidth);
 
@@ -21,8 +31,6 @@ const HeaderHome = ({ token, setToken, offerRoute }) => {
 	const [isModalLog, setIsModalLog] = useState(false);
 	// display the modal to login
 	const [isModalMenu, setIsModalMenu] = useState(false);
-	// The default price range on min and max
-	const [priceRange, setPriceRange] = useState([0, 200]);
 
 	// When the width change, change the state width with the new width
 	// Then stop listening to the width change
@@ -111,6 +119,10 @@ const HeaderHome = ({ token, setToken, offerRoute }) => {
 							offerRoute={offerRoute}
 							priceRange={priceRange}
 							setPriceRange={setPriceRange}
+							checked={checked}
+							setChecked={setChecked}
+							search={search}
+							setSearch={setSearch}
 						/>
 					</div>
 					<nav className="header-m">

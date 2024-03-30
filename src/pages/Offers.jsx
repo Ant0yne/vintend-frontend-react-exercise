@@ -7,7 +7,16 @@ import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
 import Pagination from "../components/Pagination";
 
-const Offers = ({ token, setToken }) => {
+const Offers = ({
+	token,
+	setToken,
+	priceRange,
+	setPriceRange,
+	checked,
+	setChecked,
+	search,
+	setSearch,
+}) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
 
@@ -24,6 +33,14 @@ const Offers = ({ token, setToken }) => {
 
 	useEffect(() => {
 		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+		setChecked(checked);
+		const temp = [];
+		temp.push(Number(priceMin));
+		temp.push(Number(priceMax));
+		setPriceRange(temp);
+		setSearch(title);
+
 		const fetchData = async () => {
 			try {
 				// send request with the queries
@@ -39,13 +56,34 @@ const Offers = ({ token, setToken }) => {
 		};
 
 		fetchData();
-	}, [limit, page, sort, priceMin, priceMax, url]);
+	}, [
+		limit,
+		page,
+		sort,
+		url,
+		priceMin,
+		priceMax,
+		checked,
+		setChecked,
+		setPriceRange,
+		setSearch,
+		title,
+	]);
 
 	return isLoading ? (
 		<p>Loading ...</p>
 	) : (
 		<>
-			<HeaderHome token={token} setToken={setToken} />
+			<HeaderHome
+				token={token}
+				setToken={setToken}
+				priceRange={priceRange}
+				setPriceRange={setPriceRange}
+				checked={checked}
+				setChecked={setChecked}
+				search={search}
+				setSearch={setSearch}
+			/>
 			<Hero />
 			{/* if no offer display a message */}
 			{data.count > 0 ? <OffersHome {...data} /> : <p>Aucune offre trouvée</p>}

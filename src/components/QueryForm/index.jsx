@@ -6,12 +6,15 @@ import QuerySwitch from "../QuerySwitch";
 
 import "./queryForm.css";
 
-const QueryForm = ({ offerRoute, priceRange, setPriceRange }) => {
-	// all the state for the inputs' values to search and sort the offers
-	const [checked, setChecked] = useState(false);
-	const [search, setSearch] = useState("");
-
-	// test
+const QueryForm = ({
+	offerRoute,
+	priceRange,
+	setPriceRange,
+	checked,
+	setChecked,
+	search,
+	setSearch,
+}) => {
 	const navigate = useNavigate();
 
 	/**
@@ -65,23 +68,7 @@ const QueryForm = ({ offerRoute, priceRange, setPriceRange }) => {
 								setChecked={setChecked}
 								sendQuery={sendQuery}
 							/>
-							{/* <div id="checkbox-query">
-								<p>Trier par prix décroissant</p>
-								<input
-									type="checkbox"
-									name="sort-price"
-									id="sort-price"
-									checked={checkbox}
-									onChange={(e) => setCheckbox(e.target.checked)}
-								/>
-							</div> */}
 						</div>
-						{/* <input
-							type="submit"
-							name="submit-query"
-							id="submit-query"
-							value="Lancer la recherche"
-						/> */}
 					</>
 				)}
 			</form>
