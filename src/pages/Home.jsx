@@ -21,6 +21,11 @@ const Home = ({
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
+		// reset the search and sort parameters
+		setSearch("");
+		setChecked(false);
+		setPriceRange([0, 200]);
+
 		const fetchData = async () => {
 			// return to the top of screen
 			window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -39,7 +44,7 @@ const Home = ({
 		};
 
 		fetchData();
-	}, []);
+	}, [setSearch, setChecked, setPriceRange]);
 
 	return isLoading ? (
 		<p>Loading ...</p>
