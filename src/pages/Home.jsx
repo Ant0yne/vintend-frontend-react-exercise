@@ -31,7 +31,7 @@ const Home = ({
 			window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 			try {
 				const response = await axios.get(
-					"https://lereacteur-vinted-api.herokuapp.com/offers"
+					"https://site--vinted-backend-exercise--spyfkvx5gdbh.code.run/offers"
 				);
 
 				// assign the data sent by the request to data

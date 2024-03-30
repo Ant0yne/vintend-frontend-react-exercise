@@ -19,7 +19,7 @@ const Offer = ({ token, setToken }) => {
 		const fetchData = async () => {
 			try {
 				const response = await axios.get(
-					`https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
+					`https://site--vinted-backend-exercise--spyfkvx5gdbh.code.run/offer/${id}`
 				);
 
 				const data = response.data;

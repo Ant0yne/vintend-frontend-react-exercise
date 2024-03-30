@@ -45,7 +45,7 @@ const Offers = ({
 			try {
 				// send request with the queries
 				const response = await axios.get(
-					`https://lereacteur-vinted-api.herokuapp.com/offers${url}&page=${page}&limit=${limit}`
+					`https://site--vinted-backend-exercise--spyfkvx5gdbh.code.run/offers${url}&page=${page}&limit=${limit}`
 				);
 
 				setData(response.data);
