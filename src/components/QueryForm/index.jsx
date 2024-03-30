@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./queryForm.css";
 
-const QueryForm = () => {
+const QueryForm = ({ offerRoute }) => {
 	// all the state for the inputs' values to search and sort the offers
 	const [checkbox, setCheckbox] = useState(false);
 	const [search, setSearch] = useState("");
@@ -44,38 +44,42 @@ const QueryForm = () => {
 					value={search}
 					onChange={(e) => setSearch(e.target.value)}
 				/>
-				<div id="checkbox-query">
-					<p>Trier par prix décroissant</p>
-					<input
-						type="checkbox"
-						name="sort-price"
-						id="sort-price"
-						checked={checkbox}
-						onChange={(e) => setCheckbox(e.target.checked)}
-					/>
-				</div>
-				<input
-					type="number"
-					name="min-price"
-					id="min-price"
-					placeholder="prix min."
-					value={minPrice}
-					onChange={(e) => setMinPrice(e.target.value)}
-				/>
-				<input
-					type="number"
-					name="max-price"
-					id="max-price"
-					placeholder="prix max."
-					value={maxPrice}
-					onChange={(e) => setMaxPrice(e.target.value)}
-				/>
-				<input
-					type="submit"
-					name="submit-query"
-					id="submit-query"
-					value="Lancer la recherche"
-				/>
+				{!offerRoute && (
+					<>
+						<div id="checkbox-query">
+							<p>Trier par prix décroissant</p>
+							<input
+								type="checkbox"
+								name="sort-price"
+								id="sort-price"
+								checked={checkbox}
+								onChange={(e) => setCheckbox(e.target.checked)}
+							/>
+						</div>
+						<input
+							type="number"
+							name="min-price"
+							id="min-price"
+							placeholder="prix min."
+							value={minPrice}
+							onChange={(e) => setMinPrice(e.target.value)}
+						/>
+						<input
+							type="number"
+							name="max-price"
+							id="max-price"
+							placeholder="prix max."
+							value={maxPrice}
+							onChange={(e) => setMaxPrice(e.target.value)}
+						/>
+						<input
+							type="submit"
+							name="submit-query"
+							id="submit-query"
+							value="Lancer la recherche"
+						/>
+					</>
+				)}
 			</form>
 		</>
 	);

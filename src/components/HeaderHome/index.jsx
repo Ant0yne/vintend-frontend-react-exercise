@@ -11,7 +11,7 @@ import MenuMobile from "../MenuMobile";
 import "./headerHome.css";
 import Cookies from "js-cookie";
 
-const HeaderHome = ({ token, setToken }) => {
+const HeaderHome = ({ token, setToken, offerRoute }) => {
 	// the actual width of the screen
 	const [width, setWidth] = useState(window.innerWidth);
 
@@ -105,13 +105,11 @@ const HeaderHome = ({ token, setToken }) => {
 						</nav>
 					</div>
 					<div>
-						<QueryForm />
+						<QueryForm offerRoute={offerRoute} />
 					</div>
 					<nav className="header-m">
-						{/* if there is a token in the state
-						display the "Se déconnecter" button
-						if the token is ""
-						display the "S'inscrire" and "Se connecter" button */}
+						{/* if there is a token in the state display the "Se déconnecter" button
+						if the token is "" display the "S'inscrire" and "Se connecter" button */}
 						{token !== "" ? (
 							<div>
 								<button

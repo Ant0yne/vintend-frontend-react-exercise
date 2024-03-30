@@ -8,6 +8,7 @@ import OfferDetail from "../components/OfferDetail";
 const Offer = ({ token, setToken }) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
+	const offerRoute = true;
 
 	const { id } = useParams();
 
@@ -37,7 +38,7 @@ const Offer = ({ token, setToken }) => {
 		<p>Loading ...</p>
 	) : (
 		<>
-			<HeaderHome token={token} setToken={setToken} />
+			<HeaderHome token={token} setToken={setToken} offerRoute={offerRoute} />
 			<OfferDetail data={data} />
 		</>
 	);
