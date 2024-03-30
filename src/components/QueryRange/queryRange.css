@@ -1,0 +1,49 @@
+#range-container {
+	margin-top: 15px;
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	width: 80%;
+}
+
+#range-bg {
+	height: 36px;
+	display: flex;
+	width: 100%;
+}
+
+#range-barre {
+	height: 5px;
+	width: 100%;
+	border-radius: 4px;
+	align-self: center;
+}
+
+#range-thumb {
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 2px 6px #aaa;
+}
+
+#range-thumb-value {
+	text-align: center;
+	width: 40px;
+	position: absolute;
+	top: -28px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 1rem;
+	border-radius: 4px;
+	background-color: var(--green-vinted);
+}
+
+#range-thumb-int {
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+}

@@ -21,6 +21,8 @@ const HeaderHome = ({ token, setToken, offerRoute }) => {
 	const [isModalLog, setIsModalLog] = useState(false);
 	// display the modal to login
 	const [isModalMenu, setIsModalMenu] = useState(false);
+	// The default price range on min and max
+	const [priceRange, setPriceRange] = useState([0, 200]);
 
 	// When the width change, change the state width with the new width
 	// Then stop listening to the width change
@@ -105,7 +107,11 @@ const HeaderHome = ({ token, setToken, offerRoute }) => {
 						</nav>
 					</div>
 					<div>
-						<QueryForm offerRoute={offerRoute} />
+						<QueryForm
+							offerRoute={offerRoute}
+							priceRange={priceRange}
+							setPriceRange={setPriceRange}
+						/>
 					</div>
 					<nav className="header-m">
 						{/* if there is a token in the state display the "Se déconnecter" button
