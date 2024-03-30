@@ -2,7 +2,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 	gap: 8px;
 }
 
@@ -31,12 +30,6 @@
 	margin-top: 15px;
 }
 
-#checkbox-query {
-	display: flex;
-	font-size: 1.2rem;
-	gap: 10px;
-}
-
 /* ----------------- 520 px ----------------- */
 
 @media (min-width: 520px) {
@@ -44,11 +37,15 @@
 		flex-direction: row;
 		justify-content: space-around;
 		gap: 30px;
-		padding: 20px;
+		padding: 20px 10px 0 20px;
 		margin: 0;
 	}
+}
 
-	#checkbox-query > p {
-		flex-shrink: 0;
+/* ----------------- 960 px ----------------- */
+
+@media (min-width: 960px) {
+	#form-query {
+		margin-top: 20px;
 	}
 }

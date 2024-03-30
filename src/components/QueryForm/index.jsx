@@ -76,12 +76,12 @@ const QueryForm = ({ offerRoute, priceRange, setPriceRange }) => {
 								/>
 							</div> */}
 						</div>
-						<input
+						{/* <input
 							type="submit"
 							name="submit-query"
 							id="submit-query"
 							value="Lancer la recherche"
-						/>
+						/> */}
 					</>
 				)}
 			</form>

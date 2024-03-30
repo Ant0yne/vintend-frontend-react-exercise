@@ -1,0 +1,18 @@
+#checkbox-query {
+	margin-right: 35px;
+}
+
+#checkbox-query > label {
+	display: flex;
+	font-size: 1.2rem;
+	align-items: center;
+	gap: 10px;
+}
+
+/* ----------------- 520 px ----------------- */
+
+@media (min-width: 520px) {
+	#checkbox-query p {
+		flex-shrink: 0;
+	}
+}
