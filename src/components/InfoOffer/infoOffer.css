@@ -73,6 +73,7 @@ h4 {
 @media (min-width: 520px) {
 	.info-offer {
 		margin: 0;
+		flex-shrink: 0;
 	}
 }
 
