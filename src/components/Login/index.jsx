@@ -24,7 +24,7 @@ const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 
 		try {
 			const response = await axios.post(
-				"https://lereacteur-vinted-api.herokuapp.com/user/login",
+				"https://site--vinted-backend-exercise--spyfkvx5gdbh.code.run/user/login",
 				{
 					email: email,
 					password: password,
