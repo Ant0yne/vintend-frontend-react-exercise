@@ -6,10 +6,6 @@
 	gap: 8px;
 }
 
-#form-query input[type="number"] {
-	width: 100px;
-}
-
 #form-query input[type="submit"] {
 	width: 150px;
 	background-color: var(--green-vinted);
@@ -27,8 +23,32 @@
 	border-radius: 3px;
 }
 
+#check-range-query {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 15px;
+}
+
 #checkbox-query {
 	display: flex;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	gap: 10px;
+}
+
+/* ----------------- 520 px ----------------- */
+
+@media (min-width: 520px) {
+	#check-range-query {
+		flex-direction: row;
+		justify-content: space-around;
+		gap: 30px;
+		padding: 20px;
+		margin: 0;
+	}
+
+	#checkbox-query > p {
+		flex-shrink: 0;
+	}
 }

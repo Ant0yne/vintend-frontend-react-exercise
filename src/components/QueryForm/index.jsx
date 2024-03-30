@@ -50,22 +50,24 @@ const QueryForm = ({ offerRoute, priceRange, setPriceRange }) => {
 				/>
 				{!offerRoute && (
 					<>
-						{/* component for the price range */}
-						<QueryRange
-							rtl={false}
-							values={priceRange}
-							setValues={setPriceRange}
-							sendQuery={sendQuery}
-						/>
-						<div id="checkbox-query">
-							<p>Trier par prix décroissant</p>
-							<input
-								type="checkbox"
-								name="sort-price"
-								id="sort-price"
-								checked={checkbox}
-								onChange={(e) => setCheckbox(e.target.checked)}
+						<div id="check-range-query">
+							{/* component for the price range */}
+							<QueryRange
+								rtl={false}
+								values={priceRange}
+								setValues={setPriceRange}
+								sendQuery={sendQuery}
 							/>
+							<div id="checkbox-query">
+								<p>Trier par prix décroissant</p>
+								<input
+									type="checkbox"
+									name="sort-price"
+									id="sort-price"
+									checked={checkbox}
+									onChange={(e) => setCheckbox(e.target.checked)}
+								/>
+							</div>
 						</div>
 						<input
 							type="submit"

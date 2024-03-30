@@ -1,5 +1,4 @@
 #range-container {
-	margin-top: 15px;
 	display: flex;
 	justify-content: flex-end;
 	flex-wrap: wrap;
@@ -46,4 +45,18 @@
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
+}
+
+@media (min-width: 520px) {
+	#range-container {
+		max-width: 470px;
+	}
+}
+
+/* ----------------- 960 px ----------------- */
+
+@media (min-width: 960px) {
+	#range-container {
+		width: 80%;
+	}
 }
