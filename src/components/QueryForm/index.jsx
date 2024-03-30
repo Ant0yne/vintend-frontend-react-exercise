@@ -10,6 +10,7 @@ const QueryForm = ({ offerRoute, priceRange, setPriceRange }) => {
 	const [checkbox, setCheckbox] = useState(false);
 	const [search, setSearch] = useState("");
 
+	// test
 	const navigate = useNavigate();
 
 	/**
