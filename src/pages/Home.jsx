@@ -31,7 +31,7 @@ const Home = ({
 			window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 			try {
 				const response = await axios.get(
-					"https://site--vinted-backend-exercise--spyfkvx5gdbh.code.run/offers"
+					import.meta.env.VITE_API_URL + "/offers"
 				);
 
 				// assign the data sent by the request to data
@@ -39,7 +39,7 @@ const Home = ({
 				// remove the loading screen
 				setIsLoading(false);
 			} catch (error) {
-				console.log(error.response);
+				console.log(error.response.data.message);
 			}
 		};
 

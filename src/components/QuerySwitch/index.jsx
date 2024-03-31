@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ReactSwitch from "react-switch";
 
 import "./querySwitch.css";
@@ -19,7 +18,6 @@ const QuerySwitch = ({ checked, setChecked, sendQuery }) => {
 					id="react-switch"
 					offColor="#868686"
 					onColor="#2baeb7"
-					// handleDiameter={10}
 					height={18}
 					width={40}
 					activeBoxShadow="0 0 2px 3px #2baeb7"

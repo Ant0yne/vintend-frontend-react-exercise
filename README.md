@@ -25,11 +25,12 @@ An offer detail found by id in params
 
 ## To Do
 
-- better carrousel (better responsive, better scrollbar, etc.)
+- Offers : No offer found layout
+- designing the loading page
+- better carrousel in offer (better responsive, better scrollbar, etc.)
 - better design for search bar (a button to search, design when the input is focus, etc)
 - add a screen message when successfully sign up
 - when on mobile, opening the sign up and log in modal above it (and not closing it)
-- designing the loading page
 - designing the 404 page
 - dryer code
 

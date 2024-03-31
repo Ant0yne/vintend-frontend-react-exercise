@@ -19,7 +19,7 @@ const Offer = ({ token, setToken }) => {
 		const fetchData = async () => {
 			try {
 				const response = await axios.get(
-					`https://site--vinted-backend-exercise--spyfkvx5gdbh.code.run/offer/${id}`
+					`${import.meta.env.VITE_API_URL}/offer/${id}`
 				);
 
 				const data = response.data;
@@ -27,7 +27,7 @@ const Offer = ({ token, setToken }) => {
 				setData(data);
 				setIsLoading(false);
 			} catch (error) {
-				console.log(error.response);
+				console.log(error.response.data.message);
 			}
 		};
 

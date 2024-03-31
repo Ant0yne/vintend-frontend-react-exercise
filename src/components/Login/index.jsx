@@ -24,7 +24,7 @@ const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 
 		try {
 			const response = await axios.post(
-				"https://site--vinted-backend-exercise--spyfkvx5gdbh.code.run/user/login",
+				import.meta.env.VITE_API_URL + "/user/login",
 				{
 					email: email,
 					password: password,

@@ -27,7 +27,7 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 
 		try {
 			const response = await axios.post(
-				"https://site--vinted-backend-exercise--spyfkvx5gdbh.code.run/user/signup",
+				import.meta.env.VITE_API_URL + "/user/signup",
 				{
 					username: username,
 					email: email,

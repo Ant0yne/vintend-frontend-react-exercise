@@ -34,6 +34,7 @@ const Offers = ({
 	useEffect(() => {
 		window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
+		// Keep the range and switch at the right position and values
 		setChecked(checked);
 		const temp = [];
 		temp.push(Number(priceMin));
@@ -45,13 +46,15 @@ const Offers = ({
 			try {
 				// send request with the queries
 				const response = await axios.get(
-					`https://site--vinted-backend-exercise--spyfkvx5gdbh.code.run/offers${url}&page=${page}&limit=${limit}`
+					`${
+						import.meta.env.VITE_API_URL
+					}/offers${url}&page=${page}&limit=${limit}`
 				);
 
 				setData(response.data);
 				setIsLoading(false);
 			} catch (error) {
-				console.log("error.response");
+				console.log(error.response.data.message);
 			}
 		};
 
