@@ -3,9 +3,9 @@ import ReactSwitch from "react-switch";
 import "./querySwitch.css";
 
 const QuerySwitch = ({ checked, setChecked, sendQuery }) => {
-	const handleChange = (nextChecked) => {
-		setChecked(nextChecked);
-		sendQuery();
+	const handleChange = (checkedState) => {
+		setChecked(checkedState);
+		sendQuery(true);
 	};
 
 	return (

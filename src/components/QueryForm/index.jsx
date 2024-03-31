@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import QueryRange from "../QueryRange";
@@ -19,18 +18,18 @@ const QueryForm = ({
 
 	/**
 	 *
-	 * @param {Object} e
-	 *
 	 * function when subimitting the form
 	 *
 	 * add all the query to the url then navigate to this url
 	 *
 	 */
-	const sendQuery = () => {
+	const sendQuery = (tempChecked) => {
 		let url = "/offers?";
-		checked
-			? (url = url + "sort=price-asc&")
-			: (url = url + "sort=price-desc&");
+		let finalchecked;
+		tempChecked ? (finalchecked = !checked) : (finalchecked = checked);
+		finalchecked
+			? (url = url + "sort=price-desc&")
+			: (url = url + "sort=price-asc&");
 		url = url + "priceMin=" + priceRange[0] + "&";
 		url = url + "priceMax=" + priceRange[1] + "&";
 		url = url + "title=" + search;
