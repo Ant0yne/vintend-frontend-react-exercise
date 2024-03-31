@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 
+import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Offers from "./pages/Offers";
 import Offer from "./pages/Offer";
@@ -64,7 +65,10 @@ function App() {
 					element={<Offer token={token} setToken={setToken} />}
 				/>
 				{/* route 404 not found */}
-				<Route path="*" element={<p>Error 404</p>} />
+				<Route
+					path="*"
+					element={<NotFound token={token} setToken={setToken} />}
+				/>
 			</Routes>
 		</Router>
 	);

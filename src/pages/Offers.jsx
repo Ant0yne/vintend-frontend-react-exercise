@@ -6,6 +6,7 @@ import HeaderHome from "../components/HeaderHome";
 import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
 import Pagination from "../components/Pagination";
+import Loading from "../components/Loading";
 
 const Offers = ({
 	token,
@@ -55,6 +56,13 @@ const Offers = ({
 				setIsLoading(false);
 			} catch (error) {
 				console.log(error.response.data.message);
+				if (
+					error.response.data.message ===
+					"No offer can be found with those parameters."
+				) {
+					setData({ count: 0 });
+					setIsLoading(false);
+				}
 			}
 		};
 
@@ -74,7 +82,7 @@ const Offers = ({
 	]);
 
 	return isLoading ? (
-		<p>Loading ...</p>
+		<Loading token={token} setToken={setToken} />
 	) : (
 		<>
 			<HeaderHome
@@ -89,7 +97,11 @@ const Offers = ({
 			/>
 			<Hero />
 			{/* if no offer display a message */}
-			{data.count > 0 ? <OffersHome {...data} /> : <p>Aucune offre trouvée</p>}
+			{data.count > 0 ? (
+				<OffersHome {...data} />
+			) : (
+				<h2 style={{ textAlign: "center" }}>Aucune offre trouvée</h2>
+			)}
 			<Pagination page={page} limit={limit} count={data.count} url={url} />
 		</>
 	);

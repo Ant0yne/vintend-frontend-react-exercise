@@ -20,7 +20,7 @@ const HeaderHome = ({
 	setChecked,
 	search,
 	setSearch,
-	offerRoute,
+	noQueryRoute,
 }) => {
 	// the actual width of the screen
 	const [width, setWidth] = useState(window.innerWidth);
@@ -116,7 +116,7 @@ const HeaderHome = ({
 					</div>
 					<div>
 						<QueryForm
-							offerRoute={offerRoute}
+							noQueryRoute={noQueryRoute}
 							priceRange={priceRange}
 							setPriceRange={setPriceRange}
 							checked={checked}

@@ -6,7 +6,7 @@ import QuerySwitch from "../QuerySwitch";
 import "./queryForm.css";
 
 const QueryForm = ({
-	offerRoute,
+	noQueryRoute,
 	priceRange,
 	setPriceRange,
 	checked,
@@ -52,7 +52,7 @@ const QueryForm = ({
 					value={search}
 					onChange={(e) => setSearch(e.target.value)}
 				/>
-				{!offerRoute && (
+				{!noQueryRoute && (
 					<>
 						<div id="check-range-query">
 							{/* component for the price range */}

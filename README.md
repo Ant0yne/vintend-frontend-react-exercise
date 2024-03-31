@@ -25,8 +25,6 @@ An offer detail found by id in params
 
 ## To Do
 
-- Offers : No offer found layout
-- designing the loading page
 - better carrousel in offer (better responsive, better scrollbar, etc.)
 - better design for search bar (a button to search, design when the input is focus, etc)
 - add a screen message when successfully sign up

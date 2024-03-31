@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import HeaderHome from "../components/HeaderHome";
 import Hero from "../components/Hero";
 import OffersHome from "../components/OffersHome";
+import Loading from "../components/Loading";
 
 const Home = ({
 	token,
@@ -47,7 +48,7 @@ const Home = ({
 	}, [setSearch, setChecked, setPriceRange]);
 
 	return isLoading ? (
-		<p>Loading ...</p>
+		<Loading token={token} setToken={setToken} />
 	) : (
 		<>
 			<HeaderHome

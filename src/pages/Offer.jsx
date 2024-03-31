@@ -4,11 +4,12 @@ import { useParams } from "react-router-dom";
 
 import HeaderHome from "../components/HeaderHome";
 import OfferDetail from "../components/OfferDetail";
+import Loading from "../components/Loading";
 
 const Offer = ({ token, setToken }) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
-	const offerRoute = true;
+	const noQueryRoute = true;
 
 	const { id } = useParams();
 
@@ -35,10 +36,14 @@ const Offer = ({ token, setToken }) => {
 	}, [id]);
 
 	return isLoading ? (
-		<p>Loading ...</p>
+		<Loading token={token} setToken={setToken} />
 	) : (
 		<>
-			<HeaderHome token={token} setToken={setToken} offerRoute={offerRoute} />
+			<HeaderHome
+				token={token}
+				setToken={setToken}
+				noQueryRoute={noQueryRoute}
+			/>
 			<OfferDetail data={data} />
 		</>
 	);
