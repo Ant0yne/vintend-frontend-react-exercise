@@ -1,16 +1,25 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./login.css";
 
-const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
+const Login = ({
+	setIsModalLog,
+	setIsModalSign,
+	setToken,
+	isPublishRoute,
+	setIsPublishRoute,
+}) => {
 	// state for all the input values
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isError, setIsError] = useState(
 		"This is a placeholder to prevent the layout to move"
 	);
+
+	const navigate = useNavigate();
 
 	/**
 	 *
@@ -33,6 +42,10 @@ const Login = ({ setIsModalLog, setIsModalSign, setToken }) => {
 			Cookies.set("token", response.data.token, { expires: 10 });
 			setToken(response.data.token);
 			setIsModalLog(false);
+			if (isPublishRoute === true) {
+				setIsPublishRoute(false);
+				navigate("/publish");
+			}
 		} catch (error) {
 			const errMsg = error.response.data.message;
 

@@ -9,6 +9,8 @@ import Loading from "../components/Loading";
 const Offer = ({ token, setToken }) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
+
+	// To not display the query components (switch and range)
 	const noQueryRoute = true;
 
 	const { id } = useParams();

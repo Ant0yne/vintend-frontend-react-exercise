@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,6 +21,7 @@ const HeaderHome = ({
 	search,
 	setSearch,
 	noQueryRoute,
+	publishMissingToken,
 }) => {
 	// the actual width of the screen
 	const [width, setWidth] = useState(window.innerWidth);
@@ -28,10 +29,13 @@ const HeaderHome = ({
 	// display the modal to sign
 	const [isModalSign, setIsModalSign] = useState(false);
 	// display the modal to login
-	const [isModalLog, setIsModalLog] = useState(false);
+	const [isModalLog, setIsModalLog] = useState(publishMissingToken || false);
 	// display the modal to login
 	const [isModalMenu, setIsModalMenu] = useState(false);
+	// Check if the user log from the "Vends tes articles" button
+	const [isPublishRoute, setIsPublishRoute] = useState(false);
 
+	const navigate = useNavigate();
 	// When the width change, change the state width with the new width
 	// Then stop listening to the width change
 	useEffect(() => {
@@ -147,7 +151,14 @@ const HeaderHome = ({
 								</button>
 							</div>
 						)}
-						<button>Vends tes articles</button>
+						<button
+							onClick={() =>
+								token
+									? navigate("/publish")
+									: (setIsModalLog(true), setIsPublishRoute(true))
+							}>
+							Vends tes articles
+						</button>
 					</nav>
 				</div>
 			</header>
@@ -163,6 +174,8 @@ const HeaderHome = ({
 					setIsModalLog={setIsModalLog}
 					setIsModalSign={setIsModalSign}
 					setToken={setToken}
+					isPublishRoute={isPublishRoute}
+					setIsPublishRoute={setIsPublishRoute}
 				/>
 			)}
 			{isModalMenu && (
@@ -172,6 +185,7 @@ const HeaderHome = ({
 					setIsModalMenu={setIsModalMenu}
 					token={token}
 					setToken={setToken}
+					setIsPublishRoute={setIsPublishRoute}
 				/>
 			)}
 		</>

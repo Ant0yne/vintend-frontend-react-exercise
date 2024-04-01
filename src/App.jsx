@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Offers from "./pages/Offers";
 import Offer from "./pages/Offer";
+import Publish from "./pages/Publish";
 
 import "./App.css";
 
@@ -63,6 +64,11 @@ function App() {
 				<Route
 					path="/offer/:id"
 					element={<Offer token={token} setToken={setToken} />}
+				/>
+				{/*  */}
+				<Route
+					path="/publish"
+					element={<Publish token={token} setToken={setToken} />}
 				/>
 				{/* route 404 not found */}
 				<Route

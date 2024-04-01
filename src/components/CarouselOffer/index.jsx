@@ -29,8 +29,9 @@ const CarouselOffer = ({ image, pictures }) => {
 		<>
 			<nav className="carousel-offer">
 				<Carousel
+					arrows={false}
 					swipeable={true}
-					draggable={false}
+					draggable={true}
 					showDots={true}
 					responsive={responsive}
 					ssr={true}

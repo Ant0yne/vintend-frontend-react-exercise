@@ -1,3 +1,5 @@
+import { Link, useNavigate, redirect } from "react-router-dom";
+
 import Cookies from "js-cookie";
 import "./menuMobile.css";
 
@@ -7,7 +9,10 @@ const MenuMobile = ({
 	setIsModalLog,
 	token,
 	setToken,
+	setIsPublishRoute,
 }) => {
+	const navigate = useNavigate();
+
 	/**
 	 *
 	 * @param {String} type
@@ -41,7 +46,15 @@ const MenuMobile = ({
 			<section id="menu">
 				<div id="menu-modal" onClick={(e) => e.stopPropagation()}>
 					<nav>
-						<button>Vendre tes articles</button>
+						<button
+							onClick={() =>
+								token
+									? navigate("/publish")
+									: (setIsModalLog(true), setIsPublishRoute(true))
+							}>
+							Vends tes articles
+						</button>
+
 						{/* if there is a token in the state
 						display the "Se déconnecter" button
 						if the token is ""
