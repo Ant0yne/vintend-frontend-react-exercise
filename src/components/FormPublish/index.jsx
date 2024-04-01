@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import DropFilesPublish from "../DropFilesPublish";
+
 import "./formPublish.css";
 
 const FormPublish = ({ token }) => {
@@ -71,13 +73,14 @@ const FormPublish = ({ token }) => {
 		<main>
 			<form onSubmit={(e) => handlePublish(e)} id="form-publish">
 				<section>
-					<input
+					{/* <input
 						multiple
 						onChange={(e) => setFiles(e.target.files)}
 						type="file"
 						name="file-publish"
 						id="file-publish"
-					/>
+					/> */}
+					<DropFilesPublish setFiles={setFiles} />
 				</section>
 				<section>
 					<label htmlFor="title">
