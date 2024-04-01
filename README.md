@@ -25,6 +25,7 @@ An offer detail found by id in params
 
 ## To Do
 
+- if disconnect during publish -> open the log modal
 - better carrousel in offer (better responsive, better scrollbar, etc.)
 - better design for search bar (a button to search, design when the input is focus, etc)
 - Not displaying all the pages at once when too many page of offers

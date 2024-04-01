@@ -2,10 +2,13 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { useState } from "react";
 
+import DropFilesPublish from "../DropFilesPublish";
+
 import "./signComp.css";
 
 const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 	// state for all the input values
+	const [file, setFile] = useState([]);
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -25,15 +28,22 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 		setIsError("This is a placeholder to prevent the layout to move");
 		e.preventDefault();
 
+		// Create the FormData to send
+		const formData = new FormData();
+		// Create an array with the pictures in the key "picture" in the formData
+
+		formData.append("avatar", file[0]);
+		formData.append("username", username);
+		formData.append("email", email);
+		formData.append("password", password);
+		formData.append("newsletter", isNews);
+
+		console.log(formData.get("avatar"));
+
 		try {
 			const response = await axios.post(
 				import.meta.env.VITE_API_URL_DUMMY + "/user/signup",
-				{
-					username: username,
-					email: email,
-					password: password,
-					newsletter: isNews,
-				}
+				formData
 			);
 
 			// Create cookie "token" with server's response -> expires arbitrary for now
@@ -70,6 +80,8 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 					</button>
 					<form onSubmit={(e) => sendData(e)}>
 						<h2>S'inscrire</h2>
+
+						<DropFilesPublish setFiles={setFile} isAvatar={true} />
 
 						{/* The error from the request to display */}
 						<span

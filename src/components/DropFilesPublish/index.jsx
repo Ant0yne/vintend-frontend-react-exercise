@@ -3,9 +3,12 @@ import { useEffect } from "react";
 
 import "./dropFilesPublish.css";
 
-const DropFilesPublish = ({ setFiles }) => {
+const DropFilesPublish = ({ setFiles, isAvatar }) => {
+	let limitedfile = 0;
+	isAvatar && (limitedfile = 1);
+
 	const { acceptedFiles, getRootProps, getInputProps, isDragActive } =
-		useDropzone();
+		useDropzone({ maxFiles: limitedfile });
 
 	// To display the list of files added to be uploaded
 	const filesAll = acceptedFiles.map((file) => (
@@ -16,6 +19,7 @@ const DropFilesPublish = ({ setFiles }) => {
 
 	// Update the state with the files with what is added to the component
 	useEffect(() => {
+		console.log(acceptedFiles);
 		const temp = [...acceptedFiles];
 		setFiles(temp);
 	}, [acceptedFiles, setFiles]);
@@ -25,10 +29,22 @@ const DropFilesPublish = ({ setFiles }) => {
 			<div {...getRootProps({ className: "dropzone" })}>
 				<input {...getInputProps()} />
 				{/* Display a different message when some files are drag 'n' drop above the div */}
-				{isDragActive ? (
-					<p>Glisser les images ici...</p>
+				{isAvatar ? (
+					isDragActive ? (
+						<p>Déposer ici</p>
+					) : (
+						<p>
+							Faites glisser votre photo de profil ici (ou cliquer dans le
+							cadre)
+						</p>
+					)
+				) : isDragActive ? (
+					<p>Déposer ici</p>
 				) : (
-					<p>Faites glisser des photos ici (ou cliquer dans le cadre)</p>
+					<p>
+						Faites glisser les photo de votre offre ici (ou cliquer dans le
+						cadre).
+					</p>
 				)}
 			</div>
 			<aside>
