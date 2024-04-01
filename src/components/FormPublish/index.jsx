@@ -1,9 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./formPublish.css";
 
-const FormPublish = ({ token, setToken }) => {
+const FormPublish = ({ token }) => {
+	const navigate = useNavigate();
+
 	const [file, setFile] = useState({});
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
@@ -42,7 +45,7 @@ const FormPublish = ({ token, setToken }) => {
 				}
 			);
 
-			console.log(response.data);
+			navigate("/offer/" + response.data._id);
 		} catch (error) {
 			console.log(error.response.data.message);
 		}

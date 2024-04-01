@@ -11,7 +11,7 @@ const Publish = ({ token, setToken }) => {
 				setToken={setToken}
 				noQueryRoute={noQueryRoute}
 			/>
-			<FormPublish token={token} setToken={setToken} />
+			<FormPublish token={token} />
 		</>
 	);
 };

@@ -25,7 +25,7 @@ const Home = ({
 		// reset the search and sort parameters
 		setSearch("");
 		setChecked(false);
-		setPriceRange([0, 200]);
+		setPriceRange([0, 1000]);
 
 		const fetchData = async () => {
 			// return to the top of screen

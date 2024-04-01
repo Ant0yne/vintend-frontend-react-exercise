@@ -27,6 +27,7 @@ An offer detail found by id in params
 
 - better carrousel in offer (better responsive, better scrollbar, etc.)
 - better design for search bar (a button to search, design when the input is focus, etc)
+- Not displaying all the pages at once when too many page of offers
 - add a screen message when successfully sign up
 - when on mobile, opening the sign up and log in modal above it (and not closing it)
 - designing the 404 page
