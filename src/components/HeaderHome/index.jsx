@@ -21,7 +21,6 @@ const HeaderHome = ({
 	search,
 	setSearch,
 	noQueryRoute,
-	publishMissingToken,
 }) => {
 	// the actual width of the screen
 	const [width, setWidth] = useState(window.innerWidth);
@@ -29,7 +28,7 @@ const HeaderHome = ({
 	// display the modal to sign
 	const [isModalSign, setIsModalSign] = useState(false);
 	// display the modal to login
-	const [isModalLog, setIsModalLog] = useState(publishMissingToken || false);
+	const [isModalLog, setIsModalLog] = useState(false);
 	// display the modal to login
 	const [isModalMenu, setIsModalMenu] = useState(false);
 	// Check if the user log from the "Vends tes articles" button

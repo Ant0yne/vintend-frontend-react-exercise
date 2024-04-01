@@ -1,0 +1,9 @@
+#form-publish {
+	display: flex;
+	flex-direction: column;
+}
+
+#price-check-publish {
+	display: flex;
+	flex-direction: column;
+}

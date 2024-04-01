@@ -61,8 +61,10 @@ const Home = ({
 				search={search}
 				setSearch={setSearch}
 			/>
-			<Hero />
-			<OffersHome {...data} />
+			<main>
+				<Hero />
+				<OffersHome {...data} />
+			</main>
 		</>
 	);
 };

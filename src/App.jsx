@@ -19,7 +19,7 @@ function App() {
 	// if not, init token with ""
 	const [token, setToken] = useState(Cookies.get("token") || "");
 	// The default price range on min and max
-	const [priceRange, setPriceRange] = useState([0, 200]);
+	const [priceRange, setPriceRange] = useState([0, 1000]);
 	// to sort offers asc or desc
 	const [checked, setChecked] = useState(false);
 	// the input from the searchbar

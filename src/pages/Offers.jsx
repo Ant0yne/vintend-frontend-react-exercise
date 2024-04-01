@@ -95,14 +95,16 @@ const Offers = ({
 				search={search}
 				setSearch={setSearch}
 			/>
-			<Hero />
-			{/* if no offer display a message */}
-			{data.count > 0 ? (
-				<OffersHome {...data} />
-			) : (
-				<h2 style={{ textAlign: "center" }}>Aucune offre trouvée</h2>
-			)}
-			<Pagination page={page} limit={limit} count={data.count} url={url} />
+			<main>
+				<Hero />
+				{/* if no offer display a message */}
+				{data.count > 0 ? (
+					<OffersHome {...data} />
+				) : (
+					<h2 style={{ textAlign: "center" }}>Aucune offre trouvée</h2>
+				)}
+				<Pagination page={page} limit={limit} count={data.count} url={url} />
+			</main>
 		</>
 	);
 };

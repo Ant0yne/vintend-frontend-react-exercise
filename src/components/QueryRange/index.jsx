@@ -4,7 +4,7 @@ import "./queryRange.css";
 
 const STEP = 1;
 const MIN = 0;
-const MAX = 200;
+const MAX = 1000;
 
 const QueryRange = ({ rtl, values, setValues, sendQuery }) => {
 	return (
