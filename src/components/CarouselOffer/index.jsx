@@ -29,7 +29,7 @@ const CarouselOffer = ({ image, pictures }) => {
 		<>
 			<nav className="carousel-offer">
 				<Carousel
-					arrows={false}
+					arrows={true}
 					swipeable={true}
 					draggable={true}
 					showDots={true}
@@ -45,10 +45,8 @@ const CarouselOffer = ({ image, pictures }) => {
 					dotListClass="custom-dot-list-style"
 					itemClass="carousel-item-padding-40-px"
 					// partialVisbile={true}
-					centerMode={true}>
-					<div>
-						<img id="image" src={image.secure_url} alt={image.asset_id} />
-					</div>
+					// centerMode={true}
+				>
 					{pictures.map((picture) => {
 						return (
 							<div key={picture.secure_url}>

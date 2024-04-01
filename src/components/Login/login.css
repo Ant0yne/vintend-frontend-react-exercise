@@ -1,6 +1,7 @@
 #login {
 	position: fixed;
-	z-index: 3;
+	z-index: 1001;
+
 	width: 100vw;
 	height: 100vh;
 	background-color: var(--bg-modal);

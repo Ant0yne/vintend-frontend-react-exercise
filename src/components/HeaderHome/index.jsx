@@ -105,7 +105,7 @@ const HeaderHome = ({
 								setIsModalMenu(false);
 							}}>
 							<img
-								src="https://lereacteur-vinted.netlify.app/static/media/logo.10b0caad793dd0a8ea72.png"
+								src="https://najiwen.be/wp-content/uploads/2019/11/Vinted_logo-768x295.png"
 								alt=""
 							/>
 						</Link>
