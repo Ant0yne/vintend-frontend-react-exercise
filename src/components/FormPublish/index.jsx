@@ -35,7 +35,7 @@ const FormPublish = ({ token }) => {
 
 		try {
 			const response = await axios.post(
-				"https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+				import.meta.env.VITE_API_URL_DUMMY + "/offer/publish",
 				formData,
 				{
 					headers: {
