@@ -6,7 +6,14 @@ import HeaderHome from "../components/HeaderHome";
 import OfferDetail from "../components/OfferDetail";
 import Loading from "../components/Loading";
 
-const Offer = ({ token, setToken }) => {
+const Offer = ({
+	token,
+	setToken,
+	isModalLog,
+	setIsModalLog,
+	isPublishRoute,
+	setIsPublishRoute,
+}) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
 
@@ -45,6 +52,10 @@ const Offer = ({ token, setToken }) => {
 				token={token}
 				setToken={setToken}
 				noQueryRoute={noQueryRoute}
+				isModalLog={isModalLog}
+				setIsModalLog={setIsModalLog}
+				isPublishRoute={isPublishRoute}
+				setIsPublishRoute={setIsPublishRoute}
 			/>
 			<OfferDetail data={data} />
 		</>

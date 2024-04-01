@@ -17,6 +17,10 @@ const Offers = ({
 	setChecked,
 	search,
 	setSearch,
+	isModalLog,
+	setIsModalLog,
+	isPublishRoute,
+	setIsPublishRoute,
 }) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
@@ -94,9 +98,17 @@ const Offers = ({
 				setChecked={setChecked}
 				search={search}
 				setSearch={setSearch}
+				isModalLog={isModalLog}
+				setIsModalLog={setIsModalLog}
+				isPublishRoute={isPublishRoute}
+				setIsPublishRoute={setIsPublishRoute}
 			/>
 			<main>
-				<Hero />
+				<Hero
+					token={token}
+					setIsModalLog={setIsModalLog}
+					setIsPublishRoute={setIsPublishRoute}
+				/>
 				{/* if no offer display a message */}
 				{data.count > 0 ? (
 					<OffersHome {...data} />

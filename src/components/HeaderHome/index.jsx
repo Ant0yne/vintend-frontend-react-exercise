@@ -21,18 +21,18 @@ const HeaderHome = ({
 	search,
 	setSearch,
 	noQueryRoute,
+	isModalLog,
+	setIsModalLog,
+	isPublishRoute,
+	setIsPublishRoute,
 }) => {
 	// the actual width of the screen
 	const [width, setWidth] = useState(window.innerWidth);
 
-	// display the modal to sign
-	const [isModalSign, setIsModalSign] = useState(false);
-	// display the modal to login
-	const [isModalLog, setIsModalLog] = useState(false);
 	// display the modal to login
 	const [isModalMenu, setIsModalMenu] = useState(false);
-	// Check if the user log from the "Vends tes articles" button
-	const [isPublishRoute, setIsPublishRoute] = useState(false);
+	// display the modal to sign
+	const [isModalSign, setIsModalSign] = useState(false);
 
 	const navigate = useNavigate();
 	// When the width change, change the state width with the new width

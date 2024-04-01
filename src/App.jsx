@@ -18,6 +18,10 @@ function App() {
 	// Check if there is a cookie "token"
 	// if not, init token with ""
 	const [token, setToken] = useState(Cookies.get("token") || "");
+	// display the modal to login
+	const [isModalLog, setIsModalLog] = useState(false);
+	// Check if the user log from the "Vends tes articles" button
+	const [isPublishRoute, setIsPublishRoute] = useState(false);
 	// The default price range on min and max
 	const [priceRange, setPriceRange] = useState([0, 1000]);
 	// to sort offers asc or desc
@@ -41,6 +45,10 @@ function App() {
 							setChecked={setChecked}
 							search={search}
 							setSearch={setSearch}
+							isModalLog={isModalLog}
+							setIsModalLog={setIsModalLog}
+							isPublishRoute={isPublishRoute}
+							setIsPublishRoute={setIsPublishRoute}
 						/>
 					}
 				/>
@@ -57,23 +65,54 @@ function App() {
 							setChecked={setChecked}
 							search={search}
 							setSearch={setSearch}
+							isModalLog={isModalLog}
+							setIsModalLog={setIsModalLog}
+							isPublishRoute={isPublishRoute}
+							setIsPublishRoute={setIsPublishRoute}
 						/>
 					}
 				/>
 				{/* route to display a particular offer by id */}
 				<Route
 					path="/offer/:id"
-					element={<Offer token={token} setToken={setToken} />}
+					element={
+						<Offer
+							token={token}
+							setToken={setToken}
+							isModalLog={isModalLog}
+							setIsModalLog={setIsModalLog}
+							isPublishRoute={isPublishRoute}
+							setIsPublishRoute={setIsPublishRoute}
+						/>
+					}
 				/>
 				{/*  */}
 				<Route
 					path="/publish"
-					element={<Publish token={token} setToken={setToken} />}
+					element={
+						<Publish
+							token={token}
+							setToken={setToken}
+							isModalLog={isModalLog}
+							setIsModalLog={setIsModalLog}
+							isPublishRoute={isPublishRoute}
+							setIsPublishRoute={setIsPublishRoute}
+						/>
+					}
 				/>
 				{/* route 404 not found */}
 				<Route
 					path="*"
-					element={<NotFound token={token} setToken={setToken} />}
+					element={
+						<NotFound
+							token={token}
+							setToken={setToken}
+							isModalLog={isModalLog}
+							setIsModalLog={setIsModalLog}
+							isPublishRoute={isPublishRoute}
+							setIsPublishRoute={setIsPublishRoute}
+						/>
+					}
 				/>
 			</Routes>
 		</Router>
