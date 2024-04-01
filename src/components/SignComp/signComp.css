@@ -36,6 +36,21 @@
 	gap: 10px;
 }
 
+#signup-modal > form .dropzone {
+	width: 100%;
+}
+
+#signup-modal > form aside p {
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+#signup-modal > form aside ul {
+	text-align: center;
+	font-size: 1.2rem;
+	color: var(--text-grey);
+}
+
 #signup-modal h2 {
 	text-align: center;
 	padding-top: 20px;

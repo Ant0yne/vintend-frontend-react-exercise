@@ -19,7 +19,6 @@ const DropFilesPublish = ({ setFiles, isAvatar }) => {
 
 	// Update the state with the files with what is added to the component
 	useEffect(() => {
-		console.log(acceptedFiles);
 		const temp = [...acceptedFiles];
 		setFiles(temp);
 	}, [acceptedFiles, setFiles]);
@@ -34,7 +33,7 @@ const DropFilesPublish = ({ setFiles, isAvatar }) => {
 						<p>Déposer ici</p>
 					) : (
 						<p>
-							Faites glisser votre photo de profil ici (ou cliquer dans le
+							Faites glisser votre photo de profil ici (ou cliquez dans le
 							cadre)
 						</p>
 					)
@@ -42,7 +41,7 @@ const DropFilesPublish = ({ setFiles, isAvatar }) => {
 					<p>Déposer ici</p>
 				) : (
 					<p>
-						Faites glisser les photo de votre offre ici (ou cliquer dans le
+						Faites glisser les photo de votre offre ici (ou cliquez dans le
 						cadre).
 					</p>
 				)}

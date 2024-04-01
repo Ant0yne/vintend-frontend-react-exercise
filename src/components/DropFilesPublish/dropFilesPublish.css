@@ -1,4 +1,19 @@
 .dropzone {
-	border: 1px solid red;
-	height: 150px;
+	background-color: var(--white);
+	border: 1px dashed var(--text-grey);
+	height: 100px;
+	text-align: center;
+	font-size: 1.2rem;
+	color: var(--text-grey);
+}
+
+#drop-publish > aside > p {
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+#drop-publish > aside > ul {
+	text-align: center;
+	font-size: 1.2rem;
+	color: var(--text-grey);
 }

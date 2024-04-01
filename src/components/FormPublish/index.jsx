@@ -70,126 +70,121 @@ const FormPublish = ({ token }) => {
 	};
 
 	return (
-		<main>
-			<form onSubmit={(e) => handlePublish(e)} id="form-publish">
-				<section>
-					{/* <input
-						multiple
-						onChange={(e) => setFiles(e.target.files)}
-						type="file"
-						name="file-publish"
-						id="file-publish"
-					/> */}
-					<DropFilesPublish setFiles={setFiles} />
-				</section>
-				<section>
-					<label htmlFor="title">
-						<p>Title</p>
-						<input
-							onChange={(e) => setTitle(e.target.value)}
-							type="text"
-							name="title-publish"
-							id="title-publish"
-							placeholder="ex: Chemise costume"
-							value={title}
-						/>
-					</label>
-					<label htmlFor="description-publish">
-						<p>Décris ton article</p>
-						<input
-							onChange={(e) => setDescription(e.target.value)}
-							type="text"
-							name="description-publish"
-							id="description-publish"
-							placeholder="ex: très tendance"
-							value={description}
-						/>
-					</label>
-				</section>
-				<section>
-					<label htmlFor="brand-publish">
-						<p>Marque</p>
-						<input
-							onChange={(e) => setBrand(e.target.value)}
-							type="text"
-							name="brand-publish"
-							id="brand-publish"
-							placeholder="ex: Zara"
-							value={brand}
-						/>
-					</label>
-					<label htmlFor="size-publish">
-						<p>Taille</p>
-						<input
-							onChange={(e) => setSize(e.target.value)}
-							type="text"
-							name="size-publish"
-							id="size-publish"
-							placeholder="ex: L/40/12"
-							value={size}
-						/>
-					</label>
-					<label htmlFor="color-publish">
-						<p>Couleur</p>
-						<input
-							onChange={(e) => setColor(e.target.value)}
-							type="text"
-							name="color-publish"
-							id="color-publish"
-							placeholder="ex: bleu"
-							value={color}
-						/>
-					</label>
-					<label htmlFor="condition-publish">
-						<p>État</p>
-						<input
-							onChange={(e) => setCondition(e.target.value)}
-							type="text"
-							name="condition-publish"
-							id="condition-publish"
-							placeholder="ex: neuf"
-							value={condition}
-						/>
-					</label>
-					<label htmlFor="location-publish">
-						<p>Lieu</p>
-						<input
-							onChange={(e) => setLocation(e.target.value)}
-							type="text"
-							name="location-publish"
-							id="location-publish"
-							placeholder="Montpellier"
-							value={location}
-						/>
-					</label>
-				</section>
-				<section id="price-check-publish">
-					<label htmlFor="price-publish">
-						<p>Prix</p>
-						<input
-							onChange={(e) => setPrice(e.target.value)}
-							type="number"
-							name="price-publish"
-							id="price-publish"
-							placeholder="0,00€"
-							value={price}
-						/>
-					</label>
-					<label htmlFor="checkbox-publish">
-						<input
-							onChange={(e) => setCheckbox(e.target.checked)}
-							type="checkbox"
-							name="checkbox-publish"
-							id="checkbox-publish"
-							value={checkbox}
-						/>
-						<p>Je suis intéressé-e par les échanges</p>
-					</label>
-				</section>
-				<section>
-					<input type="submit" value="Publier" />
-				</section>
-			</form>
+		<main id="main-publish">
+			<div className="container">
+				<form onSubmit={(e) => handlePublish(e)} id="form-publish">
+					<section id="drop-publish">
+						<DropFilesPublish setFiles={setFiles} />
+					</section>
+					<section>
+						<label htmlFor="title">
+							<p>Title</p>
+							<input
+								onChange={(e) => setTitle(e.target.value)}
+								type="text"
+								name="title-publish"
+								id="title-publish"
+								placeholder="ex: Chemise costume"
+								value={title}
+							/>
+						</label>
+						<label htmlFor="description-publish">
+							<p>Décris ton article</p>
+							<input
+								onChange={(e) => setDescription(e.target.value)}
+								type="text"
+								name="description-publish"
+								id="description-publish"
+								placeholder="ex: très tendance"
+								value={description}
+							/>
+						</label>
+					</section>
+					<section>
+						<label htmlFor="brand-publish">
+							<p>Marque</p>
+							<input
+								onChange={(e) => setBrand(e.target.value)}
+								type="text"
+								name="brand-publish"
+								id="brand-publish"
+								placeholder="ex: Zara"
+								value={brand}
+							/>
+						</label>
+						<label htmlFor="size-publish">
+							<p>Taille</p>
+							<input
+								onChange={(e) => setSize(e.target.value)}
+								type="text"
+								name="size-publish"
+								id="size-publish"
+								placeholder="ex: L/40/12"
+								value={size}
+							/>
+						</label>
+						<label htmlFor="color-publish">
+							<p>Couleur</p>
+							<input
+								onChange={(e) => setColor(e.target.value)}
+								type="text"
+								name="color-publish"
+								id="color-publish"
+								placeholder="ex: bleu"
+								value={color}
+							/>
+						</label>
+						<label htmlFor="condition-publish">
+							<p>État</p>
+							<input
+								onChange={(e) => setCondition(e.target.value)}
+								type="text"
+								name="condition-publish"
+								id="condition-publish"
+								placeholder="ex: neuf"
+								value={condition}
+							/>
+						</label>
+						<label htmlFor="location-publish">
+							<p>Lieu</p>
+							<input
+								onChange={(e) => setLocation(e.target.value)}
+								type="text"
+								name="location-publish"
+								id="location-publish"
+								placeholder="ex: Montpellier"
+								value={location}
+							/>
+						</label>
+					</section>
+					<section id="price-check-publish">
+						<label htmlFor="price-publish">
+							<p>Prix</p>
+							<input
+								onChange={(e) => setPrice(e.target.value)}
+								type="number"
+								name="price-publish"
+								id="price-publish"
+								placeholder="0,00 €"
+								value={price}
+							/>
+						</label>
+						<label id="cb-publish" htmlFor="checkbox-publish">
+							<input
+								onChange={(e) => setCheckbox(e.target.checked)}
+								type="checkbox"
+								name="checkbox-publish"
+								id="checkbox-publish"
+								value={checkbox}
+							/>
+							<p>Je suis intéressé-e par les échanges</p>
+						</label>
+					</section>
+					<section id="btn-submit-publish">
+						<input type="submit" value="Publier" />
+					</section>
+				</form>
+			</div>
 		</main>
 	);
 };
