@@ -39,9 +39,14 @@ const Login = ({
 					password: password,
 				}
 			);
+
+			// Create cookie and assign it to state the close the log modale
 			Cookies.set("token", response.data.token, { expires: 10 });
 			setToken(response.data.token);
 			setIsModalLog(false);
+
+			// If the user was sent to Login by clicking on "Vends tes articles" button
+			// navigate directly to the Publish Route
 			if (isPublishRoute === true) {
 				setIsPublishRoute(false);
 				navigate("/publish");

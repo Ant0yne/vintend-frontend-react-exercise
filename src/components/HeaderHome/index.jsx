@@ -134,6 +134,7 @@ const HeaderHome = ({
 						{token !== "" ? (
 							<div>
 								<button
+									id="disconnect-button"
 									onClick={() => {
 										handleLogOut();
 									}}>
@@ -151,6 +152,8 @@ const HeaderHome = ({
 							</div>
 						)}
 						<button
+							// If no token in cookie -> open the modale to log
+							// If there is -> navigate to the publish route
 							onClick={() =>
 								token
 									? navigate("/publish")

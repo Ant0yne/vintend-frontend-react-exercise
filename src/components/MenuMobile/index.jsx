@@ -47,6 +47,8 @@ const MenuMobile = ({
 				<div id="menu-modal" onClick={(e) => e.stopPropagation()}>
 					<nav>
 						<button
+							// If no token in cookie -> open the modale to log
+							// If there is -> navigate to the publish route
 							onClick={() =>
 								token
 									? navigate("/publish")
@@ -62,6 +64,7 @@ const MenuMobile = ({
 						{token !== "" ? (
 							<div>
 								<button
+									id="disconnect-button-mobile"
 									onClick={() => {
 										handleLogOut();
 									}}>

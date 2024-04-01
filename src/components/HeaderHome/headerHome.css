@@ -94,4 +94,14 @@
 		color: var(--white);
 		font-size: 1.4rem;
 	}
+
+	/* button to disconnect */
+	#disconnect-button {
+		background-color: var(--red-error);
+		border: none;
+		border-radius: 3px;
+		padding: 8px 10px;
+		color: var(--white);
+		font-size: 1.4rem;
+	}
 }

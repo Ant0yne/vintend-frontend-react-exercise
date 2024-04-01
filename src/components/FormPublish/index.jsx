@@ -7,7 +7,8 @@ import "./formPublish.css";
 const FormPublish = ({ token }) => {
 	const navigate = useNavigate();
 
-	const [file, setFile] = useState({});
+	// All the state to send with FormData
+	const [files, setFiles] = useState([]);
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [brand, setBrand] = useState("");
@@ -18,11 +19,23 @@ const FormPublish = ({ token }) => {
 	const [price, setPrice] = useState("");
 	const [checkbox, setCheckbox] = useState(false);
 
+	/**
+	 *
+	 * @param {Object} e
+	 *
+	 * Create a FormData with all the inputs from the form
+	 * Send them to the DDB
+	 * Once the offer is published, navigate to the offer page
+	 */
 	const handlePublish = async (e) => {
 		e.preventDefault();
 
+		// Create the FormData to send
 		const formData = new FormData();
-		formData.append("picture", file);
+		// Create an array with the pictures in the key "picture" in the formData
+		for (let file of files) {
+			formData.append("picture", file);
+		}
 		formData.append("title", title);
 		formData.append("description", description);
 		formData.append("brand", brand);
@@ -32,6 +45,8 @@ const FormPublish = ({ token }) => {
 		formData.append("location", location);
 		formData.append("price", price);
 		formData.append("checkbox", checkbox);
+
+		// console.log(formData.getAll("picture"));
 
 		try {
 			const response = await axios.post(
@@ -45,6 +60,7 @@ const FormPublish = ({ token }) => {
 				}
 			);
 
+			// Once the offer is published -> navigate to the offer page
 			navigate("/offer/" + response.data._id);
 		} catch (error) {
 			console.log(error.response.data.message);
@@ -56,7 +72,8 @@ const FormPublish = ({ token }) => {
 			<form onSubmit={(e) => handlePublish(e)} id="form-publish">
 				<section>
 					<input
-						onChange={(e) => setFile(e.target.files[0])}
+						multiple
+						onChange={(e) => setFiles(e.target.files)}
 						type="file"
 						name="file-publish"
 						id="file-publish"
