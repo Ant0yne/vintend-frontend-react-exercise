@@ -2,21 +2,19 @@
 	padding: 10px;
 	margin-top: 10px;
 	background-color: var(--white);
-}
-
-.carousel-offer > div {
-	display: flex;
-	overflow: hidden;
-	overflow-x: scroll;
-	gap: 5px;
+	/* height: 50vh; */
+	/* width: 50vw; */
 }
 
 .carousel-offer img {
-	width: calc((100% - 5px) / 1.5);
+	height: 50vh;
 	object-fit: cover;
 }
 
 /* ----------------- 720 px ----------------- */
 
-/* @media (min-width: 720px) {
-} */
+@media (min-width: 720px) {
+	.carousel-offer {
+		width: 50vw;
+	}
+}
