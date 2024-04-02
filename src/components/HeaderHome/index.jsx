@@ -23,8 +23,8 @@ const HeaderHome = ({
 	noQueryRoute,
 	isModalLog,
 	setIsModalLog,
-	isPublishRoute,
-	setIsPublishRoute,
+	preventRoute,
+	setPreventRoute,
 }) => {
 	// the actual width of the screen
 	const [width, setWidth] = useState(window.innerWidth);
@@ -157,7 +157,7 @@ const HeaderHome = ({
 							onClick={() =>
 								token
 									? navigate("/publish")
-									: (setIsModalLog(true), setIsPublishRoute(true))
+									: (setIsModalLog(true), setPreventRoute("publish"))
 							}>
 							Vends tes articles
 						</button>
@@ -176,8 +176,8 @@ const HeaderHome = ({
 					setIsModalLog={setIsModalLog}
 					setIsModalSign={setIsModalSign}
 					setToken={setToken}
-					isPublishRoute={isPublishRoute}
-					setIsPublishRoute={setIsPublishRoute}
+					preventRoute={preventRoute}
+					setPreventRoute={setPreventRoute}
 				/>
 			)}
 			{isModalMenu && (
@@ -187,7 +187,7 @@ const HeaderHome = ({
 					setIsModalMenu={setIsModalMenu}
 					token={token}
 					setToken={setToken}
-					setIsPublishRoute={setIsPublishRoute}
+					setPreventRoute={setPreventRoute}
 				/>
 			)}
 		</>

@@ -8,8 +8,8 @@ const Publish = ({
 	setToken,
 	isModalLog,
 	setIsModalLog,
-	isPublishRoute,
-	setIsPublishRoute,
+	preventRoute,
+	setPreventRoute,
 }) => {
 	// To not display the query components (switch and range)
 	const noQueryRoute = true;
@@ -19,10 +19,10 @@ const Publish = ({
 	useEffect(() => {
 		if (!token) {
 			setIsModalLog(true);
-			setIsPublishRoute(true);
+			setPreventRoute(true);
 			navigate("/");
 		}
-	}, [token, setIsModalLog, setIsPublishRoute, navigate]);
+	}, [token, setIsModalLog, setPreventRoute, navigate]);
 
 	return (
 		<>
@@ -32,8 +32,8 @@ const Publish = ({
 				noQueryRoute={noQueryRoute}
 				isModalLog={isModalLog}
 				setIsModalLog={setIsModalLog}
-				isPublishRoute={isPublishRoute}
-				setIsPublishRoute={setIsPublishRoute}
+				preventRoute={preventRoute}
+				setPreventRoute={setPreventRoute}
 			/>
 			<FormPublish token={token} />
 		</>

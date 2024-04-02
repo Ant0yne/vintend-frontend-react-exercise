@@ -19,8 +19,8 @@ const Offers = ({
 	setSearch,
 	isModalLog,
 	setIsModalLog,
-	isPublishRoute,
-	setIsPublishRoute,
+	preventRoute,
+	setPreventRoute,
 }) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
@@ -100,14 +100,14 @@ const Offers = ({
 				setSearch={setSearch}
 				isModalLog={isModalLog}
 				setIsModalLog={setIsModalLog}
-				isPublishRoute={isPublishRoute}
-				setIsPublishRoute={setIsPublishRoute}
+				preventRoute={preventRoute}
+				setPreventRoute={setPreventRoute}
 			/>
 			<main>
 				<Hero
 					token={token}
 					setIsModalLog={setIsModalLog}
-					setIsPublishRoute={setIsPublishRoute}
+					setPreventRoute={setPreventRoute}
 				/>
 				{/* if no offer display a message */}
 				{data.count > 0 ? (

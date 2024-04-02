@@ -1,6 +1,6 @@
 import HeaderHome from "../components/HeaderHome";
 
-const NotFound = ({
+const Payment = ({
 	token,
 	setToken,
 	isModalLog,
@@ -8,8 +8,8 @@ const NotFound = ({
 	preventRoute,
 	setPreventRoute,
 }) => {
+	// To not display the query components (switch and range)
 	const noQueryRoute = true;
-
 	return (
 		<>
 			<HeaderHome
@@ -21,13 +21,8 @@ const NotFound = ({
 				preventRoute={preventRoute}
 				setPreventRoute={setPreventRoute}
 			/>
-			<main>
-				<h2 style={{ textAlign: "center", marginTop: "30px" }}>
-					Désolé, cette page n'existe pas
-				</h2>
-			</main>
 		</>
 	);
 };
 
-export default NotFound;
+export default Payment;

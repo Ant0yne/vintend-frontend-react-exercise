@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Offers from "./pages/Offers";
 import Offer from "./pages/Offer";
 import Publish from "./pages/Publish";
+import Payment from "./pages/Payment";
 
 import "./App.css";
 
@@ -20,8 +21,8 @@ function App() {
 	const [token, setToken] = useState(Cookies.get("token") || "");
 	// display the modal to login
 	const [isModalLog, setIsModalLog] = useState(false);
-	// Check if the user log from the "Vends tes articles" button
-	const [isPublishRoute, setIsPublishRoute] = useState(false);
+	// Check if the user try to sell or buy an offer
+	const [preventRoute, setPreventRoute] = useState("");
 	// The default price range on min and max
 	const [priceRange, setPriceRange] = useState([0, 1000]);
 	// to sort offers asc or desc
@@ -47,8 +48,8 @@ function App() {
 							setSearch={setSearch}
 							isModalLog={isModalLog}
 							setIsModalLog={setIsModalLog}
-							isPublishRoute={isPublishRoute}
-							setIsPublishRoute={setIsPublishRoute}
+							preventRoute={preventRoute}
+							setPreventRoute={setPreventRoute}
 						/>
 					}
 				/>
@@ -67,8 +68,8 @@ function App() {
 							setSearch={setSearch}
 							isModalLog={isModalLog}
 							setIsModalLog={setIsModalLog}
-							isPublishRoute={isPublishRoute}
-							setIsPublishRoute={setIsPublishRoute}
+							preventRoute={preventRoute}
+							setPreventRoute={setPreventRoute}
 						/>
 					}
 				/>
@@ -81,12 +82,12 @@ function App() {
 							setToken={setToken}
 							isModalLog={isModalLog}
 							setIsModalLog={setIsModalLog}
-							isPublishRoute={isPublishRoute}
-							setIsPublishRoute={setIsPublishRoute}
+							preventRoute={preventRoute}
+							setPreventRoute={setPreventRoute}
 						/>
 					}
 				/>
-				{/*  */}
+				{/* route to publish an offer */}
 				<Route
 					path="/publish"
 					element={
@@ -95,8 +96,22 @@ function App() {
 							setToken={setToken}
 							isModalLog={isModalLog}
 							setIsModalLog={setIsModalLog}
-							isPublishRoute={isPublishRoute}
-							setIsPublishRoute={setIsPublishRoute}
+							preventRoute={preventRoute}
+							setPreventRoute={setPreventRoute}
+						/>
+					}
+				/>
+				{/* Route for payment */}
+				<Route
+					path="/payment"
+					element={
+						<Payment
+							token={token}
+							setToken={setToken}
+							isModalLog={isModalLog}
+							setIsModalLog={setIsModalLog}
+							preventRoute={preventRoute}
+							setPreventRoute={setPreventRoute}
 						/>
 					}
 				/>
@@ -109,8 +124,8 @@ function App() {
 							setToken={setToken}
 							isModalLog={isModalLog}
 							setIsModalLog={setIsModalLog}
-							isPublishRoute={isPublishRoute}
-							setIsPublishRoute={setIsPublishRoute}
+							preventRoute={preventRoute}
+							setPreventRoute={setPreventRoute}
 						/>
 					}
 				/>

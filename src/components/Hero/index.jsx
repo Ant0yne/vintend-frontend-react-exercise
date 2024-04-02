@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./hero.css";
 
-const Hero = ({ token, setIsModalLog, setIsPublishRoute }) => {
+const Hero = ({ token, setIsModalLog, setPreventRoute }) => {
 	const navigate = useNavigate();
 	return (
 		<>
@@ -18,7 +18,7 @@ const Hero = ({ token, setIsModalLog, setIsPublishRoute }) => {
 							// If there is -> navigate to the publish route
 							token
 								? navigate("/publish")
-								: (setIsModalLog(true), setIsPublishRoute(true))
+								: (setIsModalLog(true), setPreventRoute("publish"))
 						}>
 						Commencer à vendre
 					</button>

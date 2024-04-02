@@ -47,7 +47,6 @@ const DropFilesPublish = ({ files, setFiles, isAvatar }) => {
 				)}
 			</div>
 			<aside>
-				{/* <ul>{filesAll}</ul> */}
 				{files.length > 0 && (
 					<>
 						{files.map((file) => {

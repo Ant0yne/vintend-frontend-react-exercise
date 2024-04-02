@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import "./infoOffer.css";
 
 const InfOffer = ({
@@ -6,7 +8,13 @@ const InfOffer = ({
 	product_name,
 	product_description,
 	owner,
+	token,
+	setIsModalLog,
+	preventRoute,
+	setPreventRoute,
 }) => {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<div className="info-offer">
@@ -36,7 +44,16 @@ const InfOffer = ({
 					)}
 					<p>{owner.account.username}</p>
 				</nav>
-				<button>Acheter</button>
+				<button
+					// If no token in cookie -> open the modale to log
+					// If there is -> navigate to the payment route
+					onClick={() =>
+						token
+							? navigate("/payment")
+							: (setIsModalLog(true), setPreventRoute("payment"))
+					}>
+					Acheter
+				</button>
 			</div>
 		</>
 	);

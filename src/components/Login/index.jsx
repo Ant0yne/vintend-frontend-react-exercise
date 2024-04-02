@@ -9,8 +9,8 @@ const Login = ({
 	setIsModalLog,
 	setIsModalSign,
 	setToken,
-	isPublishRoute,
-	setIsPublishRoute,
+	preventRoute,
+	setPreventRoute,
 }) => {
 	// state for all the input values
 	const [email, setEmail] = useState("");
@@ -47,9 +47,12 @@ const Login = ({
 
 			// If the user was sent to Login by clicking on "Vends tes articles" button
 			// navigate directly to the Publish Route
-			if (isPublishRoute === true) {
-				setIsPublishRoute(false);
+			if (preventRoute === "publish") {
+				setPreventRoute(false);
 				navigate("/publish");
+			} else if (preventRoute === "payment") {
+				setPreventRoute(false);
+				navigate("/payment");
 			}
 		} catch (error) {
 			const errMsg = error.response.data.message;

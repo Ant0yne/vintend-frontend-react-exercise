@@ -3,7 +3,13 @@ import InfOffer from "../InfoOffer";
 
 import "./offerDetail.css";
 
-const OfferDetail = ({ data }) => {
+const OfferDetail = ({
+	data,
+	token,
+	setIsModalLog,
+	preventRoute,
+	setPreventRoute,
+}) => {
 	return (
 		<>
 			<main>
@@ -21,7 +27,13 @@ const OfferDetail = ({ data }) => {
 								alt={data.product_pictures[0].secure_url}
 							/>
 						)}
-						<InfOffer {...data} />
+						<InfOffer
+							{...data}
+							token={token}
+							setIsModalLog={setIsModalLog}
+							preventRoute={preventRoute}
+							setPreventRoute={setPreventRoute}
+						/>
 					</div>
 				</section>
 			</main>

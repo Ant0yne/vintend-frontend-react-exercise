@@ -9,7 +9,7 @@ const MenuMobile = ({
 	setIsModalLog,
 	token,
 	setToken,
-	setIsPublishRoute,
+	setPreventRoute,
 }) => {
 	const navigate = useNavigate();
 
@@ -52,7 +52,7 @@ const MenuMobile = ({
 							onClick={() =>
 								token
 									? navigate("/publish")
-									: (setIsModalLog(true), setIsPublishRoute(true))
+									: (setIsModalLog(true), setPreventRoute(true))
 							}>
 							Vends tes articles
 						</button>

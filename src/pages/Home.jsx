@@ -17,8 +17,8 @@ const Home = ({
 	setSearch,
 	isModalLog,
 	setIsModalLog,
-	isPublishRoute,
-	setIsPublishRoute,
+	preventRoute,
+	setPreventRoute,
 }) => {
 	// data received by the request
 	const [data, setData] = useState();
@@ -66,14 +66,14 @@ const Home = ({
 				setSearch={setSearch}
 				isModalLog={isModalLog}
 				setIsModalLog={setIsModalLog}
-				isPublishRoute={isPublishRoute}
-				setIsPublishRoute={setIsPublishRoute}
+				preventRoute={preventRoute}
+				setPreventRoute={setPreventRoute}
 			/>
 			<main>
 				<Hero
 					token={token}
 					setIsModalLog={setIsModalLog}
-					setIsPublishRoute={setIsPublishRoute}
+					setPreventRoute={setPreventRoute}
 				/>
 				<OffersHome {...data} />
 			</main>

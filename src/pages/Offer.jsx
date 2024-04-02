@@ -11,8 +11,8 @@ const Offer = ({
 	setToken,
 	isModalLog,
 	setIsModalLog,
-	isPublishRoute,
-	setIsPublishRoute,
+	preventRoute,
+	setPreventRoute,
 }) => {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
@@ -54,10 +54,16 @@ const Offer = ({
 				noQueryRoute={noQueryRoute}
 				isModalLog={isModalLog}
 				setIsModalLog={setIsModalLog}
-				isPublishRoute={isPublishRoute}
-				setIsPublishRoute={setIsPublishRoute}
+				preventRoute={preventRoute}
+				setPreventRoute={setPreventRoute}
 			/>
-			<OfferDetail data={data} />
+			<OfferDetail
+				data={data}
+				token={token}
+				setIsModalLog={setIsModalLog}
+				preventRoute={preventRoute}
+				setPreventRoute={setPreventRoute}
+			/>
 		</>
 	);
 };
