@@ -81,25 +81,27 @@ const CheckoutForm = ({ id, title, price }) => {
 	};
 
 	return paymentDone ? (
-		<>
+		<section id="checkout-form">
 			<p>Achat Terminé !</p>
 			<button>
 				<Link to="/">Retour à l'Acceuil</Link>
 			</button>
-		</>
+		</section>
 	) : (
-		<form onSubmit={handlePayment}>
-			<PaymentElement />
-			<button
-				id="submit-payment"
-				// Disable the submit if a payment try is in progress
-				// or if the PaymentElement is not loaded
-				disabled={!stripe || !elements || isLoading}>
-				Payer
-			</button>
+		<section id="checkout-form">
+			<form onSubmit={handlePayment}>
+				<PaymentElement />
+				<button
+					id="submit-payment"
+					// Disable the submit if a payment try is in progress
+					// or if the PaymentElement is not loaded
+					disabled={!stripe || !elements || isLoading}>
+					Payer
+				</button>
 
-			{errorMessage && <p>{errorMessage}</p>}
-		</form>
+				{errorMessage && <p>{errorMessage}</p>}
+			</form>
+		</section>
 	);
 };
 

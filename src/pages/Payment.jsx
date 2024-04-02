@@ -4,6 +4,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 import HeaderHome from "../components/HeaderHome";
+import CheckoutInfo from "../components/CheckoutInfo";
 import CheckoutForm from "../components/CheckoutForm";
 
 const stripePromise = loadStripe(
@@ -24,6 +25,9 @@ const Payment = ({
 	// The props sent with the navigate to Payment
 	const location = useLocation();
 
+	const protecBuyer = 0.4;
+	const shippingCost = 0.8;
+
 	useEffect(() => {
 		// If not login -> redirect to Home and ask to log
 		if (!token) {
@@ -39,10 +43,12 @@ const Payment = ({
 
 	const { id, title, price } = location.state;
 
+	const total = Number((price + protecBuyer + shippingCost).toFixed(2));
+
 	// Transaction's option
 	const options = {
 		mode: "payment",
-		amount: Number((price * 100).toFixed(0)),
+		amount: Number((total * 100).toFixed(0)),
 		currency: "eur",
 	};
 
@@ -58,9 +64,18 @@ const Payment = ({
 				setPreventRoute={setPreventRoute}
 			/>
 			<main>
-				<Elements stripe={stripePromise} options={options}>
-					<CheckoutForm id={id} title={title} price={price} />
-				</Elements>
+				<div className="container">
+					<CheckoutInfo
+						total={total}
+						title={title}
+						price={price}
+						protecBuyer={protecBuyer}
+						shippingCost={shippingCost}
+					/>
+					<Elements stripe={stripePromise} options={options}>
+						<CheckoutForm id={id} title={title} price={price} />
+					</Elements>
+				</div>
 			</main>
 		</>
 	);

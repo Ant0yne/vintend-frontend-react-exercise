@@ -1,0 +1,33 @@
+#checkout-info {
+	/* padding: 10px; */
+}
+
+#checkout-info > p:first-of-type {
+	color: var(--text-grey);
+	font-size: 1.2rem;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#checkout-info-detail > div {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+
+#checkout-info-detail > aside {
+	width: 100%;
+	border: 1px solid var(--palceholder-grey);
+	margin: 20px 0;
+}
+
+#checkout-total {
+	display: flex;
+	justify-content: space-between;
+}
+
+#checkout-info > p:last-of-type {
+	font-size: 1.4rem;
+	text-align: justify;
+	margin-bottom: 30px;
+}
