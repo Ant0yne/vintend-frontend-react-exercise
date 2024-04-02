@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./infoOffer.css";
 
 const InfOffer = ({
+	_id,
 	product_price,
 	product_details,
 	product_name,
@@ -14,6 +15,9 @@ const InfOffer = ({
 	setPreventRoute,
 }) => {
 	const navigate = useNavigate();
+	const infoPayment = {
+		state: { id: _id, title: product_name, price: product_price },
+	};
 
 	return (
 		<>
@@ -49,7 +53,7 @@ const InfOffer = ({
 					// If there is -> navigate to the payment route
 					onClick={() =>
 						token
-							? navigate("/payment")
+							? navigate("/payment", infoPayment)
 							: (setIsModalLog(true), setPreventRoute("payment"))
 					}>
 					Acheter
