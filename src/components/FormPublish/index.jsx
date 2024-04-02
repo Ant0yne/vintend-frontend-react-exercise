@@ -52,7 +52,7 @@ const FormPublish = ({ token }) => {
 
 		try {
 			const response = await axios.post(
-				import.meta.env.VITE_API_URL_DUMMY + "/offer/publish",
+				import.meta.env.VITE_API_URL + "/offer/publish",
 				formData,
 				{
 					headers: {

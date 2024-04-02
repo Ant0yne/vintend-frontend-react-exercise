@@ -45,7 +45,7 @@ const CheckoutForm = ({ id, title, price }) => {
 			// Request to back the PaymentIntent creation
 			// If ok, return the clientSecret key
 			const response = await axios.post(
-				import.meta.env.VITE_API_URL_DUMMY + "/payment",
+				import.meta.env.VITE_API_URL + "/payment",
 				{
 					title: title,
 					amount: price,
