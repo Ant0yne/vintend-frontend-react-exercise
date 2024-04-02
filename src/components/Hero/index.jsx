@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./hero.css";
 
 const Hero = ({ token, setIsModalLog, setIsPublishRoute }) => {
-	console.log(token);
 	const navigate = useNavigate();
 	return (
 		<>

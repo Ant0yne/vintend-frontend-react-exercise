@@ -74,7 +74,7 @@ const FormPublish = ({ token }) => {
 			<div className="container">
 				<form onSubmit={(e) => handlePublish(e)} id="form-publish">
 					<section id="drop-publish">
-						<DropFilesPublish setFiles={setFiles} />
+						<DropFilesPublish files={files} setFiles={setFiles} />
 					</section>
 					<section>
 						<label htmlFor="title">

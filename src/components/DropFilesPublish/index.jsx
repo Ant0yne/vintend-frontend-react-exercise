@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 import "./dropFilesPublish.css";
 
-const DropFilesPublish = ({ setFiles, isAvatar }) => {
+const DropFilesPublish = ({ files, setFiles, isAvatar }) => {
 	let limitedfile = 0;
 	isAvatar && (limitedfile = 1);
 
@@ -47,8 +47,21 @@ const DropFilesPublish = ({ setFiles, isAvatar }) => {
 				)}
 			</div>
 			<aside>
-				<p>Fichiers</p>
-				<ul>{filesAll}</ul>
+				{/* <ul>{filesAll}</ul> */}
+				{files.length > 0 && (
+					<>
+						{files.map((file) => {
+							return (
+								<img
+									src={URL.createObjectURL(file)}
+									alt=""
+									className="img-file-dropzone"
+									key={file.path}
+								/>
+							);
+						})}
+					</>
+				)}
 			</aside>
 		</>
 	);

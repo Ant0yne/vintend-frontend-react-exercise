@@ -81,7 +81,7 @@ const SignComp = ({ setIsModalSign, setIsModalLog, setToken }) => {
 					<form onSubmit={(e) => sendData(e)}>
 						<h2>S'inscrire</h2>
 
-						<DropFilesPublish setFiles={setFile} isAvatar={true} />
+						<DropFilesPublish files={file} setFiles={setFile} isAvatar={true} />
 
 						{/* The error from the request to display */}
 						<span
