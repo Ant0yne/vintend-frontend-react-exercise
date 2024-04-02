@@ -24,8 +24,9 @@ const CheckoutInfo = ({ total, title, price, protecBuyer, shippingCost }) => {
 				<h3>{total} €</h3>
 			</div>
 			<p>
-				Il ne vous rest plus qu'une étape pour vous offrir {title}. Vous allez
-				payer {total} € (frais de protection et frais de port inclus).
+				Il ne vous rest plus qu'une étape pour vous offrir votre{" "}
+				<span>{title}</span>. Vous allez payer <span>{total}</span> € (frais de
+				protection et frais de port inclus).
 			</p>
 		</section>
 	);

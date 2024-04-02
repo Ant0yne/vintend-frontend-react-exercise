@@ -1,3 +1,13 @@
+#checkout-main {
+	background-color: var(--bg-grey);
+	height: 100vh;
+}
+
+#checkout-main > .container {
+	background-color: var(--white);
+	margin-top: 20px;
+}
+
 #checkout-form button {
 	background-color: var(--green-vinted);
 	border: none;
@@ -8,4 +18,36 @@
 	text-align: center;
 	width: 100%;
 	margin: 20px 0;
+}
+
+/* ----------------- 520 px ----------------- */
+
+@media (min-width: 520px) {
+	#checkout-main {
+		padding: 10px;
+	}
+
+	#checkout-form > form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	#checkout-form .StripeElement {
+		width: 100%;
+	}
+
+	#checkout-form button {
+		width: 500px;
+		margin: 40px 0;
+	}
+}
+
+/* ----------------- 720 px ----------------- */
+
+@media (min-width: 720px) {
+	#checkout-main > .container {
+		width: 720px;
+		margin: 0 auto;
+	}
 }

@@ -45,7 +45,7 @@ const CheckoutForm = ({ id, title, price }) => {
 			// Request to back the PaymentIntent creation
 			// If ok, return the clientSecret key
 			const response = await axios.post(
-				"https://lereacteur-vinted-api.herokuapp.com/v2/payment",
+				import.meta.env.VITE_API_URL_DUMMY + "/payment",
 				{
 					title: title,
 					amount: price,
@@ -60,7 +60,7 @@ const CheckoutForm = ({ id, title, price }) => {
 				clientSecret,
 				// A route to redirect (blocked)
 				confirmParams: {
-					return_url: "https://vint-react-front-antoine-soliv.netlify.app/",
+					return_url: import.meta.env.VITE_API_URL,
 				},
 				redirect: "if_required",
 			});

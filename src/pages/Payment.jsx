@@ -65,7 +65,7 @@ const Payment = ({
 				preventRoute={preventRoute}
 				setPreventRoute={setPreventRoute}
 			/>
-			<main>
+			<main id="checkout-main">
 				<div className="container">
 					<CheckoutInfo
 						total={total}

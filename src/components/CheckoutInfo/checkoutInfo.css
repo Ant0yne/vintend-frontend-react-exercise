@@ -23,11 +23,31 @@
 
 #checkout-total {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 #checkout-info > p:last-of-type {
 	font-size: 1.4rem;
 	text-align: justify;
 	margin-bottom: 30px;
+}
+
+#checkout-info span {
+	font-weight: bold;
+}
+
+/* ----------------- 520 px ----------------- */
+
+@media (min-width: 520px) {
+	#checkout-info > p:first-of-type {
+		margin: 20px 0;
+	}
+
+	#checkout-info-detail > aside {
+		margin: 50px 0 20px 0;
+	}
+
+	#checkout-info > p:last-of-type {
+		margin: 40px 0;
+	}
 }
