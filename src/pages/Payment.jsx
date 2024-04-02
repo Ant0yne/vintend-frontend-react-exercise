@@ -73,7 +73,7 @@ const Payment = ({
 						shippingCost={shippingCost}
 					/>
 					<Elements stripe={stripePromise} options={options}>
-						<CheckoutForm id={id} title={title} price={price} />
+						<CheckoutForm id={id} title={title} price={total} />
 					</Elements>
 				</div>
 			</main>
