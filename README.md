@@ -11,7 +11,7 @@ An exercise to recreate the Vinted website. It's part of my training to become a
 The Home Page.
 All the offers are display from the oldest created to the newest
 
-### Offers
+### "/offers"
 
 The offers sort regarding the query:
 
@@ -19,16 +19,29 @@ The offers sort regarding the query:
 - sort by ascending or descending price
 - search by word in offer's name
 
-### Offer/:id
+### "offer/:id"
 
 An offer detail found by id in params
+
+### "publish"
+
+To Publish an offer when clicking on green buttons
+
+### "/payment"
+
+To buy an offer when on an offer page
 
 ## To Do
 
 - textarea for description publish
 - better design for search bar (a button to search, design when the input is focus, etc)
 - add a screen message when successfully sign up
-- Not displaying all the pages number at once when too many page of offers
+- Not displaying all the pages number at once when too many page of offers:
+
+  [package rc-pagination](https://www.npmjs.com/package/rc-pagination)
+
+  [package react-paginate](https://www.npmjs.com/package/react-paginate)
+
 - responsive sign modal mobile horizontal
 - when on mobile, opening the sign up and log in modal above mobile menu (and not closing it)
 - component for sign/log/sell button
@@ -36,5 +49,5 @@ An offer detail found by id in params
 
 _not sure_
 
-- merging the sign up and log in modal in one component
-- creating a/some components for the inputs
+- merging the sign up and log in modal in one component ?
+- creating a/some components for the inputs ?

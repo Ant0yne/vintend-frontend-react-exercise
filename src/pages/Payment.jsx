@@ -25,6 +25,7 @@ const Payment = ({
 	// The props sent with the navigate to Payment
 	const location = useLocation();
 
+	// Arbitrary cost
 	const protecBuyer = 0.4;
 	const shippingCost = 0.8;
 
@@ -43,6 +44,7 @@ const Payment = ({
 
 	const { id, title, price } = location.state;
 
+	// The total to pay with all the costs
 	const total = Number((price + protecBuyer + shippingCost).toFixed(2));
 
 	// Transaction's option
