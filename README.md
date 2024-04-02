@@ -46,6 +46,12 @@ To buy an offer when on an offer page
 - when on mobile, opening the sign up and log in modal above mobile menu (and not closing it)
 - component for sign/log/sell button
 - dryer code
+- Send the id with the axios request body for Payment route
+- Don't display offer with the true "isPurchased" key in Home/Offers route
+- If it's not your offer, when on Offer/:id -> if key "isPurchased" is true -> return to Home
+- If it's your offer, when on Offer/:id -> give payment info
+- Make a "My Purchased" page
+- Make a "My Sold Offers" page
 
 _not sure_
 
