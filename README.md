@@ -25,11 +25,10 @@ An offer detail found by id in params
 
 ## To Do
 
-- if disconnect during publish -> open the log modal
-- better carrousel in offer (better responsive, better scrollbar, etc.)
+- textarea for description publish
 - better design for search bar (a button to search, design when the input is focus, etc)
-- Not displaying all the pages at once when too many page of offers
 - add a screen message when successfully sign up
+- Not displaying all the pages number at once when too many page of offers
 - responsive sign modal mobile horizontal
 - when on mobile, opening the sign up and log in modal above mobile menu (and not closing it)
 - component for sign/log/sell button
